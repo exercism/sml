@@ -1,0 +1,18 @@
+{
+  "slug": "sml",
+  "language": "Standard ML",
+  "repository": "https://github.com/exercism/xsml",
+  "active": false,
+  "problems": [
+
+  ],
+  "deprecated": [
+
+  ],
+  "ignored": [
+
+  ],
+  "foregone": [
+
+  ]
+}
