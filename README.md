@@ -3,7 +3,7 @@
 Exercism problems in Standard ML
 
 ## Testing
-Note: your problem implementation must be in a file named <problem-name>.sml
+Note: your problem implementation must be in a file named example.sml
 
 1. cd into your problem directory
 2. use the test_<problem-name>.sml file with the SML interpreter of your choice
@@ -13,7 +13,7 @@ Note: your problem implementation must be in a file named <problem-name>.sml
 
 Example:
  cd ~/exercism/xsml/accumulate
- poly --use accumulate.sml
+ poly --use test_<problem-name>.sml
  (* inspect allTestsPass variable *)
 
 TODO: Find a _better_ way to test SML problems

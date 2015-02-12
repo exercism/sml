@@ -1,4 +1,4 @@
-use "accumulate.sml";
+use "example.sml";
 
 val test_cases = [
     ( [],      (fn x => x),     []       ),
