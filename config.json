@@ -5,7 +5,8 @@
   "active": false,
   "test_pattern": "^test_*.sml$",
   "problems": [
-    "accumulate"
+    "accumulate",
+    "allergies"
   ],
   "deprecated": [
 
