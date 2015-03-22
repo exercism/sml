@@ -6,7 +6,8 @@
   "test_pattern": "^test_*.sml$",
   "problems": [
     "accumulate",
-    "allergies"
+    "allergies",
+    "anagram"
   ],
   "deprecated": [
 
