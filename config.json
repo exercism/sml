@@ -8,7 +8,8 @@
     "accumulate",
     "allergies",
     "anagram",
-    "binary"
+    "binary",
+    "hamming"  
   ],
   "deprecated": [
 
