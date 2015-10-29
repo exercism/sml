@@ -7,7 +7,9 @@
   "problems": [
     "accumulate",
     "allergies",
-    "anagram"
+    "anagram",
+    "binary",
+    "hamming"  
   ],
   "deprecated": [
 
