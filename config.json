@@ -5,15 +5,6 @@
   "checklist_issue": 8,
   "active": false,
   "test_pattern": "^test_*.sml$",
-  "problems": [
-    "accumulate",
-    "allergies",
-    "anagram",
-    "binary",
-    "flatten-array",
-    "hamming",
-    "nth-prime"
-  ],
   "exercises": [
     {
       "slug": "accumulate",
@@ -36,7 +27,17 @@
       "topics": []
     },
     {
+      "slug": "flatten-array",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
       "slug": "hamming",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "nth-prime",
       "difficulty": 1,
       "topics": []
     }
