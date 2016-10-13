@@ -5,13 +5,6 @@
   "checklist_issue": 8,
   "active": false,
   "test_pattern": "^test_*.sml$",
-  "problems": [
-    "accumulate",
-    "allergies",
-    "anagram",
-    "binary",
-    "hamming"
-  ],
   "exercises": [
     {
       "slug": "accumulate",
