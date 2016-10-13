@@ -14,6 +14,33 @@
     "hamming",
     "nth-prime"
   ],
+  "exercises": [
+    {
+      "slug": "accumulate",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "allergies",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "anagram",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "binary",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "hamming",
+      "difficulty": 1,
+      "topics": []
+    }
+  ],
   "deprecated": [
 
   ],
