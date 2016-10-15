@@ -5,13 +5,6 @@
   "checklist_issue": 8,
   "active": false,
   "test_pattern": "^test_*.sml$",
-  "problems": [
-    "accumulate",
-    "allergies",
-    "anagram",
-    "binary",
-    "hamming"
-  ],
   "deprecated": [
 
   ],
@@ -22,5 +15,32 @@
   ],
   "foregone": [
 
+  ],
+  "exercises": [
+    {
+      "difficulty": 1,
+      "slug": "accumulate",
+      "topics": []
+    },
+    {
+      "difficulty": 1,
+      "slug": "allergies",
+      "topics": []
+    },
+    {
+      "difficulty": 1,
+      "slug": "anagram",
+      "topics": []
+    },
+    {
+      "difficulty": 1,
+      "slug": "binary",
+      "topics": []
+    },
+    {
+      "difficulty": 1,
+      "slug": "hamming",
+      "topics": []
+    }
   ]
 }
