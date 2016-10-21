@@ -95,6 +95,16 @@
       ]
     },
     {
+      "uuid": "b6713a74-08d5-4480-6524-f9dbf5cf2563d2b2a91",
+      "slug": "difference-of-squares",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "225cfd7d-81a3-4a58-b1aa-1de2e40e7a93",
       "slug": "binary",
       "deprecated": true
