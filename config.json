@@ -10,6 +10,7 @@
     "allergies",
     "anagram",
     "binary",
+    "flatten-array",
     "hamming"
   ],
   "deprecated": [
