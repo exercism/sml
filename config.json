@@ -11,7 +11,8 @@
     "anagram",
     "binary",
     "flatten-array",
-    "hamming"
+    "hamming",
+    "nth-prime"
   ],
   "deprecated": [
 
