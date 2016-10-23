@@ -9,7 +9,8 @@
     "allergies",
     "anagram",
     "binary",
-    "hamming"
+    "hamming",
+    "nth-prime"
   ],
   "deprecated": [
 
