@@ -1,76 +1,94 @@
-use "example.sml";
+use "raindrops.sml";
 
 val test_cases = [
   {
-    number = 1,
+    description = "3, 5, and 7 are not factors of 1",
+    input = 1,
     expected = "1"
   },
   {
-    number = 3,
+    description = "3 is a factor of 3",
+    input = 3,
     expected = "Pling"
   },
   {
-    number = 5,
+    description = "5 is a factor of 5",
+    input = 5,
     expected = "Plang"
   },
   {
-    number = 7,
+    description = "7 is a factor of 7",
+    input = 7,
     expected = "Plong"
   },
   {
-    number = 6,
+    description = "3 is a factor of 6",
+    input = 6,
     expected = "Pling"
   },
   {
-    number = 8,
+    description = "3, 5, and 7 are not factors of 8",
+    input = 8,
     expected = "8"
   },
   {
-    number = 9,
+    description = "3 is a factor of 9",
+    input = 9,
     expected = "Pling"
   },
   {
-    number = 10,
+    description = "5 is a factor of 10",
+    input = 10,
     expected = "Plang"
   },
   {
-    number = 14,
+    description = "7 is a factor of 14",
+    input = 14,
     expected = "Plong"
   },
   {
-    number = 15,
+    description = "3 and 5 are factors of 15",
+    input = 15,
     expected = "PlingPlang"
   },
   {
-    number = 21,
+    description = "3 and 7 are factors of 21",
+    input = 21,
     expected = "PlingPlong"
   },
   {
-    number = 25,
+    description = "5 is a factor of 25",
+    input = 25,
     expected = "Plang"
   },
   {
-    number = 27,
+    description = "3 is factor of 27",
+    input = 27,
     expected = "Pling"
   },
   {
-    number = 35,
+    description = "5 and 7 are factors of 35",
+    input = 35,
     expected = "PlangPlong"
   },
   {
-    number = 49,
+    description = "7 is a factor of 49",
+    input = 49,
     expected = "Plong"
   },
   {
-    number = 52,
+    description = "3, 5, and 7 are not factors of 52",
+    input = 52,
     expected = "52"
   },
   {
-    number = 105,
+    description = "3, 5, and 7 are factors of 105",
+    input = 105,
     expected = "PlingPlangPlong"
   },
   {
-    number = 3125,
+    description = "5 is a factor of 3125",
+    input = 3125,
     expected = "Plang"
   }
 ]
@@ -78,13 +96,12 @@ val test_cases = [
 fun run_tests _ [] = []
   | run_tests f (x :: xs) =
       let
-        fun aux { number, expected } =
+        fun aux { description, input, expected } =
           let
-            val output = f number
+            val output = f input
             val is_correct = output = expected
-            val expl =
-              "convert " ^ (Int.toString number) ^ ": " ^
-              (if not is_correct then "FAILED" else "PASSED") ^ "\n"
+            val expl = description ^ ": " ^
+              (if is_correct then "PASSED" else "FAILED") ^ "\n"
           in
             (print (expl); is_correct)
           end
@@ -92,4 +109,10 @@ fun run_tests _ [] = []
         (aux x) :: run_tests f xs
       end
 
-val allTestsPass = List.all (fn x => x) (run_tests convert test_cases)   
+val testResults = run_tests raindrops test_cases;
+val passedTests = List.filter (fn x => x) testResults;
+val failedTests = List.filter (fn x => not x) testResults;
+
+if (List.length testResults) = (List.length passedTests)
+then (print "ALL TESTS PASSED")
+else (print (Int.toString (List.length failedTests) ^ " TEST(S) FAILED"));
