@@ -1,2 +1,2 @@
-fun convert (n: int): string =
-  raise Fail "'convert' is not implemented"
+fun raindrops (n: int): string =
+  raise Fail "'raindrops' is not implemented"

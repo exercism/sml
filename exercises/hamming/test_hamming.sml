@@ -1,28 +1,66 @@
-use "example.sml";
+use "hamming.sml";
 
 val test_cases = [
-    (("GAGCCTACTAACGGGAT","CATCGTAATGACGGCCT"),7),
-    (("CAT","DOG"), 3),
-    (("DEPOSIT","DOPIEST"),4)
+  {
+    description = "'GAGCCTACTAACGGGAT' is 7 away from 'CATCGTAATGACGGCCT'",
+    input = ("GAGCCTACTAACGGGAT","CATCGTAATGACGGCCT"),
+    expected = 7
+  },
+  {
+    description = "'CAT' is 3 away from 'DOG'",
+    input = ("CAT","DOG"),
+    expected = 3
+  },
+  {
+    description = "'DEPOSIT' is 4 away from 'DOPIEST'",
+    input = ("DEPOSIT","DOPIEST"),
+    expected = 4
+  }
 ];
 
 val error_test_cases = [
-    (("",       "A"), NonEqualLengthStringsFound),
-    (("A",       ""), NonEqualLengthStringsFound),
-    (("ABCD", "ABC"), NonEqualLengthStringsFound)
+  {
+    description = "throws error on unequal length strings",
+    input = ("", "A"),
+    expected = NonEqualLengthStringsFound
+  },
+  {
+    description = "throws error on unequal length strings",
+    input = ("A", ""),
+    expected = NonEqualLengthStringsFound
+  },
+  {
+    description = "throws error on unequal length strings",
+    input = ("ABCD", "ABC"),
+    expected = NonEqualLengthStringsFound
+  }
 ];
 
-fun run_tests [] = []
-  | run_tests (((s1,s2),expected)::ts) =
-       (hamming (s1,s2) = expected) :: run_tests ts
+fun run_tests _ [] = []
+  | run_tests f (x :: xs) =
+      let
+        fun aux { description, is_correct } =
+          let
+            val expl = description ^ ": " ^
+              (if is_correct then "PASSED" else "FAILED") ^ "\n"
+          in
+            (print (expl); is_correct)
+          end
+      in
+        (aux x) :: run_tests f xs
+      end
 
-fun run_error_tests [] = []
-  | run_error_tests (((s1,s2),expected)::ts) =
-       (hamming (s1,s2) handle expected => 1) :: run_error_tests ts
+fun evaluateGoodTestCase f { description, input, expected } =
+  { description = description, is_correct = (f input) = expected }
 
-val allNormalTestsPass =
-    List.foldl (fn (x,y) => x andalso y) true (run_tests test_cases)
-val allErrorTestsPass =
-    (List.foldl (fn (x,y) => x + y) 0 (run_error_tests error_test_cases)) = length error_test_cases
-val allTestsPass = allNormalTestsPass andalso allErrorTestsPass
-    
+fun evaluateErrorTestCase f { description, input, expected } =
+  { description = description, is_correct = (f input handle expected => 1) = 1 }
+
+val testResults = run_tests hamming (List.map (evaluateGoodTestCase hamming) test_cases)
+  @ run_tests hamming (List.map (evaluateErrorTestCase hamming) error_test_cases);
+val passedTests = List.filter (fn x => x) testResults;
+val failedTests = List.filter (fn x => not x) testResults;
+
+if (List.length testResults) = (List.length passedTests)
+then (print "ALL TESTS PASSED")
+else (print (Int.toString (List.length failedTests) ^ " TEST(S) FAILED"));
