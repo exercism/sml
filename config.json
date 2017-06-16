@@ -9,42 +9,58 @@
     {
       "slug": "accumulate",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+
+      ]
     },
     {
       "slug": "allergies",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+
+      ]
     },
     {
       "slug": "anagram",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+
+      ]
     },
     {
       "slug": "binary",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+
+      ]
     },
     {
       "slug": "flatten-array",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+
+      ]
     },
     {
       "slug": "hamming",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+
+      ]
     },
     {
       "slug": "raindrops",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+
+      ]
     },
     {
       "slug": "nth-prime",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+
+      ]
     }
   ],
   "deprecated": [
