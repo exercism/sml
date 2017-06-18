@@ -13,7 +13,7 @@ You will need an SML interpreter to solve these problems. There are several popu
 
 #### Example:
 
-     cd ~/exercism/xsml/accumulate
+     cd ~/exercism/sml/accumulate
      poly
      Poly/ML 5.2 Release
      > use "test_accumulate.sml";
