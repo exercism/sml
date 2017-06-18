@@ -1,4 +1,4 @@
-# xSML
+# Exercism Standard ML Track
 
 Exercism problems in the Standard ML programming language
 
@@ -9,5 +9,3 @@ Please see SETUP.md for instructions on how to get started solving the SML exerc
 ## Contributing Guide
 
 Please see the [contributing guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data)
-
-
