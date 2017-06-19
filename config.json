@@ -1,7 +1,7 @@
 {
   "slug": "sml",
   "language": "Standard ML",
-  "repository": "https://github.com/exercism/xsml",
+  "repository": "https://github.com/exercism/sml",
   "checklist_issue": 8,
   "active": false,
   "test_pattern": "^test_*.sml$",
