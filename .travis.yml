@@ -1,5 +1,12 @@
-language: sml
-
+language: generic
+sudo: false
+install:
+  - curl -LO https://github.com/polyml/polyml/archive/v5.7.tar.gz
+  - tar xf v5.7.tar.gz
+  - cd polyml-5.7 && ./configure --prefix=$HOME/.local && make && make install && cd -
+  - export PATH=$PATH:$HOME/.local/bin
+  - which poly
 script:
   - bin/fetch-configlet
   - bin/configlet lint .
+  - make travis
