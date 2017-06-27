@@ -28,13 +28,6 @@
       ]
     },
     {
-      "slug": "binary",
-      "difficulty": 1,
-      "topics": [
-
-      ]
-    },
-    {
       "slug": "flatten-array",
       "difficulty": 1,
       "topics": [
@@ -64,7 +57,7 @@
     }
   ],
   "deprecated": [
-
+    "binary"
   ],
   "foregone": [
 
