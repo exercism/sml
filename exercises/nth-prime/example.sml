@@ -6,7 +6,7 @@ fun next s = let
 in
     next' s
 end ;
-                 
+
 fun hd s = let
     fun hd' Nil = raise EmptyList
       | hd' (Cons(a, _)) = a
@@ -27,20 +27,21 @@ fun allPrimes n = let
     in
         (List.length (factors n)) = 1
     end
-                        
+
     fun nextPrime n = let
         val nextN = if (n mod 2) = 0 then n + 1 else n + 2
     in
         if isPrime nextN then nextN else nextPrime nextN
     end
-                          
+
 in
     Cons(n, fn () => (allPrimes (nextPrime n)))
 end ;
-                      
+
 fun nthPrime n = let
-    fun nthPrime' 0 s = hd s 
+    fun nthPrime' 0 s = hd s
       | nthPrime' n s = nthPrime' (n-1) (next s)
 in
-    nthPrime' (n-1) (allPrimes 2)
+    if n <= 0 then raise Domain
+    else nthPrime' (n-1) (allPrimes 2)
 end ;
