@@ -1,16 +1,54 @@
-use "example.sml";
+use "anagram.sml";
 
 val test_cases = [
-    ( ""      ,  ["enlists", "google", "inlets", "banana"], []         ),
-    ( "listen",                                         [], []         ),
-    ( "listen",  ["enlists", "google", "inlets", "banana"], ["inlets"] ),
-    ( "hatreds", ["dearths","hardest","salmon","devilish", "threads"], ["dearths","hardest","threads"] )
+  {
+    description = "The empty string is not an anagram of anything",
+    input = "",
+    candidates = ["enlists", "google", "inlets", "banana"],
+    expected = []
+  },
+  {
+    description = "A starting word with no candidates returns an empty array",
+    input = "listen",
+    candidates = [],
+    expected = []
+  },
+  {
+    description = "'listen' is an anagram of 'inlets'",
+    input = "listen",
+    candidates = ["enlists", "google", "inlets", "banana"],
+    expected = ["inlets"]
+  },
+  {
+    description = "'hatreds' is an anagram of 'dearths', 'hardest', and 'threads'",
+    input = "hatreds",
+    candidates = ["dearths","hardest","salmon","devilish", "threads"],
+    expected = ["dearths","hardest","threads"]
+  }
 ];
 
-fun run_tests [] = []
-  | run_tests ((word,candidateList,expected)::ts) =
-       (anagram word candidateList = expected) :: run_tests ts
-                                                         
-val allTestsPass = List.foldl (fn (x,y) => x andalso y) true (run_tests test_cases)                                                 
+fun run_tests _ [] = []
+  | run_tests f (x :: xs) =
+      let
+        fun aux { description, input, candidates, expected } =
+          let
+            val output = f input candidates
+            val is_correct = output = expected
+            val expl = description ^ ": " ^
+              (if is_correct then "PASSED" else "FAILED") ^ "\n"
+          in
+            (print (expl); is_correct)
+          end
+      in
+        (aux x) :: run_tests f xs
+      end
 
-    
+val testResults = run_tests anagram test_cases;
+val passedTests = List.filter (fn x => x) testResults;
+val failedTests = List.filter (fn x => not x) testResults;
+
+if (List.length testResults) = (List.length passedTests)
+then (print "ALL TESTS PASSED")
+else (print (Int.toString (List.length failedTests) ^ " TEST(S) FAILED"));
+
+
