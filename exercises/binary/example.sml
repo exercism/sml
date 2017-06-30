@@ -2,8 +2,8 @@ exception NonBinaryDigitFound
 exception EmptyBinaryStringFound
 
 (* accepts a binary string and converts it to the decimal equivalant *)
-fun binaryToDecimal n = let
-    val digits = List.map (fn c => (ord c) - 48) (explode n)
+fun binaryToDecimal bitstring = let
+    val digits = List.map (fn c => (ord c) - 48) (explode bitstring)
     val len = List.length digits
     fun validateBinaryDigits []      = true
       | validateBinaryDigits (d::ds) = if d <> 0 andalso d <> 1 then false
@@ -17,7 +17,7 @@ fun binaryToDecimal n = let
     in
         loop a b 1
     end
-    fun f' []      mult acc = acc 
+    fun f' []      mult acc = acc
       | f' (x::xs) mult acc = f' xs (mult - 1) (acc + (x * (expt 2 mult)))
 in
     if len = 0 then raise EmptyBinaryStringFound
