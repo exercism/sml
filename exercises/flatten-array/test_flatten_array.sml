@@ -3,31 +3,31 @@ use "flatten-array.sml";
 val test_cases = [
   {
     description = "[1, [2, [], 3, [4, 5]]] flattens to [1,2,3,4,5]",
-    input = Node [
-        Leaf 1,
-        Node [
-          Leaf 2,
-          Node [],
-          Leaf 3,
-          Node [Leaf 4, Leaf 5]
+    input = List [
+        Elem 1,
+        List [
+          Elem 2,
+          List [],
+          Elem 3,
+          List [Elem 4, Elem 5]
         ]
     ],
     expected = [1, 2, 3, 4, 5]
   },
   {
     description = "[1,2,3,4,5] flattens to [1,2,3,4,5]",
-    input = Node [
-        Leaf 1,
-        Leaf 2,
-        Leaf 3,
-        Leaf 4,
-        Leaf 5
+    input = List [
+        Elem 1,
+        Elem 2,
+        Elem 3,
+        Elem 4,
+        Elem 5
     ],
     expected = [1, 2, 3, 4, 5]
   },
   {
     description = "[] flattens to []",
-    input = Node [],
+    input = List [],
     expected = []
   }
 ];
