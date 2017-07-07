@@ -18,8 +18,8 @@ val test_cases = [
   },
   {
     description = "The one-hundredth prime is 541",
-    input = 1,
-    expected = 2
+    input = 100,
+    expected = 541
   },
   {
     description = "The three-thousand and first prime is 27457",
