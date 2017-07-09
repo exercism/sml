@@ -1,6 +1,6 @@
 datatype 'a nestedList =
-	  Leaf of 'a			     (* leaf *)
-	| Node of 'a nestedList list (* node *)
+	  Elem of 'a
+	| List of 'a nestedList list
 
-fun flatten (Leaf x)  = [x]
-  | flatten (Node xs) = List.concat (map flatten xs)
+fun flatten (Elem x)  = [x]
+  | flatten (List xs) = List.concat (map flatten xs)
