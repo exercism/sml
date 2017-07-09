@@ -2,4 +2,4 @@ language: sml
 
 script:
   - bin/fetch-configlet
-  - bin/configlet .
+  - bin/configlet lint .
