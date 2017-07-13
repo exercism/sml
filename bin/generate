@@ -1,0 +1,275 @@
+import json
+import re
+import shutil
+
+from pathlib import Path
+from collections import OrderedDict
+from urllib.request import urlopen, HTTPError
+from http import HTTPStatus
+
+
+canonical_data_url = 'https://raw.githubusercontent.com/exercism' + \
+                     '/problem-specifications/master' + \
+                     '/exercises/%s/canonical-data.json'
+
+
+def fetch(exercise):
+    try:
+        with urlopen(canonical_data_url % exercise) as response:
+            return json.loads(response.read().decode('utf8'))
+    except HTTPError as e:
+        if e.status == HTTPStatus.NOT_FOUND.value:
+            msg = "Exercise '%s' doesn't exist." % exercise
+        else:
+            msg = 'Unexpected error, please try again later.'
+        raise Exception(msg)
+
+
+def load(exercise):
+    root = Path(__file__).absolute().parent.parent.parent
+    path = root / 'problem-specifications/exercises'
+    with (path / exercise / 'canonical-data.json').open() as f:
+        return json.loads(f.read())
+
+
+def indent(n, s):
+    return s.rjust(len(s) + n, ' ')
+
+
+def camelize(s):
+    return re.sub('[-_](\w)', lambda x: x.group(1).upper(), s)
+
+
+def sml_type(value):
+    if value is None:
+        return 'option'
+    if isinstance(value, list):
+        if not value:
+            return "'a list"
+        s = {sml_type(v)
+             for v in value
+             # }
+             if not (isinstance(v, list) and not v)}
+        s.discard('exn')
+        if not s or len(s) > 2:
+            raise Exception('Failed to infer a proper type')
+        if len(s) == 1:
+            return '%s list' % s.pop()
+        if 'option' not in s:
+            raise Exception('Failed to infer a proper type, got multiple types', value, s)
+        s.remove('option')
+        return '%s option list' % s.pop()
+    if isinstance(value, dict):
+        if 'error' in value:
+            return 'exn'
+        return '{%s}' % ', '.join(
+            '%s: %s' % (key, sml_type(value[key]))
+            for key in sorted(value.keys())
+        )
+    types = {int: 'int', str: 'string', float: 'real', bool: 'bool'}
+    return types[type(value)]
+
+
+def sml_value(value, smltype=''):
+    if value is None:
+        return 'NONE'
+    _value = None
+    if isinstance(value, str):
+        _value = json.dumps(value)
+    if isinstance(value, bool):
+        _value = str(value).lower()
+    if isinstance(value, (int, float)):
+        if value < 0:
+            _value = '~%s' % -value
+        else:
+            _value = str(value)
+    if isinstance(value, list):
+        _value = '[%s]' % ', '.join(sml_value(v) for v in value)
+    if isinstance(value, dict):
+        if 'error' in value:
+            return 'Fail "%s"' % value['error']
+        _value = '{%s}' % ', '.join('%s = %s' % (k, sml_value(v))
+                                  for k, v in value.items())
+    return _value if 'option' not in smltype else ('SOME ' + _value)
+
+
+def get_fn_args(case):
+    ignored_keys = {'property', 'expected', 'description', 'comments'}
+    return OrderedDict(
+        (k, case[k])
+        for k in sorted(case.keys())
+        if k not in ignored_keys
+    )
+
+
+def extract_signatures(data):
+    funcs = OrderedDict()
+    exercise = data['exercise']
+    ignored_keys = {'property', 'expected', 'description', 'comments'}
+
+    def type_aux(values):
+        s = {sml_type(val) for val in values}
+        if len(s) == 1:
+            return s.pop()
+        if len(s) == 2 and 'option' in s:
+            s.remove('option')
+            return '%s option' % s.pop()
+        raise Exception('Failed to infer a proper type, can not unify different types: %s' % s)
+
+    def signature(xs):
+        output = []
+        args = OrderedDict()
+        for x in xs:
+            output.append(x['output'])
+            for arg, val in x['args'].items():
+                args.setdefault(arg, []).append(val)
+        return {
+            'args': OrderedDict((arg, type_aux(vals)) for arg, vals in args.items()),
+            'output': type_aux(output),
+        }
+
+    def collect(cases):
+        for case in cases:
+            if 'cases' in case:
+                collect(case['cases'])
+            else:
+                # assumes there's at least one test with non "nullish" vars
+                fn = camelize(case.get('property', exercise))
+                if sml_type(case['expected']) == 'exn':
+                    continue
+                args = get_fn_args(case)
+                if not all(args.values()) or sml_type(case['expected']) == "'a list":# or not case['expected']:
+                    continue
+                funcs.setdefault(fn, []).append({
+                    'args': args,
+                    'output': case['expected']
+                })
+
+    collect(data['cases'])
+    return {fn: signature(funcs[fn]) for fn in funcs}
+
+
+def expectation(signature, fn, args, expected):
+    tmpl = '(fn _ => %s |> Expect.%s)'
+    output = sml_value(expected, signature['output'])
+    invocation = '%s (%s)' % (
+        fn,
+        ', '.join((
+            sml_value(val, signature['args'][arg])
+            for arg, val in args.items())
+        )
+    )
+    if sml_type(expected) == 'exn':
+        return tmpl % (
+            '(fn _ => %s)' % invocation,
+            'error (%s)' % output
+        )
+    if signature['output'] == 'bool':
+        return tmpl % (
+            invocation,
+            'truthy' if expected else 'falsy'
+        )
+    if signature['output'] == 'real':
+        return tmpl % (
+            invocation,
+            'nearTo %s' % output
+        )
+    return tmpl % (
+        invocation,
+        ('equalTo (%s)' if 'SOME ' in output else 'equalTo %s') % output
+    )
+
+
+def generate_test_content(data, signature):
+    exercise = data['exercise']
+
+    def fmt(case, depth=0):
+        if 'property' not in  case:
+            print('WARNING: property not found using exercise name as function name')
+        fn = camelize(case.get('property', exercise))
+        expected = case['expected']
+        args = get_fn_args(case)
+        return '\n'.join((
+            indent(depth, 'test "%s"' % case.get('description', fn)),
+            indent(depth + 2, expectation(signature[fn], fn, args, expected))
+        ))
+
+    def traverse(cases, depth=0):
+        acc = []
+        for case in cases:
+            if 'cases' in case:
+                acc.append('\n'.join((
+                    indent(depth * 2, 'describe "%s" [' % case['description']),
+                    ',\n\n'.join(traverse(case['cases'], depth + 1)),
+                    indent(depth * 2, ']')
+                )))
+            else:
+                acc.append(fmt(case, depth * 2))
+        return acc
+
+    return '\n'.join([
+        '(* version %s *)' % data['version'],
+        '',
+        'use "%s.sml";' % data['exercise'],
+        'use "testlib.sml";',
+        '',
+        'infixr |>',
+        'fun x |> f = f x',
+        '',
+        'val testsuite =',
+        '  describe "%s" [' % data['exercise'],
+        ',\n\n'.join(traverse(data['cases'], depth=2)),
+        '  ]',
+        '',
+        'val _ = Test.run testsuite'
+    ])
+
+
+def generate_exercise_content(signatures):
+    def fmt(args):
+        return ', '.join('%s: %s' % (name, value)
+                        for name, value in args.items())
+
+    return '\n\n'.join(
+        'fun {0} ({1}): {2} =\n'
+        '  raise Fail "\'{0}\' is not implemented"'.format(
+            fn,
+            fmt(signature['args']),
+            signature['output']
+        )
+        for fn, signature in signatures.items()
+    )
+
+
+def write(path, content):
+    with path.open('w') as f:
+        f.write(content)
+
+
+def generate(exercise):
+    root = Path(__file__).parent.parent.absolute()
+    path = root / 'exercises' / exercise
+    if not path.exists():
+        path.mkdir()
+    data = fetch(exercise)
+    signatures = extract_signatures(data)
+    write(path / 'test.sml', generate_test_content(data, signatures))
+    content = generate_exercise_content(signatures)
+    write(path / ('%s.sml' % exercise), content)
+    write(path / 'example.sml', content)
+    shutil.copyfile(
+        (root / 'lib/testlib.sml').as_posix(),
+        (path / 'testlib.sml').as_posix()
+    )
+
+
+if __name__ == '__main__':
+    import sys
+
+    for exercise in sys.argv[1:]:
+        try:
+            generate(exercise)
+        except FileNotFoundError:
+            print('[%s]: canonical-data.json not found' % exercise)
+        except Exception as e:
+            print('[%s]: %s' % (exercise, e))
