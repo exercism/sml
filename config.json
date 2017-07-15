@@ -7,57 +7,80 @@
   "test_pattern": "^test_*.sml$",
   "exercises": [
     {
+      "uuid": "333c2cb9-f03c-473c-9eeb-096072a321b2",
       "slug": "accumulate",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "7be1122c-33cd-40ed-a70f-c71a6713c47a",
       "slug": "allergies",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "216334c2-bdb5-481a-a22b-20ac088f20e9",
       "slug": "anagram",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "fb0a030d-33bc-4066-a30a-1b8b02cc42f1",
       "slug": "flatten-array",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "ce5dd1a4-7c90-48e4-b260-d2b62f29fbaf",
       "slug": "hamming",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "76b1e1d1-2360-487c-89be-37f9780540b7",
       "slug": "raindrops",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "cfd7a0bc-4b94-402a-9e8e-d81cd4ddecfd",
       "slug": "nth-prime",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
+    },
+    {
+      "uuid": "225cfd7d-81a3-4a58-b1aa-1de2e40e7a93",
+      "slug": "binary",
+      "deprecated": true
     }
-  ],
-  "deprecated": [
-    "binary"
   ],
   "foregone": [
 
