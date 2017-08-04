@@ -2,7 +2,7 @@
   "language": "Standard ML",
   "checklist_issue": 8,
   "active": false,
-  "test_pattern": "test_.*[.]sml$",
+  "test_pattern": "test[.]sml$",
   "exercises": [
     {
       "uuid": "333c2cb9-f03c-473c-9eeb-096072a321b2",
