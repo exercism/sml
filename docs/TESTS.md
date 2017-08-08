@@ -1,5 +1,5 @@
-# Running Tests
+# Running the tests
 
 ```
-$ poly -q < test_{exercise}.sml
+$ poly -q --use test.sml
 ```

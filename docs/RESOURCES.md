@@ -1,7 +1,7 @@
 # Books
 - [The Definition of Standard ML](https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised)
 - [Purely Functional Data Structures](https://www.amazon.com/Purely-Functional-Structures-Chris-Okasaki/dp/0521663504)
-- [Chris Okasaki's theses](https://www.cs.cmu.edu/~rwh/theses/okasaki.pdf)
+- [Chris Okasaki's thesis](https://www.cs.cmu.edu/~rwh/theses/okasaki.pdf)
 - [Modern Compiler Implementation in ML](https://www.amazon.com/Modern-Compiler-Implementation-Andrew-Appel/dp/0521607647)
 - [Notes on Programming SML/NJ](http://www.cs.cornell.edu/riccardo/prog-smlnj/notes-011001.pdf)
 
