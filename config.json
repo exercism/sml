@@ -15,6 +15,16 @@
       ]
     },
     {
+      "uuid": "9d8e76f1-0e85-a280-b779-16335f29d1a96ce3a72",
+      "slug": "bob",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "333c2cb9-f03c-473c-9eeb-096072a321b2",
       "slug": "accumulate",
       "core": false,
