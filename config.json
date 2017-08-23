@@ -5,6 +5,16 @@
   "test_pattern": "test[.]sml$",
   "exercises": [
     {
+      "uuid": "4450455d-0786-6f80-7672-48368a115df16e0aa7e",
+      "slug": "hello-world",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "333c2cb9-f03c-473c-9eeb-096072a321b2",
       "slug": "accumulate",
       "core": false,
