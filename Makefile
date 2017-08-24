@@ -34,8 +34,8 @@ travis:
 
 test-%:
 	$(eval exercise := $(patsubst test-%, %, $@))
-	@echo "# $(exercise)"
 	@echo
+	@ls ./exercises/$(exercise)/README.md > /dev/null
 	@cd ./exercises/$(exercise) && cat test.sml | sed 's/$(exercise).sml/example.sml/' | poly -q
 	@echo
 
