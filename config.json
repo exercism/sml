@@ -155,6 +155,16 @@
       ]
     },
     {
+      "uuid": "c8b94fa9-d758-4dca-b7fc-7a130061e064",
+      "slug": "list-ops",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "225cfd7d-81a3-4a58-b1aa-1de2e40e7a93",
       "slug": "binary",
       "deprecated": true
