@@ -212,8 +212,8 @@ def generate_test_content(data, signature):
     return '\n'.join([
         '(* version %s *)' % data['version'],
         '',
-        'use "%s.sml";' % data['exercise'],
         'use "testlib.sml";',
+        'use "%s.sml";' % data['exercise'],
         '',
         'infixr |>',
         'fun x |> f = f x',
