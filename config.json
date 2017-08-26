@@ -145,6 +145,16 @@
       ]
     },
     {
+      "uuid": "6c191163-0a98-2380-debc-75144c1787f3853e868",
+      "slug": "prime-factors",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "225cfd7d-81a3-4a58-b1aa-1de2e40e7a93",
       "slug": "binary",
       "deprecated": true
