@@ -1,2 +1,2 @@
-fun rebase (fromBase: int) (xs: int list) (toBase: int): int list option =
-  raise Fail "'rebase' has not been implemented"
+fun rebase (input_base: int, input_digits: int list, output_base: int): int list option =
+  raise Fail "'rebase' is not implemented"

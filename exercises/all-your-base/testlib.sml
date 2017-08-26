@@ -5,7 +5,7 @@ struct
   local
     fun failEq b a =
       Fail ("Expected: " ^ b, "Got: " ^ a)
-
+    
     fun failExn b a =
       Fail ("Expected: " ^ b, "Raised: " ^ a)
 
@@ -21,7 +21,7 @@ struct
       then failEq "false" "true"
       else Pass
 
-    fun equalTo b a =
+    fun equalTo b a = 
       if a = b
       then Pass
       else failEq (PolyML.makestring b) (PolyML.makestring a)
@@ -128,7 +128,7 @@ struct
               (counter, [fmt depth evaluation])
             end
       end
-
+    
     fun println s = print (s ^ "\n")
   in
     fun run suite =
@@ -141,7 +141,7 @@ struct
           TermColor.redit ((Int.toString errored) ^ " errored"),
           (Int.toString (succeeded + failed + errored)) ^ " total"
         ]
-
+        
         val status = if failed = 0 andalso errored = 0
                      then OS.Process.success
                      else OS.Process.failure

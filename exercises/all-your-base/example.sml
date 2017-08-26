@@ -1,4 +1,4 @@
-fun rebase inBase digits outBase = let
+fun rebase (inBase, digits, outBase) = let
   fun fromBase base = let
     fun f (x, NONE  ) = NONE
       | f (x, SOME n) =
@@ -25,7 +25,11 @@ fun rebase inBase digits outBase = let
     rev o (unfold f)
   end
 in
-  if inBase < 2 orelse outBase < 2 then NONE
+  if inBase < 2
+    orelse outBase < 2
+    orelse (List.length digits) = 0
+    orelse (List.length digits) = (List.length (List.filter (fn x => x = 0) digits))
+  then NONE
   else case fromBase inBase digits of
     SOME v => SOME (toBase outBase v)
   | NONE   => NONE
