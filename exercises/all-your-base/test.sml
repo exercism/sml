@@ -1,7 +1,6 @@
 (* version 1.1.0 *)
 
-use "example.sml";
-(* use "all-your-base.sml"; *)
+use "all-your-base.sml";
 use "testlib.sml";
 
 infixr |>
