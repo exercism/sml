@@ -5,9 +5,9 @@
   "test_pattern": "test[.]sml$",
   "exercises": [
     {
-      "uuid": "7e1d0e9a-435d-4dc6-8867-2fc4f9b7fe6f",
-      "slug": "all-your-base",
-      "core": false,
+      "uuid": "4450455d-0786-6f80-7672-48368a115df16e0aa7e",
+      "slug": "hello-world",
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -15,9 +15,19 @@
       ]
     },
     {
-      "uuid": "4450455d-0786-6f80-7672-48368a115df16e0aa7e",
-      "slug": "hello-world",
+      "uuid": "a56bad29-684c-47e7-9724-8c7f165a51af",
+      "slug": "two-fer",
       "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
+    {
+      "uuid": "7e1d0e9a-435d-4dc6-8867-2fc4f9b7fe6f",
+      "slug": "all-your-base",
+      "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
