@@ -21,7 +21,7 @@ def fetch(exercise):
             return json.loads(response.read().decode('utf8'))
     except HTTPError as e:
         if e.status == HTTPStatus.NOT_FOUND.value:
-            msg = "Exercise '%s' doesn't exist." % exercise
+            msg = "canonical-data.json was not found."
         else:
             msg = 'Unexpected error, please try again later.'
         raise Exception(msg)
@@ -96,18 +96,17 @@ def sml_value(value, smltype=''):
 
 
 def get_fn_args(case):
-    ignored_keys = {'property', 'expected', 'description', 'comments'}
+    reserved_keys = {'property', 'expected', 'description', 'comments'}
     return OrderedDict(
         (k, case[k])
         for k in sorted(case.keys())
-        if k not in ignored_keys
+        if k not in reserved_keys
     )
 
 
 def extract_signatures(data):
     funcs = OrderedDict()
     exercise = data['exercise']
-    ignored_keys = {'property', 'expected', 'description', 'comments'}
 
     def type_aux(values):
         s = {sml_type(val) for val in values}
