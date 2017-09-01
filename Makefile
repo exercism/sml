@@ -36,6 +36,11 @@ test-%:
 	$(eval exercise := $(patsubst test-%, %, $@))
 	@echo
 	@ls ./exercises/$(exercise)/README.md > /dev/null
+	@# check stub type
+	@cd ./exercises/$(exercise) && \
+		poly -q --use test | grep 'error: Type error' | \
+		wc -l | xargs -I @ expr @ = 0 > /dev/null || \
+		{ echo '$(exercise).sml is faulty'; exit 1; }
 	@cd ./exercises/$(exercise) && cat test.sml | sed 's/$(exercise).sml/example.sml/' | poly -q
 	@echo
 
