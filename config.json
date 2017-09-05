@@ -205,6 +205,16 @@
       ]
     },
     {
+      "uuid": "b9377be8-06c1-5280-33b6-a2071298947c9ddf65e",
+      "slug": "sum-of-multiples",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "225cfd7d-81a3-4a58-b1aa-1de2e40e7a93",
       "slug": "binary",
       "deprecated": true
