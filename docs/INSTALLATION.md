@@ -1,8 +1,8 @@
 # Installation
 
-We'll be using `PolyML` as our `SML` implementation.
+We'll be using `PolyML` as our `Standard ML` implementation.
 
-General instructions for Linux/OS X/Free BSD can be found at https://github.com/polyml/polyml/blob/master/README.md.
+If you are using Windows you can download an installer from https://github.com/polyml/polyml/releases. General instructions for Linux/OS X/Free BSD can be found at https://github.com/polyml/polyml/blob/master/README.md.
 
 If you want to install from source, the process is pretty easy:
 ```
