@@ -91,16 +91,18 @@ bin/generate {{ slug }}
 
 It will create the exercise directory, test and stub files.
 
-**Note:** It will fail with some exercises. Reasons:
-
-- `canonical-data.json` does not exist
-- type mismatch
+**Note:**
+- You need Python 3.5+.
+- It may fail with some exercises. Reasons:
+  - `canonical-data.json` does not exist
+  - type mismatch
 
 In those cases you will have to create the files manually. `testlib.sml` can be copied from `lib/testlib.sml`. When in doubt, feel free to open an issue.
 
 In order to generate `README.md` you will need an up to date copy of `problem-specifications`. This should be located at the same level as your `sml` clone. Then you can execute:
 
 ```
+bin/fetch-configlet
 bin/configlet generate . -o {{ slug }}
 ```
 
