@@ -1,2 +1,2 @@
-fun convert (n: int): string =
+fun convert (number: int): string =
   raise Fail "'convert' is not implemented"
