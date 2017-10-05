@@ -6,5 +6,5 @@
    Caveats: an empty list cannot be transformed
             do not use List.map from the standard basis
 *)
-fun accumulate (f: 'a -> 'b) (xs: 'a list): 'b list =
+fun accumulate (f: 'a -> 'b, xs: 'a list) : 'b list =
   raise Fail "'accumulate' has not been implemented"
