@@ -17,33 +17,38 @@ Your code should be able to produce the collection of squares:
 
 - 1, 4, 9, 16, 25
 
-Check out the test suite to see the expected function signature.
-
 ## Restrictions
 
-Keep your hands off that collect/map/fmap/whatchamacallit functionality
-provided by your standard library!
-Solve this one yourself using other basic tools instead.
+Avoid using any `map` or related functions supplied in the Standard Basis
 
-Lisp specific: it's perfectly fine to use `MAPCAR` or the equivalent,
-as this is idiomatic Lisp, not a library function.
+## Loading your exercise implementation in PolyML
+
+```
+$ poly --use {exercise}.sml
+```
+
+Or:
+
+```
+$ poly
+> use "{exercise}.sml";
+```
+
+**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
-Even though there are multiple implementations, we encourage to use Poly/ML.
-
 ```
-$ poly -q < test_{ exercise }.sml
+$ poly -q --use test.sml
 ```
 
-If you want to start an interactive session:
-```
-$ poly --use test_{ exercise }.sml
-```
+## Feedback, Issues, Pull Requests
 
-## Source
+The [exercism/sml](https://github.com/exercism/sml) repository on
+GitHub is the home for all of the Standard ML exercises.
 
-Conversation with James Edward Gray II [https://twitter.com/jeg2](https://twitter.com/jeg2)
+If you have feedback about an exercise, or want to help implementing a new
+one, head over there and create an issue. We'll do our best to help you!
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
