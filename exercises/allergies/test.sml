@@ -1,7 +1,7 @@
 (* version 1.0.0 *)
 
 use "testlib.sml";
-use "example.sml";
+use "allergies.sml";
 
 infixr |>
 fun x |> f = f x
@@ -11,27 +11,27 @@ val testsuite =
     describe "allergicTo" [
       describe "no allergies means not allergic" [
         test "is not allergic to Peanuts"
-          (fn _ => allergicTo 0 Peanuts |> Expect.equalTo false),
+          (fn _ => allergicTo 0 Peanuts |> Expect.falsy),
 
         test "is not allergic to Cats"
-          (fn _ => allergicTo 0 Cats |> Expect.equalTo false),
+          (fn _ => allergicTo 0 Cats |> Expect.falsy),
 
         test "is not allergic to Strawberries"
-          (fn _ => allergicTo 0 Strawberries |> Expect.equalTo false)
+          (fn _ => allergicTo 0 Strawberries |> Expect.falsy)
       ],
 
       test "is allergic to eggs"
-        (fn _ => allergicTo 1 Eggs |> Expect.equalTo true),
+        (fn _ => allergicTo 1 Eggs |> Expect.truthy),
 
       describe "allergic to eggs in addition to other stuff" [
         test "is allergic to Eggs"
-          (fn _ => allergicTo 5 Eggs |> Expect.equalTo true),
+          (fn _ => allergicTo 5 Eggs |> Expect.truthy),
 
         test "is allergic to Shellfish"
-          (fn _ => allergicTo 5 Shellfish |> Expect.equalTo true),
+          (fn _ => allergicTo 5 Shellfish |> Expect.truthy),
 
         test "is allergic to Strawberries"
-          (fn _ => allergicTo 5 Strawberries |> Expect.equalTo false)
+          (fn _ => allergicTo 5 Strawberries |> Expect.falsy)
       ]
     ],
 
