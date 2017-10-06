@@ -48,10 +48,10 @@ val testsuite =
       (fn _ => distance ("GGACGGATTCTG", "AGGACGGATTCT") |> Expect.equalTo 9),
 
     test "disallow first strand longer"
-      (fn _ => (fn _ => distance ("AATG", "AAA")) |> Expect.error (Fail "left and right strands must be of equal length")),
+      (fn _ => (fn _ => distance ("AATG", "AAA")) |> Expect.error NonEqualLengthStringsFound),
 
     test "disallow second strand longer"
-      (fn _ => (fn _ => distance ("ATA", "AGTG")) |> Expect.error (Fail "left and right strands must be of equal length"))
+      (fn _ => (fn _ => distance ("ATA", "AGTG")) |> Expect.error NonEqualLengthStringsFound)
   ]
 
 val _ = Test.run testsuite

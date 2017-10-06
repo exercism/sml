@@ -1,3 +1,5 @@
+exception NonEqualLengthStringsFound
+
 fun distance (strand1: string, strand2: string): int =
   let
     val chars1 = explode strand1
@@ -7,6 +9,6 @@ fun distance (strand1: string, strand2: string): int =
           distance' (xs, ys) (acc + (if x = y then 0 else 1))
   in
     if (length chars1) <> (length chars2) then
-      raise Fail "left and right strands must be of equal length"
+      raise NonEqualLengthStringsFound
     else distance' (chars1, chars2) 0
   end
