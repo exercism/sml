@@ -1,132 +1,68 @@
+(* version 1.0.0 *)
+
+use "testlib.sml";
 use "allergies.sml";
 
-val test_cases = {
-  list = [
-    {
-      description = "Code = 0 returns no allergies",
-      input = 0,
-      expected = []
-    },
-    {
-      description = "Code = 1 returns allergen list of [Eggs]",
-      input = 1,
-      expected = [Eggs]
-    },
-    {
-      description = "Code = 2 returns allergen list of [Peanuts]",
-      input = 2,
-      expected = [Peanuts]
-    },
-    {
-      description = "Code = 4 returns allergen list of [Shellfish]",
-      input = 4,
-      expected = [Shellfish]
-    },
-    {
-      description = "Code = 8 returns allergen list of [Strawberries]",
-      input = 8,
-      expected = [Strawberries]
-    },
-    {
-      description = "Code = 16 returns allergen list of [Tomatoes]",
-      input = 16,
-      expected = [Tomatoes]
-    },
-    {
-      description = "Code = 32 returns allergen list of [Chocolate]",
-      input = 32,
-      expected = [Chocolate]
-    },
-    {
-      description = "Code = 64 returns allergen list of [Pollen]",
-      input = 64,
-      expected = [Pollen]
-    },
-    {
-      description = "Code = 128 returns allergen list of [Cats]",
-      input = 128,
-      expected = [Cats]
-    },
-    {
-      description = "Code = 256 returns an empty allergen list",
-      input = 256,
-      expected = []
-    },
-    (* compound tests *)
-    {
-      description = "Code = 3 returns allergen list of [Eggs, Peanuts]",
-      input = 3,
-      expected = [Eggs, Peanuts]
-    },
-    {
-      description = "Code = 20 returns allergen list of [Shellfish, Tomatoes]",
-      input = 20,
-      expected = [Shellfish, Tomatoes]
-    },
-    {
-      description = "Code = 192 returns allergen list of [Pollen, Cats]",
-      input = 192,
-      expected = [Pollen, Cats]
-    },
-    {
-      description = "Code = 255 returns all allergens",
-      input = 255,
-      expected = [Eggs, Peanuts, Shellfish, Strawberries,Tomatoes, Chocolate, Pollen, Cats]
-    }
-  ],
-  allergic_to = [
-    {
-      description = "Code = 1 is allergic to Eggs",
-      input = 1,
-      allergen = Eggs,
-      expected = true
-    },
-    {
-      description = "Code = 1 is not allergic to Pollen",
-      input = 1,
-      allergen = Pollen,
-      expected = false
-    },
-    {
-      description = "Code = 2 is allergic to Peanuts",
-      input = 2,
-      allergen = Peanuts,
-      expected = true
-    },
-    {
-      description = "Code = 255 is allergic to Cats",
-      input = 255,
-      allergen = Cats,
-      expected = true
-    }
+infixr |>
+fun x |> f = f x
+
+val testsuite =
+  describe "allergies" [
+    describe "allergicTo" [
+      describe "no allergies means not allergic" [
+        test "is not allergic to Peanuts"
+          (fn _ => allergicTo 0 Peanuts |> Expect.falsy),
+
+        test "is not allergic to Cats"
+          (fn _ => allergicTo 0 Cats |> Expect.falsy),
+
+        test "is not allergic to Strawberries"
+          (fn _ => allergicTo 0 Strawberries |> Expect.falsy)
+      ],
+
+      test "is allergic to eggs"
+        (fn _ => allergicTo 1 Eggs |> Expect.truthy),
+
+      describe "allergic to eggs in addition to other stuff" [
+        test "is allergic to Eggs"
+          (fn _ => allergicTo 5 Eggs |> Expect.truthy),
+
+        test "is allergic to Shellfish"
+          (fn _ => allergicTo 5 Shellfish |> Expect.truthy),
+
+        test "is allergic to Strawberries"
+          (fn _ => allergicTo 5 Strawberries |> Expect.falsy)
+      ]
+    ],
+
+    describe "list" [
+      test "no allergies at all"
+        (fn _ => list (0) |> Expect.equalTo []),
+
+      test "allergic to just eggs"
+        (fn _ => list (1) |> Expect.equalTo [Eggs]),
+
+      test "allergic to just peanuts"
+        (fn _ => list (2) |> Expect.equalTo [Peanuts]),
+
+      test "allergic to just strawberries"
+        (fn _ => list (8) |> Expect.equalTo [Strawberries]),
+
+      test "allergic to eggs and peanuts"
+        (fn _ => list (3) |> Expect.equalTo [Eggs, Peanuts]),
+
+      test "allergic to more than eggs but not peanuts"
+        (fn _ => list (5) |> Expect.equalTo [Eggs, Shellfish]),
+
+      test "allergic to lots of stuff"
+        (fn _ => list (248) |> Expect.equalTo [Strawberries, Tomatoes, Chocolate, Pollen, Cats]),
+
+      test "allergic to everything"
+        (fn _ => list (255) |> Expect.equalTo [Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats]),
+
+      test "ignore non allergen score parts"
+        (fn _ => list (509) |> Expect.equalTo [Eggs, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats])
+    ]
   ]
-};
 
-fun run_tests _ [] = []
-  | run_tests f (x :: xs) =
-      let
-        fun aux { description, is_correct } =
-          let
-            val expl = description ^ ": " ^
-              (if is_correct then "PASSED" else "FAILED") ^ "\n"
-          in
-            (print (expl); is_correct)
-          end
-      in
-        (aux x) :: run_tests f xs
-      end
-
-fun evaluateList f { description, input, expected } =
-  { description = description, is_correct = (f input) = expected }
-
-fun evaluateAllergicTo f { description, input, allergen, expected } =
-  { description = description, is_correct = (f input allergen) = expected }
-
-val testResults = run_tests list (List.map (evaluateList list) (#list test_cases))
-  @ run_tests list (List.map (evaluateAllergicTo allergic_to) (#allergic_to test_cases));
-val passedTests = List.filter (fn x => x) testResults;
-val failedTests = List.filter (fn x => not x) testResults;
-
-if (List.length testResults) = (List.length passedTests)
-then (print "ALL TESTS PASSED")
-else (print (Int.toString (List.length failedTests) ^ " TEST(S) FAILED"));
+val _ = Test.run testsuite

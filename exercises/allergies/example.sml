@@ -25,12 +25,12 @@ fun valueOf a =
       | Cats         => 7
 
 (* allergic_to = fn : int -> allergen -> bool
-   Given a code (integer) and an allergen returns true if the person
-   represented by the code is allergic to the specified allergen
+   Given a score (integer) and an allergen returns true if the person
+   represented by the score is allergic to the specified allergen
 *)
-fun allergic_to code a =
-    let fun testAllergy code n =
-            let val codeWord = Word.fromInt(code)
+fun allergicTo score a =
+    let fun testAllergy score n =
+            let val codeWord = Word.fromInt(score)
                 val nWord    = Word.fromInt(n)
                 val oneWord  = Word.fromInt(1)
             in  (* ((code >> n) & 1) == 1 *)
@@ -40,12 +40,12 @@ fun allergic_to code a =
                 )
             end
     in
-        testAllergy code (valueOf a)
+        testAllergy score (valueOf a)
     end
 
 (* allergies = fn: int -> allergen list
-   Given a code that represents a person's allergies
+   Given a score that represents a person's allergies
    return a list of all allergens that they are allergic to
 *)
-fun list code =
-    List.filter (allergic_to code) [Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats]
+fun list score =
+    List.filter (allergicTo score) [Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats]
