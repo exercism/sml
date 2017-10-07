@@ -1,66 +1,57 @@
+(* version 2.0.0 *)
+
+use "testlib.sml";
 use "hamming.sml";
 
-val test_cases = [
-  {
-    description = "'GAGCCTACTAACGGGAT' is 7 away from 'CATCGTAATGACGGCCT'",
-    input = ("GAGCCTACTAACGGGAT","CATCGTAATGACGGCCT"),
-    expected = 7
-  },
-  {
-    description = "'CAT' is 3 away from 'DOG'",
-    input = ("CAT","DOG"),
-    expected = 3
-  },
-  {
-    description = "'DEPOSIT' is 4 away from 'DOPIEST'",
-    input = ("DEPOSIT","DOPIEST"),
-    expected = 4
-  }
-];
+infixr |>
+fun x |> f = f x
 
-val error_test_cases = [
-  {
-    description = "throws error on unequal length strings",
-    input = ("", "A"),
-    expected = NonEqualLengthStringsFound
-  },
-  {
-    description = "throws error on unequal length strings",
-    input = ("A", ""),
-    expected = NonEqualLengthStringsFound
-  },
-  {
-    description = "throws error on unequal length strings",
-    input = ("ABCD", "ABC"),
-    expected = NonEqualLengthStringsFound
-  }
-];
+val testsuite =
+  describe "hamming" [
+    test "empty strands"
+      (fn _ => distance ("", "") |> Expect.equalTo 0),
 
-fun run_tests _ [] = []
-  | run_tests f (x :: xs) =
-      let
-        fun aux { description, is_correct } =
-          let
-            val expl = description ^ ": " ^
-              (if is_correct then "PASSED" else "FAILED") ^ "\n"
-          in
-            (print (expl); is_correct)
-          end
-      in
-        (aux x) :: run_tests f xs
-      end
+    test "identical strands"
+      (fn _ => distance ("A", "A") |> Expect.equalTo 0),
 
-fun evaluateGoodTestCase f { description, input, expected } =
-  { description = description, is_correct = (f input) = expected }
+    test "long identical strands"
+      (fn _ => distance ("GGACTGA", "GGACTGA") |> Expect.equalTo 0),
 
-fun evaluateErrorTestCase f { description, input, expected } =
-  { description = description, is_correct = (f input handle expected => 1) = 1 }
+    test "complete distance in single nucleotide strands"
+      (fn _ => distance ("A", "G") |> Expect.equalTo 1),
 
-val testResults = run_tests hamming (List.map (evaluateGoodTestCase hamming) test_cases)
-  @ run_tests hamming (List.map (evaluateErrorTestCase hamming) error_test_cases);
-val passedTests = List.filter (fn x => x) testResults;
-val failedTests = List.filter (fn x => not x) testResults;
+    test "complete distance in small strands"
+      (fn _ => distance ("AG", "CT") |> Expect.equalTo 2),
 
-if (List.length testResults) = (List.length passedTests)
-then (print "ALL TESTS PASSED")
-else (print (Int.toString (List.length failedTests) ^ " TEST(S) FAILED"));
+    test "small distance in small strands"
+      (fn _ => distance ("AT", "CT") |> Expect.equalTo 1),
+
+    test "small distance"
+      (fn _ => distance ("GGACG", "GGTCG") |> Expect.equalTo 1),
+
+    test "small distance in long strands"
+      (fn _ => distance ("ACCAGGG", "ACTATGG") |> Expect.equalTo 2),
+
+    test "non-unique character in first strand"
+      (fn _ => distance ("AGA", "AGG") |> Expect.equalTo 1),
+
+    test "non-unique character in second strand"
+      (fn _ => distance ("AGG", "AGA") |> Expect.equalTo 1),
+
+    test "same nucleotides in different positions"
+      (fn _ => distance ("TAG", "GAT") |> Expect.equalTo 2),
+
+    test "large distance"
+      (fn _ => distance ("GATACA", "GCATAA") |> Expect.equalTo 4),
+
+    test "large distance in off-by-one strand"
+      (fn _ => distance ("GGACGGATTCTG", "AGGACGGATTCT") |> Expect.equalTo 9),
+
+    test "disallow first strand longer"
+      (fn _ => (fn _ => distance ("AATG", "AAA")) |> Expect.error NonEqualLengthStringsFound),
+
+    test "disallow second strand longer"
+      (fn _ => (fn _ => distance ("ATA", "AGTG")) |> Expect.error NonEqualLengthStringsFound)
+  ]
+
+val _ = Test.run testsuite
