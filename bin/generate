@@ -42,7 +42,9 @@ def camelize(s):
     return re.sub('[-_](\w)', lambda x: x.group(1).upper(), s)
 
 
-def sml_type(value):
+def sml_type(value, force=False):
+    if force:
+        return 'string'
     if value is None:
         return 'option'
     if isinstance(value, list):
@@ -72,7 +74,9 @@ def sml_type(value):
     return types[type(value)]
 
 
-def sml_value(value, smltype=''):
+def sml_value(value, smltype='', force=False):
+    if force:
+        return json.dumps(value)
     if value is None:
         return 'NONE'
     _value = None
@@ -104,12 +108,12 @@ def get_fn_args(case):
     )
 
 
-def extract_signatures(data):
+def extract_signatures(data, force=False):
     funcs = OrderedDict()
     exercise = data['exercise']
 
     def type_aux(values):
-        s = {sml_type(val) for val in values}
+        s = {sml_type(val, force=force) for val in values}
         if len(s) == 1:
             return s.pop()
         if len(s) == 2 and 'option' in s:
@@ -136,10 +140,10 @@ def extract_signatures(data):
             else:
                 # assumes there's at least one test with non "nullish" vars
                 fn = camelize(case.get('property', exercise))
-                if sml_type(case['expected']) == 'exn':
+                if sml_type(case['expected'], force=force) == 'exn':
                     continue
                 args = get_fn_args(case)
-                if not all(args.values()) or sml_type(case['expected']) == "'a list":# or not case['expected']:
+                if not all(args.values()) or sml_type(case['expected'], force=force) == "'a list":# or not case['expected']:
                     continue
                 funcs.setdefault(fn, []).append({
                     'args': args,
@@ -150,17 +154,17 @@ def extract_signatures(data):
     return {fn: signature(funcs[fn]) for fn in funcs}
 
 
-def expectation(signature, fn, args, expected):
+def expectation(signature, fn, args, expected, force=False):
     tmpl = '(fn _ => %s |> Expect.%s)'
-    output = sml_value(expected, signature['output'])
+    output = sml_value(expected, signature['output'], force=force)
     invocation = '%s (%s)' % (
         fn,
         ', '.join((
-            sml_value(val, signature['args'][arg])
+            sml_value(val, signature['args'][arg], force=force)
             for arg, val in args.items())
         )
     )
-    if sml_type(expected) == 'exn':
+    if sml_type(expected, force=force) == 'exn':
         return tmpl % (
             '(fn _ => %s)' % invocation,
             'error (%s)' % output
@@ -181,7 +185,7 @@ def expectation(signature, fn, args, expected):
     )
 
 
-def generate_test_content(data, signature):
+def generate_test_content(data, signature, force=False):
     exercise = data['exercise']
 
     def fmt(case, depth=0):
@@ -192,7 +196,7 @@ def generate_test_content(data, signature):
         args = get_fn_args(case)
         return '\n'.join((
             indent(depth, 'test "%s"' % case.get('description', fn)),
-            indent(depth + 2, expectation(signature[fn], fn, args, expected))
+            indent(depth + 2, expectation(signature[fn], fn, args, expected, force=force))
         ))
 
     def traverse(cases, depth=0):
@@ -247,17 +251,33 @@ def write(path, content):
         f.write(content)
 
 
-def generate(exercise):
+# flags
+TEST = 1
+STUB = 2
+EXAMPLE = 4
+FLAGS = TEST | STUB | EXAMPLE
+
+
+def generate(exercise, flags, force=False):
     root = Path(__file__).parent.parent.absolute()
     path = root / 'exercises' / exercise
+
     if not path.exists():
         path.mkdir()
+
     data = fetch(exercise)
-    signatures = extract_signatures(data)
-    write(path / 'test.sml', generate_test_content(data, signatures))
+    signatures = extract_signatures(data, force=force)
     content = generate_exercise_content(signatures)
-    write(path / ('%s.sml' % exercise), content)
-    write(path / 'example.sml', content)
+
+    if flags & TEST:
+        write(path / 'test.sml', generate_test_content(data, signatures, force=force))
+
+    if flags & STUB:
+        write(path / ('%s.sml' % exercise), content)
+
+    if flags & EXAMPLE:
+        write(path / 'example.sml', content)
+
     shutil.copyfile(
         (root / 'lib/testlib.sml').as_posix(),
         (path / 'testlib.sml').as_posix()
@@ -265,11 +285,45 @@ def generate(exercise):
 
 
 if __name__ == '__main__':
-    import sys
+    import argparse
 
-    for exercise in sys.argv[1:]:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('exercises', nargs='+')
+    parser.add_argument(
+        '--force',
+        action='store_true',
+        help=(
+            'Type inference will be disabled and "string" will be assumed. ' +
+            'Test cases will need to be modified to match the right data type.'
+        )
+    )
+    parser.add_argument(
+        '--test-only',
+        action='store_true',
+        help='Generate only "test.sml"'
+    )
+    parser.add_argument(
+        '--stub-only',
+        action='store_true',
+        help='Generate only "<exercise>.sml"'
+    )
+    parser.add_argument(
+        '--example-only',
+        action='store_true',
+        help='Generate only "example.sml"'
+    )
+    args = parser.parse_args()
+
+    for exercise in args.exercises:
         try:
-            generate(exercise)
+            flags = 0
+            if args.test_only:
+                flags |= ~(STUB | EXAMPLE)
+            if args.example_only:
+                flags |= ~(STUB | TEST)
+            if args.stub_only:
+                flags |= ~(TEST | EXAMPLE)
+            generate(exercise, force=args.force, flags=flags or FLAGS)
         except FileNotFoundError:
             print('[%s]: canonical-data.json not found' % exercise)
         except Exception as e:

@@ -91,11 +91,30 @@ bin/generate {{ slug }}
 
 It will create the exercise directory, test and stub files.
 
+### Generator
+
+```
+usage: generate [-h] [--force] [--test-only] [--stub-only] [--example-only]
+                exercises [exercises ...]
+
+positional arguments:
+  exercises
+
+optional arguments:
+  -h, --help      show this help message and exit
+  --force         Type inference will be disabled and "string" will be
+                  assumed. Test cases will need to be modified to match the
+                  right data type.
+  --test-only     Generate only "test.sml"
+  --stub-only     Generate only "<exercise>.sml"
+  --example-only  Generate only "example.sml"
+```
+
 **Note:**
 - You need Python 3.5+.
 - It may fail with some exercises. Reasons:
   - `canonical-data.json` does not exist
-  - type mismatch
+  - type mismatch (in these situation you can use `--force` option)
 
 In those cases you will have to create the files manually. `testlib.sml` can be copied from `lib/testlib.sml`. When in doubt, feel free to open an issue.
 
