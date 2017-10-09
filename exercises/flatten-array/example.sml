@@ -1,6 +1,5 @@
-datatype 'a nestedList =
-	  Elem of 'a
-	| List of 'a nestedList list
+datatype 'a tree = Empty | Elem of 'a | List of 'a tree list
 
-fun flatten (Elem x)  = [x]
+fun flatten Empty     = []
+  | flatten (Elem x)  = [x]
   | flatten (List xs) = List.concat (map flatten xs)
