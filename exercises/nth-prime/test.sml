@@ -1,71 +1,27 @@
+(* version 1.0.0 *)
+
+use "testlib.sml";
 use "nth-prime.sml";
 
-val test_cases = [
-  {
-    description = "The first prime is 2",
-    input = 1,
-    expected = 2
-  },
-  {
-    description = "The second prime is 3",
-    input = 2,
-    expected = 3
-  },
-  {
-    description = "The ninth prime is 23",
-    input = 9,
-    expected = 23
-  },
-  {
-    description = "The one-hundredth prime is 541",
-    input = 100,
-    expected = 541
-  },
-  {
-    description = "The three-thousand and first prime is 27457",
-    input = 3001,
-    expected = 27457
-  }
-];
+infixr |>
+fun x |> f = f x
 
-val error_test_cases = [
-  {
-    description = "The 0th prime is not defined",
-    input = 0,
-    expected = Domain
-  },
-  {
-    description = "The -1st prime is not defined",
-    input = ~1,
-    expected = Domain
-  }
-];
+val testsuite =
+  describe "nth-prime" [
+    test "first prime"
+      (fn _ => nthPrime 1 |> Expect.equalTo 2),
 
-fun run_tests _ [] = []
-  | run_tests f (x :: xs) =
-      let
-        fun aux { description, is_correct } =
-          let
-            val expl = description ^ ": " ^
-              (if is_correct then "PASSED" else "FAILED") ^ "\n"
-          in
-            (print (expl); is_correct)
-          end
-      in
-        (aux x) :: run_tests f xs
-      end
+    test "second prime"
+      (fn _ => nthPrime 2 |> Expect.equalTo 3),
 
-fun evaluateGoodTestCase f { description, input, expected } =
-  { description = description, is_correct = (f input) = expected }
+    test "sixth prime"
+      (fn _ => nthPrime 6 |> Expect.equalTo 13),
 
-fun evaluateErrorTestCase f { description, input, expected } =
-  { description = description, is_correct = (f input handle expected => 1) = 1 }
+    test "big prime"
+      (fn _ => nthPrime 10001 |> Expect.equalTo 104743),
 
-val testResults = run_tests nthPrime (List.map (evaluateGoodTestCase nthPrime) test_cases)
-  @ run_tests nthPrime (List.map (evaluateErrorTestCase nthPrime) error_test_cases);
-val passedTests = List.filter (fn x => x) testResults;
-val failedTests = List.filter (fn x => not x) testResults;
+    test "there is no zeroth prime"
+      (fn _ => (fn _ => nthPrime 0) |> Expect.error Domain)
+  ]
 
-if (List.length testResults) = (List.length passedTests)
-then (print "ALL TESTS PASSED")
-else (print (Int.toString (List.length failedTests) ^ " TEST(S) FAILED"));
+val _ = Test.run testsuite
