@@ -1,2 +1,2 @@
 fun nthPrime (n: int): int =
-  raise Fail "'nthPrime' has not been implemented"
+  raise Fail "'prime' is not implemented"

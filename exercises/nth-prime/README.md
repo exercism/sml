@@ -8,18 +8,45 @@ the 6th prime is 13.
 If your language provides methods in the standard library to deal with prime
 numbers, pretend they don't exist and implement them yourself.
 
+## Hints
+
+If the argument is not less than `1` raise the exception [`Domain`](http://sml-family.org/Basis/general.html#SIG:GENERAL.Domain:EXN).
+
+Some of these concepts may be helpful:
+
+- [Lazy evaluation](https://en.wikipedia.org/wiki/Lazy_evaluation)
+- Sieving (for instance [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+- Primality by [trial division](https://en.wikipedia.org/wiki/Trial_divisio://en.wikipedia.org/wiki/Trial_division)
+
+
+## Loading your exercise implementation in PolyML
+
+```
+$ poly --use {exercise}.sml
+```
+
+Or:
+
+```
+$ poly
+> use "{exercise}.sml";
+```
+
+**Note:** You have to replace {exercise}.
+
 ## Running the tests
 
-Even though there are multiple implementations, we encourage to use Poly/ML.
-
 ```
-$ poly -q < test_{ exercise }.sml
+$ poly -q --use test.sml
 ```
 
-If you want to start an interactive session:
-```
-$ poly --use test_{ exercise }.sml
-```
+## Feedback, Issues, Pull Requests
+
+The [exercism/sml](https://github.com/exercism/sml) repository on
+GitHub is the home for all of the Standard ML exercises.
+
+If you have feedback about an exercise, or want to help implementing a new
+one, head over there and create an issue. We'll do our best to help you!
 
 ## Source
 
