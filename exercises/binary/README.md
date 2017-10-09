@@ -7,10 +7,12 @@ string, your program should produce a decimal output. The
 program should handle invalid inputs.
 
 ## Note
+
 - Implement the conversion yourself.
   Do not use something else to perform the conversion for you.
 
 ## About Binary (Base-2)
+
 Decimal is a base-10 system.
 
 A number 23 in base 10 notation can be understood
@@ -28,18 +30,34 @@ Binary is similar, but uses powers of 2 rather than powers of 10.
 
 So: `101 => 1*2^2 + 0*2^1 + 1*2^0 => 1*4 + 0*2 + 1*1 => 4 + 1 => 5 base 10`.
 
+## Loading your exercise implementation in PolyML
+
+```
+$ poly --use {exercise}.sml
+```
+
+Or:
+
+```
+$ poly
+> use "{exercise}.sml";
+```
+
+**Note:** You have to replace {exercise}.
+
 ## Running the tests
 
-Even though there are multiple implementations, we encourage to use Poly/ML.
-
 ```
-$ poly -q < test_{ exercise }.sml
+$ poly -q --use test.sml
 ```
 
-If you want to start an interactive session:
-```
-$ poly --use test_{ exercise }.sml
-```
+## Feedback, Issues, Pull Requests
+
+The [exercism/sml](https://github.com/exercism/sml) repository on
+GitHub is the home for all of the Standard ML exercises.
+
+If you have feedback about an exercise, or want to help implementing a new
+one, head over there and create an issue. We'll do our best to help you!
 
 ## Source
 
