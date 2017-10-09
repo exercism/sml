@@ -1,6 +1,5 @@
-datatype 'a nestedList =
-	  Elem of 'a
-	| List of 'a nestedList list
+(* Rose tree *)
+datatype 'a tree = Empty | Elem of 'a | List of 'a tree list
 
-fun flatten (xs: 'a nestedList): 'a list =
+fun flatten (xs: 'a tree): 'a list =
   raise Fail "'flatten' has not been implemented"
