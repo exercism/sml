@@ -17,18 +17,34 @@ Convert a number to a string, the contents of which depend on the number's facto
 - 34 has four factors: 1, 2, 17, and 34.
   - In raindrop-speak, this would be "34".
 
+## Loading your exercise implementation in PolyML
+
+```
+$ poly --use {exercise}.sml
+```
+
+Or:
+
+```
+$ poly
+> use "{exercise}.sml";
+```
+
+**Note:** You have to replace {exercise}.
+
 ## Running the tests
 
-Even though there are multiple implementations, we encourage to use Poly/ML.
-
 ```
-$ poly -q < test_{ exercise }.sml
+$ poly -q --use test.sml
 ```
 
-If you want to start an interactive session:
-```
-$ poly --use test_{ exercise }.sml
-```
+## Feedback, Issues, Pull Requests
+
+The [exercism/sml](https://github.com/exercism/sml) repository on
+GitHub is the home for all of the Standard ML exercises.
+
+If you have feedback about an exercise, or want to help implementing a new
+one, head over there and create an issue. We'll do our best to help you!
 
 ## Source
 
