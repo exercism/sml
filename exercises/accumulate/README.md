@@ -17,9 +17,13 @@ Your code should be able to produce the collection of squares:
 
 - 1, 4, 9, 16, 25
 
+Check out the test suite to see the expected function signature.
+
 ## Restrictions
 
-Avoid using any `map` or related functions supplied in the Standard Basis
+Keep your hands off `map` or related functions
+provided in the Standard Basis!
+Solve this one yourself using other basic tools instead.
 
 ## Loading your exercise implementation in PolyML
 
@@ -49,6 +53,10 @@ GitHub is the home for all of the Standard ML exercises.
 
 If you have feedback about an exercise, or want to help implementing a new
 one, head over there and create an issue. We'll do our best to help you!
+
+## Source
+
+Conversation with James Edward Gray II [https://twitter.com/jeg2](https://twitter.com/jeg2)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
