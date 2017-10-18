@@ -2,7 +2,7 @@
   "blurb": "Standard ML is a functional programming language with type inference and some side-effects.",
   "language": "Standard ML",
   "checklist_issue": 8,
-  "active": false,
+  "active": true,
   "test_pattern": "test[.]sml$",
   "exercises": [
     {
