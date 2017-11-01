@@ -237,9 +237,20 @@
       ]
     },
     {
-
       "uuid": "f7ea4ee6-cd34-4dc9-bd96-abcf940873f0",
       "slug": "diamond",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "strings",
+        "lists",
+        "text_formatting"
+      ]
+    },
+    {
+      "uuid": "c257cb38-ed8d-473f-b02a-5dd8131fdc63",
+      "slug": "pig-latin",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
