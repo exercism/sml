@@ -6,7 +6,7 @@
   "test_pattern": "test[.]sml$",
   "exercises": [
     {
-      "uuid": "4450455d-0786-6f80-7672-48368a115df16e0aa7e",
+      "uuid": "a00f98a6-98dd-4c8a-b3d1-adc1d56eef29",
       "slug": "hello-world",
       "core": true,
       "unlocked_by": null,
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "uuid": "9d8e76f1-0e85-a280-b779-16335f29d1a96ce3a72",
+      "uuid": "4fb40e77-727b-41bc-ac15-b909a26bb917",
       "slug": "bob",
       "core": false,
       "unlocked_by": null,
@@ -126,7 +126,7 @@
       ]
     },
     {
-      "uuid": "b6713a74-08d5-4480-6524-f9dbf5cf2563d2b2a91",
+      "uuid": "580496d5-bec7-401d-b0cf-dc16da795491",
       "slug": "difference-of-squares",
       "core": false,
       "unlocked_by": null,
@@ -136,7 +136,7 @@
       ]
     },
     {
-      "uuid": "2bfc685e-0d13-0280-de5e-53bc093e3a8c5ac7c73",
+      "uuid": "0f488d4b-89da-4d1f-958b-a7b3171f43d5",
       "slug": "atbash-cipher",
       "core": false,
       "unlocked_by": null,
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "uuid": "b83ce171-06e6-dd80-080e-9dd189bf6df83833e92",
+      "uuid": "8ccc61c6-fac5-4af7-803e-d0f6d10f8a1f",
       "slug": "perfect-numbers",
       "core": false,
       "unlocked_by": null,
@@ -156,7 +156,7 @@
       ]
     },
     {
-      "uuid": "42adb6ed-09f0-6980-2d4f-75ac90cc2bf1f59fb3a",
+      "uuid": "d17ab3c6-82a1-413e-9018-8775ec9ea498",
       "slug": "pangram",
       "core": false,
       "unlocked_by": null,
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "uuid": "6c191163-0a98-2380-debc-75144c1787f3853e868",
+      "uuid": "e8ed5a0f-796c-4a1b-af7a-2502254d79a8",
       "slug": "prime-factors",
       "core": false,
       "unlocked_by": null,
@@ -206,7 +206,7 @@
       ]
     },
     {
-      "uuid": "b9377be8-06c1-5280-33b6-a2071298947c9ddf65e",
+      "uuid": "4bce27a8-2b91-4595-b6e6-d4be7e704113",
       "slug": "sum-of-multiples",
       "core": false,
       "unlocked_by": null,
