@@ -36,7 +36,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "bob",
@@ -100,7 +102,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "difference-of-squares",
@@ -108,7 +112,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "atbash-cipher",
@@ -124,7 +130,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "pangram",
@@ -140,7 +148,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "list-ops",
@@ -164,7 +174,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "sum-of-multiples",
@@ -172,7 +184,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "phone-number",
