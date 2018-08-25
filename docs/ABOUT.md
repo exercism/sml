@@ -2,7 +2,7 @@
 language. [ML](https://en.wikipedia.org/wiki/ML_programming_language) was the first strong statically typed language,
 developed in the early 1970s at the University of Edinburgh. 
 
-Despite it's age, SML feels very young in many ways; SML had features that mainstream languages would not pick up for decades and are still being experimented with today.
+Despite its age, SML feels very young in many ways; SML had features that mainstream languages would not pick up for decades and are still being experimented with today.
 
 Here are some of ML's "cutting-edge" features:
 
@@ -16,7 +16,7 @@ Here are some of ML's "cutting-edge" features:
 SML was originally designed for developping proofs about first-order predicate calculus (read: _computer programs_)
 and it can have a distinct academic feel about it.
 
-However it's emphasis on immutability and strong typing has led SML to be used in many fields where program correctness is paramount (compiler design, code analysis, financial systems, medical systems, etc...).
+However, its emphasis on immutability and strong typing has led SML to be used in many fields where program correctness is paramount (compiler design, code analysis, financial systems, medical systems, etc...).
 
 Learning SML makes you a better programmer, because it forces you to write code that is stateless and to use closures
 effectively.
