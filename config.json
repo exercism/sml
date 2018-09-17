@@ -163,6 +163,16 @@
       "topics": []
     },
     {
+      "slug": "acronym",
+      "uuid": "98410af6-c093-11e8-a355-529269fb1459",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "strings"
+      ]
+    },
+    {
       "slug": "prime-factors",
       "uuid": "e8ed5a0f-796c-4a1b-af7a-2502254d79a8",
       "core": false,
