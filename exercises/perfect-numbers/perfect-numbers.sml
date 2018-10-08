@@ -1,5 +1,3 @@
-exception NotAPositiveInteger
-
 datatype classification = Abundant | Deficient | Perfect
 
 fun classify (input: int): classification =
