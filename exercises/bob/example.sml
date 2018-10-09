@@ -13,7 +13,9 @@ val response =
       if isNothing chars
       then "Fine. Be that way!"
       else if isYell chars
-           then "Whoa, chill out!"
+           then if isQuestion chars
+                then "Calm down, I know what I'm doing!"
+                else "Whoa, chill out!"
            else if isQuestion chars
                 then "Sure."
                 else "Whatever."

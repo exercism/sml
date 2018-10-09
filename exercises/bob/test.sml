@@ -1,4 +1,4 @@
-(* version 1.0.0 *)
+(* version 1.4.0 *)
 
 use "bob.sml";
 use "testlib.sml";
@@ -33,12 +33,12 @@ val testsuite =
       (fn _ => response ("It's OK if you don't want to go to the DMV.") |> Expect.equalTo "Whatever."),
 
     test "forceful question"
-      (fn _ => response ("WHAT THE HELL WERE YOU THINKING?") |> Expect.equalTo "Whoa, chill out!"),
+      (fn _ => response ("WHAT THE HELL WERE YOU THINKING?") |> Expect.equalTo "Calm down, I know what I'm doing!"),
 
     test "shouting numbers"
       (fn _ => response ("1, 2, 3 GO!") |> Expect.equalTo "Whoa, chill out!"),
 
-    test "only numbers"
+    test "no letters"
       (fn _ => response ("1, 2, 3") |> Expect.equalTo "Whatever."),
 
     test "question with only numbers"
@@ -48,7 +48,7 @@ val testsuite =
       (fn _ => response ("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!") |> Expect.equalTo "Whoa, chill out!"),
 
     test "shouting with no exclamation mark"
-      (fn _ => response ("I HATE YOU") |> Expect.equalTo "Whoa, chill out!"),
+      (fn _ => response ("I HATE THE DMV") |> Expect.equalTo "Whoa, chill out!"),
 
     test "statement containing question mark"
       (fn _ => response ("Ending with ? means a question.") |> Expect.equalTo "Whatever."),
@@ -69,7 +69,7 @@ val testsuite =
       (fn _ => response ("\t\t\t\t\t\t\t\t\t\t") |> Expect.equalTo "Fine. Be that way!"),
 
     test "multiple line question"
-      (fn _ => response ("\nDoes this cryogenic chamber make me look fat?\nno") |> Expect.equalTo "Whatever."),
+      (fn _ => response ("\nDoes this cryogenic chamber make me look fat?\nNo.") |> Expect.equalTo "Whatever."),
 
     test "starting with whitespace"
       (fn _ => response ("         hmmmmmmm...") |> Expect.equalTo "Whatever."),
