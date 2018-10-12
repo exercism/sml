@@ -35,33 +35,33 @@ val testsuite =
       ]
     ],
 
-    describe "list" [
+    describe "allergies" [
       test "no allergies at all"
-        (fn _ => list (0) |> Expect.equalTo []),
+        (fn _ => allergies (0) |> Expect.equalTo []),
 
       test "allergic to just eggs"
-        (fn _ => list (1) |> Expect.equalTo [Eggs]),
+        (fn _ => allergies (1) |> Expect.equalTo [Eggs]),
 
       test "allergic to just peanuts"
-        (fn _ => list (2) |> Expect.equalTo [Peanuts]),
+        (fn _ => allergies (2) |> Expect.equalTo [Peanuts]),
 
       test "allergic to just strawberries"
-        (fn _ => list (8) |> Expect.equalTo [Strawberries]),
+        (fn _ => allergies (8) |> Expect.equalTo [Strawberries]),
 
       test "allergic to eggs and peanuts"
-        (fn _ => list (3) |> Expect.equalTo [Eggs, Peanuts]),
+        (fn _ => allergies (3) |> Expect.equalTo [Eggs, Peanuts]),
 
       test "allergic to more than eggs but not peanuts"
-        (fn _ => list (5) |> Expect.equalTo [Eggs, Shellfish]),
+        (fn _ => allergies (5) |> Expect.equalTo [Eggs, Shellfish]),
 
       test "allergic to lots of stuff"
-        (fn _ => list (248) |> Expect.equalTo [Strawberries, Tomatoes, Chocolate, Pollen, Cats]),
+        (fn _ => allergies (248) |> Expect.equalTo [Strawberries, Tomatoes, Chocolate, Pollen, Cats]),
 
       test "allergic to everything"
-        (fn _ => list (255) |> Expect.equalTo [Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats]),
+        (fn _ => allergies (255) |> Expect.equalTo [Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats]),
 
       test "ignore non allergen score parts"
-        (fn _ => list (509) |> Expect.equalTo [Eggs, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats])
+        (fn _ => allergies (509) |> Expect.equalTo [Eggs, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats])
     ]
   ]
 

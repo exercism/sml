@@ -47,5 +47,5 @@ fun allergicTo score a =
    Given a score that represents a person's allergies
    return a list of all allergens that they are allergic to
 *)
-fun list score =
+fun allergies score =
     List.filter (allergicTo score) [Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats]
