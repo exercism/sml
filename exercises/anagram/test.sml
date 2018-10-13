@@ -1,4 +1,4 @@
-(* version 1.0.1 *)
+(* version 1.4.0 *)
 
 use "testlib.sml";
 use "anagram.sml";
@@ -9,52 +9,49 @@ fun x |> f = f x
 val testsuite =
   describe "anagram" [
     test "no matches"
-      (fn _ => anagrams (["hello", "world", "zombies", "pants"], "diaper") |> Expect.equalTo []),
+      (fn _ => anagramsFor "diaper" ["hello", "world", "zombies", "pants"] |> Expect.equalTo []),
 
     test "detects simple anagram"
-      (fn _ => anagrams (["tan", "stand", "at"], "ant") |> Expect.equalTo ["tan"]),
+      (fn _ => anagramsFor "ant" ["tan", "stand", "at"] |> Expect.equalTo ["tan"]),
 
     test "does not detect false positives"
-      (fn _ => anagrams (["eagle"], "galea") |> Expect.equalTo []),
+      (fn _ => anagramsFor "galea" ["eagle"] |> Expect.equalTo []),
 
     test "detects two anagrams"
-      (fn _ => anagrams (["stream", "pigeon", "maters"], "master") |> Expect.equalTo ["stream", "maters"]),
+      (fn _ => anagramsFor "master" ["stream", "pigeon", "maters"] |> Expect.equalTo ["stream", "maters"]),
 
     test "does not detect anagram subsets"
-      (fn _ => anagrams (["dog", "goody"], "good") |> Expect.equalTo []),
+      (fn _ => anagramsFor "good" ["dog", "goody"] |> Expect.equalTo []),
 
     test "detects anagram"
-      (fn _ => anagrams (["enlists", "google", "inlets", "banana"], "listen") |> Expect.equalTo ["inlets"]),
+      (fn _ => anagramsFor "listen" ["enlists", "google", "inlets", "banana"] |> Expect.equalTo ["inlets"]),
 
     test "detects three anagrams"
-      (fn _ => anagrams (["gallery", "ballerina", "regally", "clergy", "largely", "leading"], "allergy") |> Expect.equalTo ["gallery", "regally", "largely"]),
+      (fn _ => anagramsFor "allergy" ["gallery", "ballerina", "regally", "clergy", "largely", "leading"] |> Expect.equalTo ["gallery", "regally", "largely"]),
 
     test "does not detect identical words"
-      (fn _ => anagrams (["corn", "dark", "Corn", "rank", "CORN", "cron", "park"], "corn") |> Expect.equalTo ["cron"]),
+      (fn _ => anagramsFor "corn" ["corn", "dark", "Corn", "rank", "CORN", "cron", "park"] |> Expect.equalTo ["cron"]),
 
     test "does not detect non-anagrams with identical checksum"
-      (fn _ => anagrams (["last"], "mass") |> Expect.equalTo []),
+      (fn _ => anagramsFor "mass" ["last"] |> Expect.equalTo []),
 
     test "detects anagrams case-insensitively"
-      (fn _ => anagrams (["cashregister", "Carthorse", "radishes"], "Orchestra") |> Expect.equalTo ["Carthorse"]),
+      (fn _ => anagramsFor "Orchestra" ["cashregister", "Carthorse", "radishes"] |> Expect.equalTo ["Carthorse"]),
 
     test "detects anagrams using case-insensitive subject"
-      (fn _ => anagrams (["cashregister", "carthorse", "radishes"], "Orchestra") |> Expect.equalTo ["carthorse"]),
+      (fn _ => anagramsFor "Orchestra" ["cashregister", "carthorse", "radishes"] |> Expect.equalTo ["carthorse"]),
 
     test "detects anagrams using case-insensitive possible matches"
-      (fn _ => anagrams (["cashregister", "Carthorse", "radishes"], "orchestra") |> Expect.equalTo ["Carthorse"]),
-
-    test "does not detect a word as its own anagram"
-      (fn _ => anagrams (["Banana"], "banana") |> Expect.equalTo []),
+      (fn _ => anagramsFor "orchestra" ["cashregister", "Carthorse", "radishes"] |> Expect.equalTo ["Carthorse"]),
 
     test "does not detect a anagram if the original word is repeated"
-      (fn _ => anagrams (["go Go GO"], "go") |> Expect.equalTo []),
+      (fn _ => anagramsFor "go" ["go Go GO"] |> Expect.equalTo []),
 
     test "anagrams must use all letters exactly once"
-      (fn _ => anagrams (["patter"], "tapper") |> Expect.equalTo []),
+      (fn _ => anagramsFor "tapper" ["patter"] |> Expect.equalTo []),
 
-    test "capital word is not own anagram"
-      (fn _ => anagrams (["Banana"], "BANANA") |> Expect.equalTo [])
+    test "words are not anagrams of themselves (case-insensitive)"
+      (fn _ => anagramsFor "BANANA" ["BANANA", "Banana", "banana"] |> Expect.equalTo [])
   ]
 
 val _ = Test.run testsuite

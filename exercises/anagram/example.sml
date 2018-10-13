@@ -41,7 +41,7 @@ fun mergesort lt xs =
         ms xs
     end
 
-fun anagrams (candidates, subject) =
+fun anagramsFor subject candidates =
   let
     fun toLower s = map Char.toLower (explode s)
 
