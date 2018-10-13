@@ -1,4 +1,4 @@
-(* version 1.1.0 *)
+(* version 2.3.0 *)
 
 use "all-your-base.sml";
 use "testlib.sml";
@@ -44,13 +44,13 @@ val testsuite =
     test "leading zeros"
       (fn _ => rebase (7, 10, [0, 6, 0]) |> Expect.equalTo (SOME [4, 2])),
 
-    test "first base is one"
+    test "input base is one"
       (fn _ => rebase (1, 10, []) |> Expect.equalTo NONE),
 
-    test "first base is zero"
+    test "input base is zero"
       (fn _ => rebase (0, 10, []) |> Expect.equalTo NONE),
 
-    test "first base is negative"
+    test "input base is negative"
       (fn _ => rebase (~2, 10, [1]) |> Expect.equalTo NONE),
 
     test "negative digit"
@@ -59,13 +59,13 @@ val testsuite =
     test "invalid positive digit"
       (fn _ => rebase (2, 10, [1, 2, 1, 0, 1, 0]) |> Expect.equalTo NONE),
 
-    test "second base is one"
+    test "output base is one"
       (fn _ => rebase (2, 1, [1, 0, 1, 0, 1, 0]) |> Expect.equalTo NONE),
 
-    test "second base is zero"
+    test "output base is zero"
       (fn _ => rebase (10, 0, [7]) |> Expect.equalTo NONE),
 
-    test "second base is negative"
+    test "output base is negative"
       (fn _ => rebase (2, ~7, [1]) |> Expect.equalTo NONE),
 
     test "both bases are negative"
