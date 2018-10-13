@@ -1,4 +1,4 @@
-fun rebase (inBase, digits, outBase) = let
+fun rebase (inBase, outBase, digits) = let
   fun fromBase base = let
     fun f (x, NONE  ) = NONE
       | f (x, SOME n) =
