@@ -1,2 +1,2 @@
-fun hello (): string =
+fun hello () =
   raise Fail "'hello' is not implemented"

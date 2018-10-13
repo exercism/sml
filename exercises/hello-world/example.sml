@@ -1,1 +1,1 @@
-fun hello (): string = "Hello, World!"
+fun hello () = "Hello, World!"
