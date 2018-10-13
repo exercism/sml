@@ -1,2 +1,2 @@
-fun leapYear (input: int): bool =
-  raise Fail "'leapYear' is not implemented"
+fun isLeapYear year =
+  raise Fail "'isLeapYear' is not implemented"
