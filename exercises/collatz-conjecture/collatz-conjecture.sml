@@ -1,4 +1,2 @@
-exception NegativeInteger
-
-fun steps (number: int): int =
-  raise Fail "'steps' is not implemented"
+fun collatz n =
+  raise Fail "'collatz' has not been implemented"

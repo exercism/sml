@@ -8,23 +8,23 @@ fun x |> f = f x
 
 val testsuite =
   describe "collatz-conjecture" [
-    test "zero steps for one"
-      (fn _ => steps (1) |> Expect.equalTo 0),
+    test "zero collatz for one"
+      (fn _ => collatz (1) |> Expect.equalTo (SOME 0)),
 
     test "divide if even"
-      (fn _ => steps (16) |> Expect.equalTo 4),
+      (fn _ => collatz (16) |> Expect.equalTo (SOME 4)),
 
-    test "even and odd steps"
-      (fn _ => steps (12) |> Expect.equalTo 9),
+    test "even and odd collatz"
+      (fn _ => collatz (12) |> Expect.equalTo (SOME 9)),
 
-    test "Large number of even and odd steps"
-      (fn _ => steps (1000000) |> Expect.equalTo 152),
+    test "Large number of even and odd collatz"
+      (fn _ => collatz (1000000) |> Expect.equalTo (SOME 152)),
 
     test "zero is an error"
-      (fn _ => (fn _ => steps (0)) |> Expect.error NegativeInteger),
+      (fn _ => collatz (0) |> Expect.equalTo NONE),
 
     test "negative value is an error"
-      (fn _ => (fn _ => steps (~15)) |> Expect.error NegativeInteger)
+      (fn _ => collatz (~15) |> Expect.equalTo NONE)
   ]
 
 val _ = Test.run testsuite

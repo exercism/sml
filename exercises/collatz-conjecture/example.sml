@@ -1,17 +1,10 @@
-exception NegativeInteger
+fun even n = n mod 2 = 0
 
-fun steps number =
-  let
-    fun odd n = n mod 2 = 1
+fun collatz' i n =
+  if n = 1 then i else
+  collatz' (i + 1) (if even n
+                    then n div 2
+                    else 3 * n + 1)
 
-    fun steps' stepCount n =
-      if n = 1
-      then stepCount
-      else if odd n
-           then steps' (stepCount + 1) (3 * n + 1)
-           else steps' (stepCount + 1) (n div 2)
-  in
-    if number > 0
-    then steps' 0 number
-    else raise NegativeInteger
-  end
+fun collatz n =
+  if n < 1 then NONE else SOME (collatz' 0 n)
