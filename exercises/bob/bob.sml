@@ -1,2 +1,2 @@
-fun response (input: string): string =
+fun response s =
   raise Fail "'response' is not implemented"
