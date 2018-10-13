@@ -1,2 +1,2 @@
-fun name (input: string option): string =
+fun name (input: string option) =
   raise Fail "'name' is not implemented"
