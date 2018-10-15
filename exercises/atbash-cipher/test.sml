@@ -1,4 +1,4 @@
-(* version 1.0.0 *)
+(* version 1.2.0 *)
 
 use "atbash-cipher.sml";
 use "testlib.sml";
@@ -45,7 +45,13 @@ val testsuite =
         (fn _ => decode ("gvhgr mt123 gvhgr mt") |> Expect.equalTo "testing123testing"),
 
       test "decode all the letters"
-        (fn _ => decode ("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt") |> Expect.equalTo "thequickbrownfoxjumpsoverthelazydog")
+        (fn _ => decode ("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt") |> Expect.equalTo "thequickbrownfoxjumpsoverthelazydog"),
+
+      test "decode with too many spaces"
+        (fn _ => decode "vc vix    r hn" |> Expect.equalTo "exercism"),
+
+      test "decode with no spaces"
+        (fn _ => decode "zmlyhgzxovrhlugvmzhgvkkrmthglmv" |> Expect.equalTo "anobstacleisoftenasteppingstone")
     ]
   ]
 
