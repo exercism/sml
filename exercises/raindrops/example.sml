@@ -1,9 +1,13 @@
-fun convert (n: int): string =
+fun convert n =
   let
-    fun f m s = if n mod m = 0 then s else ""
-    val sound = String.concat [f 3 "Pling", f 5 "Plang", f 7 "Plong"]
+    fun sound (i, s) = if n mod i = 0 then s else ""
+    val sounds = [
+      (3, "Pling"),
+      (5, "Plang"),
+      (7, "Plong")
+    ]
   in
-    if sound = ""
-    then Int.toString n
-    else sound
+    case String.concat (List.map sound sounds) of
+         "" => Int.toString n
+       | s => s
   end
