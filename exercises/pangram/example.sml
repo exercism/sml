@@ -1,7 +1,7 @@
-fun isPangram (input: string): bool =
+fun isPangram s =
   let
     val counter = Array.tabulate (26, fn _ => 0)
-    val chars = map Char.toLower (String.explode input)
+    val chars = map Char.toLower (String.explode s)
     val aCode = ord #"a"
 
     fun updateCounter c =
