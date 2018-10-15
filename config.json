@@ -73,6 +73,16 @@
       "topics": []
     },
     {
+      "slug": "space-age",
+      "uuid": "3c6209d0-d095-11e8-a8d5-f2801f1b9fd1",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "floats"
+      ]
+    },
+    {
       "slug": "flatten-array",
       "uuid": "fb0a030d-33bc-4066-a30a-1b8b02cc42f1",
       "core": false,
