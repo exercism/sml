@@ -1,2 +1,2 @@
-fun nthPrime (n: int): int =
+fun nthPrime n =
   raise Fail "'prime' is not implemented"

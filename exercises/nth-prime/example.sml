@@ -1,29 +1,30 @@
-fun nthPrime n =
-  let
-    fun isPrime n =
-      if n = 2
-      then true
-      else if n < 2 orelse n mod 2 = 0
-           then false
-           else
-             let
-               fun loop i =
-                 if i * i > n
-                 then true
-                 else if n mod i = 0
-                      then false
-                      else loop (i + 2)
-             in
-               loop 3
-             end
+(* Since there are infinitely many primes, there's no need for a Nil. *)
+datatype 'a stream = Cons of 'a * (unit -> 'a stream)
 
-    fun loop i m =
-      case (i = n, isPrime m) of
-        (true , true)  => m
-      | (false, true)  => loop (i + 1) (m + 1)
-      | (_    , _   )  => loop i (m + 1)
-  in
-    if n < 1
-    then raise Domain
-    else loop 1 2
-  end
+(* Filtering a stream with predicate `p` gives a new stream. *)
+fun filter p (Cons (x, stream)) =
+  if p x
+  then Cons (x, fn () => filter p (stream ()))
+  else filter p (stream ())
+
+(* Getting the nth element of a stream. *)
+fun nth (Cons (x, _), 0) = x
+  | nth (Cons (_, stream), n) = nth (stream (), n-1)
+
+(* Get an `int stream` with multiples of `i` removed. *)
+fun crossOut i =
+  filter (fn n => n mod i <> 0)
+
+(* Produce a sieve where multiples are iteratively removed. *)
+fun sieve (Cons (n, stream)) =
+  Cons (n, fn () => sieve (crossOut n (stream ())))
+
+(* An `int stream` of natural numbers from `i`. *)
+fun nats i =
+  Cons (i, fn () => nats (i+1))
+
+(* The nth prime is the nth element of the stream sieve. *)
+fun nthPrime n =
+  if n < 1
+  then NONE
+  else SOME (nth (sieve (nats 2), n - 1))

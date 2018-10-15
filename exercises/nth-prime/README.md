@@ -10,13 +10,11 @@ numbers, pretend they don't exist and implement them yourself.
 
 ## Hints
 
-If the argument is not less than `1` raise the exception [`Domain`](http://sml-family.org/Basis/general.html#SIG:GENERAL.Domain:EXN).
-
 Some of these concepts may be helpful:
 
-- [Lazy evaluation](https://en.wikipedia.org/wiki/Lazy_evaluation)
 - Sieving (for instance [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 - Primality by [trial division](https://en.wikipedia.org/wiki/Trial_divisio://en.wikipedia.org/wiki/Trial_division)
+- [Lazy streams](http://www.cs.cornell.edu/courses/cs312/2004fa/lectures/lecture18.htm)
 
 
 ## Loading your exercise implementation in PolyML
