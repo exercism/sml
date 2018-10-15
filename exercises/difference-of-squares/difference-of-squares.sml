@@ -1,8 +1,8 @@
-fun squareOfSum (number: int): int =
+fun squareOfSum n =
   raise Fail "'squareOfSum' is not implemented"
 
-fun differenceOfSquares (number: int): int =
+fun differenceOfSquares n =
   raise Fail "'differenceOfSquares' is not implemented"
 
-fun sumOfSquares (number: int): int =
+fun sumOfSquares n =
   raise Fail "'sumOfSquares' is not implemented"
