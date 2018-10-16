@@ -7,7 +7,7 @@ infixr |>
 fun x |> f = f x
 
 val testsuite =
-  describe "allergies" [
+  describe "isBalanced" [
     test "paired square brackets"
       (fn _ => isBalanced "[]" |> Expect.truthy),
     test "empty string"
