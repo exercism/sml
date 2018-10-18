@@ -1,2 +1,2 @@
 fun anagramsFor subject candidates =
-  raise Fail "'anagrams' is not implemented"
+  raise Fail "'anagramsFor' is not implemented"
