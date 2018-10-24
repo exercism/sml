@@ -16,17 +16,15 @@ He answers 'Whatever.' to anything else.
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use {exercise}.sml
+$ poly --use bob.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "{exercise}.sml";
+> use "bob.sml";
 ```
-
-**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -47,4 +45,5 @@ one, head over there and create an issue. We'll do our best to help you!
 Inspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=06](http://pine.fm/LearnToProgram/?Chapter=06)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
