@@ -24,25 +24,23 @@ factors of 60: 2, 2, 3, and 5.
 
 You can check this yourself:
 
-- 2 * 2 * 3 * 5
-- = 4 * 15
+- 2 _ 2 _ 3 \* 5
+- = 4 \* 15
 - = 60
 - Success!
 
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use {exercise}.sml
+$ poly --use prime-factors.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "{exercise}.sml";
+> use "prime-factors.sml";
 ```
-
-**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -63,4 +61,5 @@ one, head over there and create an issue. We'll do our best to help you!
 The Prime Factors Kata by Uncle Bob [http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

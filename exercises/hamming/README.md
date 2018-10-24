@@ -38,17 +38,15 @@ of equal length differently.
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use {exercise}.sml
+$ poly --use hamming.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "{exercise}.sml";
+> use "hamming.sml";
 ```
-
-**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -69,4 +67,5 @@ one, head over there and create an issue. We'll do our best to help you!
 The Calculating Point Mutations problem at Rosalind [http://rosalind.info/problems/hamm/](http://rosalind.info/problems/hamm/)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

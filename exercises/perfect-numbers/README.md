@@ -20,17 +20,15 @@ Implement a way to determine whether a given number is **perfect**. Depending on
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use {exercise}.sml
+$ poly --use perfect-numbers.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "{exercise}.sml";
+> use "perfect-numbers.sml";
 ```
-
-**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -51,4 +49,5 @@ one, head over there and create an issue. We'll do our best to help you!
 Taken from Chapter 2 of Functional Thinking by Neal Ford. [http://shop.oreilly.com/product/0636920029687.do](http://shop.oreilly.com/product/0636920029687.do)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
