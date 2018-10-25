@@ -13,16 +13,16 @@ Given a number n, return the number of steps required to reach 1.
 
 Starting with n = 12, the steps would be as follows:
 
-0.  12
-1.  6
-1.  3
-1.  10
-1.  5
-1.  16
-1.  8
-1.  4
-1.  2
-1.  1
+- 12
+- 6
+- 3
+- 10
+- 5
+- 16
+- 8
+- 4
+- 2
+- 1
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
