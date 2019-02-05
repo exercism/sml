@@ -1,4 +1,4 @@
-fun factors n =
+fun primeFactors n =
   let
     fun aux prime n =
       if prime * prime > n
