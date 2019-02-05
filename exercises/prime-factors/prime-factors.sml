@@ -1,2 +1,2 @@
-fun factors (input: int): int list =
-  raise Fail "'factors' is not implemented"
+fun primeFactors n =
+  raise Fail "'primeFactors' is not implemented"
