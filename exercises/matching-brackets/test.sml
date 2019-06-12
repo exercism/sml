@@ -1,7 +1,7 @@
 (* version 1.4.0 *)
 
 use "testlib.sml";
-use "bracket-push.sml";
+use "matching-brackets.sml";
 
 infixr |>
 fun x |> f = f x
