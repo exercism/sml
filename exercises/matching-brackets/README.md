@@ -1,4 +1,4 @@
-# Bracket Push
+# Matching Brackets
 
 Given a string containing brackets `[]`, braces `{}` and parentheses `()`,
 verify that all the pairs are matched and nested correctly.
@@ -6,14 +6,14 @@ verify that all the pairs are matched and nested correctly.
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use bracket-push.sml
+$ poly --use matching-brackets.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "bracket-push.sml";
+> use "matching-brackets.sml";
 ```
 
 ## Running the tests
