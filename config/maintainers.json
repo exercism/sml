@@ -3,9 +3,9 @@
   "maintainers": [
     {
       "github_username": "snahor",
-      "alumnus": false,
+      "alumnus": true,
       "show_on_website": false,
-      "name": null,
+      "name": "Hans Roman",
       "link_text": null,
       "link_url": null,
       "avatar_url": null,
