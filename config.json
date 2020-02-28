@@ -15,14 +15,6 @@
       "topics": []
     },
     {
-      "slug": "two-fer",
-      "uuid": "a56bad29-684c-47e7-9724-8c7f165a51af",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
       "slug": "leap",
       "uuid": "622644a8-55c3-498e-ac72-ad6d7d31109d",
       "core": true,
@@ -31,9 +23,35 @@
       "topics": []
     },
     {
-      "slug": "all-your-base",
-      "uuid": "7e1d0e9a-435d-4dc6-8867-2fc4f9b7fe6f",
-      "core": false,
+      "slug": "two-fer",
+      "uuid": "a56bad29-684c-47e7-9724-8c7f165a51af",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "space-age",
+      "uuid": "3c6209d0-d095-11e8-a8d5-f2801f1b9fd1",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "floats"
+      ]
+    },
+    {
+      "slug": "pangram",
+      "uuid": "d17ab3c6-82a1-413e-9018-8775ec9ea498",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "collatz-conjecture",
+      "uuid": "6170f05b-358b-487a-b5ae-4424af422d8e",
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -43,11 +61,41 @@
     {
       "slug": "matching-brackets",
       "uuid": "67108540-cdc3-46df-81f9-6bd8d3580575",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "stacks"
+      ]
+    },
+    {
+      "slug": "allergies",
+      "uuid": "7be1122c-33cd-40ed-a70f-c71a6713c47a",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "pig-latin",
+      "uuid": "c257cb38-ed8d-473f-b02a-5dd8131fdc63",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "lists",
+        "strings",
+        "text_formatting"
+      ]
+    },
+    {
+      "slug": "all-your-base",
+      "uuid": "7e1d0e9a-435d-4dc6-8867-2fc4f9b7fe6f",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "math"
       ]
     },
     {
@@ -67,30 +115,12 @@
       "topics": []
     },
     {
-      "slug": "allergies",
-      "uuid": "7be1122c-33cd-40ed-a70f-c71a6713c47a",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
       "slug": "anagram",
       "uuid": "216334c2-bdb5-481a-a22b-20ac088f20e9",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": []
-    },
-    {
-      "slug": "space-age",
-      "uuid": "3c6209d0-d095-11e8-a8d5-f2801f1b9fd1",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "floats"
-      ]
     },
     {
       "slug": "flatten-array",
@@ -155,14 +185,6 @@
       ]
     },
     {
-      "slug": "pangram",
-      "uuid": "d17ab3c6-82a1-413e-9018-8775ec9ea498",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
       "slug": "prime-factors",
       "uuid": "e8ed5a0f-796c-4a1b-af7a-2502254d79a8",
       "core": false,
@@ -187,16 +209,6 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": []
-    },
-    {
-      "slug": "collatz-conjecture",
-      "uuid": "6170f05b-358b-487a-b5ae-4424af422d8e",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
     },
     {
       "slug": "sum-of-multiples",
@@ -227,18 +239,6 @@
     {
       "slug": "diamond",
       "uuid": "f7ea4ee6-cd34-4dc9-bd96-abcf940873f0",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "lists",
-        "strings",
-        "text_formatting"
-      ]
-    },
-    {
-      "slug": "pig-latin",
-      "uuid": "c257cb38-ed8d-473f-b02a-5dd8131fdc63",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
