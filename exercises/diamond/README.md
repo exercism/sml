@@ -6,17 +6,17 @@ supplied letter at the widest point.
 
 ## Requirements
 
-- The first row contains one 'A'.
-- The last row contains one 'A'.
-- All rows, except the first and last, have exactly two identical letters.
-- All rows have as many trailing spaces as leading spaces. (This might be 0).
-- The diamond is horizontally symmetric.
-- The diamond is vertically symmetric.
-- The diamond has a square shape (width equals height).
-- The letters form a diamond shape.
-- The top half has the letters in ascending order.
-- The bottom half has the letters in descending order.
-- The four corners (containing the spaces) are triangles.
+* The first row contains one 'A'.
+* The last row contains one 'A'.
+* All rows, except the first and last, have exactly two identical letters.
+* All rows have as many trailing spaces as leading spaces. (This might be 0).
+* The diamond is horizontally symmetric.
+* The diamond is vertically symmetric.
+* The diamond has a square shape (width equals height).
+* The letters form a diamond shape.
+* The top half has the letters in ascending order.
+* The bottom half has the letters in descending order.
+* The four corners (containing the spaces) are triangles.
 
 ## Examples
 
@@ -55,15 +55,17 @@ E·······E
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use diamond.sml
+$ poly --use {exercise}.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "diamond.sml";
+> use "{exercise}.sml";
 ```
+
+**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -84,5 +86,4 @@ one, head over there and create an issue. We'll do our best to help you!
 Seb Rose [http://claysnow.co.uk/recycling-tests-in-tdd/](http://claysnow.co.uk/recycling-tests-in-tdd/)
 
 ## Submitting Incomplete Solutions
-
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

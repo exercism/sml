@@ -15,34 +15,36 @@ represented as a sequence of digits, convert it to base **b**.
 In positional notation, a number in base **b** can be understood as a linear
 combination of powers of **b**.
 
-The number 42, _in base 10_, means:
+The number 42, *in base 10*, means:
 
-`(4 * 10^1) + (2 * 10^0)`
+(4 * 10^1) + (2 * 10^0)
 
-The number 101010, _in base 2_, means:
+The number 101010, *in base 2*, means:
 
-`(1 * 2^5) + (0 * 2^4) + (1 * 2^3) + (0 * 2^2) + (1 * 2^1) + (0 * 2^0)`
+(1 * 2^5) + (0 * 2^4) + (1 * 2^3) + (0 * 2^2) + (1 * 2^1) + (0 * 2^0)
 
-The number 1120, _in base 3_, means:
+The number 1120, *in base 3*, means:
 
-`(1 * 3^3) + (1 * 3^2) + (2 * 3^1) + (0 * 3^0)`
+(1 * 3^3) + (1 * 3^2) + (2 * 3^1) + (0 * 3^0)
 
 I think you got the idea!
 
-_Yes. Those three numbers above are exactly the same. Congratulations!_
+*Yes. Those three numbers above are exactly the same. Congratulations!*
 
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use all-your-base.sml
+$ poly --use {exercise}.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "all-your-base.sml";
+> use "{exercise}.sml";
 ```
+
+**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -59,5 +61,4 @@ If you have feedback about an exercise, or want to help implementing a new
 one, head over there and create an issue. We'll do our best to help you!
 
 ## Submitting Incomplete Solutions
-
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

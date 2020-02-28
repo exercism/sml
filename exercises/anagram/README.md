@@ -1,22 +1,26 @@
 # Anagram
 
-Given a word and a list of possible anagrams, select the correct sublist.
+An anagram is a rearrangement of letters to form a new word.
+Given a word and a list of candidates, select the sublist of anagrams of the given word.
 
-Given `"listen"` and a list of candidates like `"enlists" "google" "inlets" "banana"` the program should return a list containing
+Given `"listen"` and a list of candidates like `"enlists" "google"
+"inlets" "banana"` the program should return a list containing
 `"inlets"`.
 
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use anagram.sml
+$ poly --use {exercise}.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "anagram.sml";
+> use "{exercise}.sml";
 ```
+
+**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -37,5 +41,4 @@ one, head over there and create an issue. We'll do our best to help you!
 Inspired by the Extreme Startup game [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
 
 ## Submitting Incomplete Solutions
-
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

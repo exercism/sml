@@ -13,23 +13,25 @@ guanine (**G**) and uracil (**U**).
 Given a DNA strand, its transcribed RNA strand is formed by replacing
 each nucleotide with its complement:
 
-- `G` -> `C`
-- `C` -> `G`
-- `T` -> `A`
-- `A` -> `U`
+* `G` -> `C`
+* `C` -> `G`
+* `T` -> `A`
+* `A` -> `U`
 
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use rna-transcription.sml
+$ poly --use {exercise}.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "rna-transcription.sml";
+> use "{exercise}.sml";
 ```
+
+**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -50,5 +52,4 @@ one, head over there and create an issue. We'll do our best to help you!
 Hyperphysics [http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html](http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html)
 
 ## Submitting Incomplete Solutions
-
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
