@@ -17,15 +17,17 @@ If everything goes well, you will be ready to fetch your first real exercise.
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use hello-world.sml
+$ poly --use {exercise}.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "hello-world.sml";
+> use "{exercise}.sml";
 ```
+
+**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -43,8 +45,7 @@ one, head over there and create an issue. We'll do our best to help you!
 
 ## Source
 
-This is an exercise to introduce users to using Exercism [http://en.wikipedia.org/wiki/%22Hello,\_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
+This is an exercise to introduce users to using Exercism [http://en.wikipedia.org/wiki/%22Hello,_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
 
 ## Submitting Incomplete Solutions
-
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

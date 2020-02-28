@@ -1,20 +1,23 @@
 # Matching Brackets
 
-Given a string containing brackets `[]`, braces `{}` and parentheses `()`,
-verify that all the pairs are matched and nested correctly.
+Given a string containing brackets `[]`, braces `{}`, parentheses `()`,
+or any combination thereof, verify that any and all pairs are matched
+and nested correctly.
 
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use matching-brackets.sml
+$ poly --use {exercise}.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "matching-brackets.sml";
+> use "{exercise}.sml";
 ```
+
+**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -35,5 +38,4 @@ one, head over there and create an issue. We'll do our best to help you!
 Ginna Baker
 
 ## Submitting Incomplete Solutions
-
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

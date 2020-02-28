@@ -31,15 +31,17 @@ things based on word boundaries.
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use atbash-cipher.sml
+$ poly --use {exercise}.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "atbash-cipher.sml";
+> use "{exercise}.sml";
 ```
+
+**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -60,5 +62,4 @@ one, head over there and create an issue. We'll do our best to help you!
 Wikipedia [http://en.wikipedia.org/wiki/Atbash](http://en.wikipedia.org/wiki/Atbash)
 
 ## Submitting Incomplete Solutions
-
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

@@ -45,15 +45,17 @@ See also: http://www.novaroma.org/via_romana/numbers.html
 ## Loading your exercise implementation in PolyML
 
 ```
-$ poly --use roman-numerals.sml
+$ poly --use {exercise}.sml
 ```
 
 Or:
 
 ```
 $ poly
-> use "roman-numerals.sml";
+> use "{exercise}.sml";
 ```
+
+**Note:** You have to replace {exercise}.
 
 ## Running the tests
 
@@ -74,5 +76,4 @@ one, head over there and create an issue. We'll do our best to help you!
 The Roman Numeral Kata [http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals](http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals)
 
 ## Submitting Incomplete Solutions
-
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
