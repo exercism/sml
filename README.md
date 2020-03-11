@@ -8,7 +8,7 @@ Exercism exercises in Standard ML.
 
 Any type of contribution is more than welcome!
 
-The first step is to get familiar with this [guideline](https://github.com/exercism/docs/tree/master/contributing-to-language-tracks/README.md.).
+The first step is to get familiar with this [guideline](https://github.com/exercism/docs/tree/master/contributing-to-language-tracks/README.md).
 
 ## Setup
 
