@@ -1,9 +1,11 @@
 language: generic
 sudo: false
+env:
+  - VERSION="5.8"
 install:
-  - curl -LO https://github.com/polyml/polyml/archive/v5.7.tar.gz
-  - tar xf v5.7.tar.gz
-  - cd polyml-5.7 && ./configure --prefix=$HOME/.local && make && make install && cd -
+  - curl -LO https://github.com/polyml/polyml/archive/v${VERSION}.tar.gz
+  - tar xf v${VERSION}.tar.gz
+  - cd polyml-${VERSION} && ./configure --prefix=$HOME/.local && make && make install && cd -
   - export PATH=$PATH:$HOME/.local/bin
   - which poly
 script:
