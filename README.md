@@ -1,5 +1,7 @@
 # Exercism Standard ML Track
 
+This is just a test. This is not meant to be committed.
+
 [![Build Status](https://travis-ci.org/exercism/sml.png?branch=master)](https://travis-ci.org/exercism/sml)
 
 Exercism exercises in Standard ML.
