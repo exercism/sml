@@ -25,4 +25,6 @@ jobs:
       - name: Run exercism/sml ci (runs tests) for all exercises
         env:
           GITHUB_COMMIT_RANGE: ${{ github.base_ref }}..${{ github.sha }}
-        run: make gha
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          make gha
