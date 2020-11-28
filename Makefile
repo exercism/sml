@@ -11,7 +11,7 @@ test: $(all-tests)
 debug:
 	@echo ---------------
 	@echo HEAD: $(shell git rev-list -1 HEAD)
-	@echo master: $(shell git rev-list -1 master 2> /dev/null)
+	@echo master: $(shell git rev-list -1 origin/master 2> /dev/null)
 	@echo COMMIT_RANGE: $(COMMIT_RANGE)
 	@echo GITHUB_EVENT_NAME: $(GITHUB_EVENT_NAME)
 	@echo GITHUB_SHA: $(GITHUB_SHA)
