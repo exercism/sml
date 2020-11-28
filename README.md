@@ -1,6 +1,7 @@
 # Exercism Standard ML Track
 
-[![Build Status](https://travis-ci.org/exercism/sml.png?branch=master)](https://travis-ci.org/exercism/sml)
+[![Configlet Status](https://github.com/exercism/sml/workflows/configlet/badge.svg)]
+[![Exercise Test Status](https://github.com/exercism/sml/workflows/sml%20%2F%20main/badge.svg)]
 
 Exercism exercises in Standard ML.
 
