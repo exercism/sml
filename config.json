@@ -1,6 +1,12 @@
 {
   "language": "Standard ML",
   "active": true,
+  "status": {
+    "concept_exercises": false,
+    "test_runner": false,
+    "representer": false,
+    "analyzer": false
+  },
   "blurb": "Standard ML is a functional programming language with type inference and some side-effects.",
   "version": 3,
   "checklist_issue": 8,
