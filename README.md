@@ -138,7 +138,7 @@ make test-{{ slug }}
 if you are in exercises/{{slug}}
 
 ```
-make -C ../../ test-{{ slug }}
+make -C https://github.com/exercism/v3/blob/main/ test-{{ slug }}
 ```
 
 If you want to run all the tests:
