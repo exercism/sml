@@ -17,6 +17,7 @@
   "checklist_issue": 8,
   "test_pattern": "test[.]sml$",
   "exercises": {
+    "concept": [],
     "practice": [
       {
         "slug": "hello-world",
