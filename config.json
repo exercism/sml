@@ -89,16 +89,22 @@
       "topics": []
     },
     {
-      "slug": "pig-latin",
-      "uuid": "c257cb38-ed8d-473f-b02a-5dd8131fdc63",
+      "slug": "binary",
+      "uuid": "225cfd7d-81a3-4a58-b1aa-1de2e40e7a93",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 0,
+      "topics": null,
+      "deprecated": true,
+      "status": "deprecated"
+    },
+    {
+      "slug": "accumulate",
+      "uuid": "333c2cb9-f03c-473c-9eeb-096072a321b2",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": [
-        "lists",
-        "strings",
-        "text_formatting"
-      ]
+      "topics": []
     },
     {
       "slug": "all-your-base",
@@ -111,72 +117,12 @@
       ]
     },
     {
-      "slug": "bob",
-      "uuid": "4fb40e77-727b-41bc-ac15-b909a26bb917",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "accumulate",
-      "uuid": "333c2cb9-f03c-473c-9eeb-096072a321b2",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
       "slug": "anagram",
       "uuid": "216334c2-bdb5-481a-a22b-20ac088f20e9",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": []
-    },
-    {
-      "slug": "flatten-array",
-      "uuid": "fb0a030d-33bc-4066-a30a-1b8b02cc42f1",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "hamming",
-      "uuid": "ce5dd1a4-7c90-48e4-b260-d2b62f29fbaf",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "raindrops",
-      "uuid": "76b1e1d1-2360-487c-89be-37f9780540b7",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "nth-prime",
-      "uuid": "cfd7a0bc-4b94-402a-9e8e-d81cd4ddecfd",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
-    },
-    {
-      "slug": "difference-of-squares",
-      "uuid": "580496d5-bec7-401d-b0cf-dc16da795491",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
     },
     {
       "slug": "atbash-cipher",
@@ -187,62 +133,8 @@
       "topics": []
     },
     {
-      "slug": "perfect-numbers",
-      "uuid": "8ccc61c6-fac5-4af7-803e-d0f6d10f8a1f",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
-    },
-    {
-      "slug": "prime-factors",
-      "uuid": "e8ed5a0f-796c-4a1b-af7a-2502254d79a8",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
-    },
-    {
-      "slug": "list-ops",
-      "uuid": "c8b94fa9-d758-4dca-b7fc-7a130061e064",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "rna-transcription",
-      "uuid": "db3e09ee-6c93-417f-b0a0-196cdccf4984",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "sum-of-multiples",
-      "uuid": "4bce27a8-2b91-4595-b6e6-d4be7e704113",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
-    },
-    {
-      "slug": "phone-number",
-      "uuid": "f923bffb-109f-4257-957c-cea8cae2d5c5",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "roman-numerals",
-      "uuid": "b4359037-8457-49ea-ac33-44710ada3b4d",
+      "slug": "bob",
+      "uuid": "4fb40e77-727b-41bc-ac15-b909a26bb917",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
@@ -261,14 +153,122 @@
       ]
     },
     {
-      "slug": "binary",
-      "uuid": "225cfd7d-81a3-4a58-b1aa-1de2e40e7a93",
+      "slug": "difference-of-squares",
+      "uuid": "580496d5-bec7-401d-b0cf-dc16da795491",
       "core": false,
       "unlocked_by": null,
-      "difficulty": 0,
-      "topics": null,
-      "deprecated": true,
-      "status": "deprecated"
+      "difficulty": 1,
+      "topics": [
+        "math"
+      ]
+    },
+    {
+      "slug": "flatten-array",
+      "uuid": "fb0a030d-33bc-4066-a30a-1b8b02cc42f1",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "hamming",
+      "uuid": "ce5dd1a4-7c90-48e4-b260-d2b62f29fbaf",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "list-ops",
+      "uuid": "c8b94fa9-d758-4dca-b7fc-7a130061e064",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "nth-prime",
+      "uuid": "cfd7a0bc-4b94-402a-9e8e-d81cd4ddecfd",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "math"
+      ]
+    },
+    {
+      "slug": "perfect-numbers",
+      "uuid": "8ccc61c6-fac5-4af7-803e-d0f6d10f8a1f",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "math"
+      ]
+    },
+    {
+      "slug": "phone-number",
+      "uuid": "f923bffb-109f-4257-957c-cea8cae2d5c5",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "pig-latin",
+      "uuid": "c257cb38-ed8d-473f-b02a-5dd8131fdc63",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "lists",
+        "strings",
+        "text_formatting"
+      ]
+    },
+    {
+      "slug": "prime-factors",
+      "uuid": "e8ed5a0f-796c-4a1b-af7a-2502254d79a8",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "math"
+      ]
+    },
+    {
+      "slug": "raindrops",
+      "uuid": "76b1e1d1-2360-487c-89be-37f9780540b7",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "rna-transcription",
+      "uuid": "db3e09ee-6c93-417f-b0a0-196cdccf4984",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "roman-numerals",
+      "uuid": "b4359037-8457-49ea-ac33-44710ada3b4d",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "sum-of-multiples",
+      "uuid": "4bce27a8-2b91-4595-b6e6-d4be7e704113",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "math"
+      ]
     }
   ]
 }
