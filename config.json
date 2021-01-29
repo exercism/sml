@@ -1,5 +1,6 @@
 {
   "language": "Standard ML",
+  "slug": "sml",
   "active": true,
   "status": {
     "concept_exercises": false,
