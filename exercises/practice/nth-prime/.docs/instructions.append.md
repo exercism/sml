@@ -1,4 +1,4 @@
-## Hints
+# Hints
 
 If the argument is not less than `1` raise the exception [`Domain`](http://sml-family.org/Basis/general.html#SIG:GENERAL.Domain:EXN).
 
