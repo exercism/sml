@@ -27,7 +27,7 @@ Every exercise must have at least these files:
 - `test.sml`: Test suite
 - `testlib.sml` Test helper
 
-#### `testlib.sml`
+### `testlib.sml`
 
 This helper has this structures:
 

@@ -1,4 +1,4 @@
-## Hints
+# Hints
 
 You can think of this data structure as a [`Rose Tree`](https://en.wikipedia.org/wiki/Rose_tree). You are given a data type `'a tree` that represents this data structure.
 
