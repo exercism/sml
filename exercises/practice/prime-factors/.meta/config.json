@@ -1,0 +1,17 @@
+{
+  "blurb": "Compute the prime factors of a given natural number.",
+  "authors": [],
+  "files": {
+    "solution": [
+      "prime-factors.sml"
+    ],
+    "test": [
+      "test.sml"
+    ],
+    "example": [
+      "example.sml"
+    ]
+  },
+  "source": "The Prime Factors Kata by Uncle Bob",
+  "source_url": "http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata"
+}

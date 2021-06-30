@@ -1,261 +1,324 @@
 {
   "language": "Standard ML",
+  "slug": "sml",
   "active": true,
+  "status": {
+    "concept_exercises": false,
+    "test_runner": true,
+    "representer": false,
+    "analyzer": false
+  },
   "blurb": "Standard ML is a functional programming language with type inference and some side-effects.",
+  "version": 3,
+  "online_editor": {
+    "indent_style": "space",
+    "indent_size": 4,
+    "highlightjs_language": "sml"
+  },
+  "test_runner": {
+    "average_run_time": 1.0
+  },
   "checklist_issue": 8,
   "test_pattern": "test[.]sml$",
-  "exercises": [
-    {
-      "slug": "hello-world",
-      "uuid": "a00f98a6-98dd-4c8a-b3d1-adc1d56eef29",
-      "core": true,
-      "auto_approve": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "leap",
-      "uuid": "622644a8-55c3-498e-ac72-ad6d7d31109d",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "two-fer",
-      "uuid": "a56bad29-684c-47e7-9724-8c7f165a51af",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "space-age",
-      "uuid": "3c6209d0-d095-11e8-a8d5-f2801f1b9fd1",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "floats"
-      ]
-    },
-    {
-      "slug": "pangram",
-      "uuid": "d17ab3c6-82a1-413e-9018-8775ec9ea498",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "collatz-conjecture",
-      "uuid": "6170f05b-358b-487a-b5ae-4424af422d8e",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
-    },
-    {
-      "slug": "matching-brackets",
-      "uuid": "67108540-cdc3-46df-81f9-6bd8d3580575",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 4,
-      "topics": [
-        "stacks"
-      ]
-    },
-    {
-      "slug": "allergies",
-      "uuid": "7be1122c-33cd-40ed-a70f-c71a6713c47a",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "pig-latin",
-      "uuid": "c257cb38-ed8d-473f-b02a-5dd8131fdc63",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "lists",
-        "strings",
-        "text_formatting"
-      ]
-    },
-    {
-      "slug": "all-your-base",
-      "uuid": "7e1d0e9a-435d-4dc6-8867-2fc4f9b7fe6f",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
-    },
-    {
-      "slug": "bob",
-      "uuid": "4fb40e77-727b-41bc-ac15-b909a26bb917",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "accumulate",
-      "uuid": "333c2cb9-f03c-473c-9eeb-096072a321b2",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "anagram",
-      "uuid": "216334c2-bdb5-481a-a22b-20ac088f20e9",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "flatten-array",
-      "uuid": "fb0a030d-33bc-4066-a30a-1b8b02cc42f1",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "hamming",
-      "uuid": "ce5dd1a4-7c90-48e4-b260-d2b62f29fbaf",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "raindrops",
-      "uuid": "76b1e1d1-2360-487c-89be-37f9780540b7",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "nth-prime",
-      "uuid": "cfd7a0bc-4b94-402a-9e8e-d81cd4ddecfd",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
-    },
-    {
-      "slug": "difference-of-squares",
-      "uuid": "580496d5-bec7-401d-b0cf-dc16da795491",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
-    },
-    {
-      "slug": "atbash-cipher",
-      "uuid": "0f488d4b-89da-4d1f-958b-a7b3171f43d5",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "perfect-numbers",
-      "uuid": "8ccc61c6-fac5-4af7-803e-d0f6d10f8a1f",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
-    },
-    {
-      "slug": "prime-factors",
-      "uuid": "e8ed5a0f-796c-4a1b-af7a-2502254d79a8",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
-    },
-    {
-      "slug": "list-ops",
-      "uuid": "c8b94fa9-d758-4dca-b7fc-7a130061e064",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "rna-transcription",
-      "uuid": "db3e09ee-6c93-417f-b0a0-196cdccf4984",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "sum-of-multiples",
-      "uuid": "4bce27a8-2b91-4595-b6e6-d4be7e704113",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math"
-      ]
-    },
-    {
-      "slug": "phone-number",
-      "uuid": "f923bffb-109f-4257-957c-cea8cae2d5c5",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "roman-numerals",
-      "uuid": "b4359037-8457-49ea-ac33-44710ada3b4d",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "diamond",
-      "uuid": "f7ea4ee6-cd34-4dc9-bd96-abcf940873f0",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "lists",
-        "strings",
-        "text_formatting"
-      ]
-    },
-    {
-      "slug": "binary",
-      "uuid": "225cfd7d-81a3-4a58-b1aa-1de2e40e7a93",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 0,
-      "topics": null,
-      "deprecated": true
-    }
-  ]
+  "files": {
+    "solution": [
+      "%{kebab_slug}.sml"
+    ],
+    "test": [
+      "test.sml"
+    ],
+    "example": [
+      "example.sml"
+    ],
+    "exemplar": [
+      ".meta/exemplar.sml"
+    ]
+  },
+  "exercises": {
+    "concept": [],
+    "practice": [
+      {
+        "slug": "hello-world",
+        "name": "Hello World",
+        "uuid": "a00f98a6-98dd-4c8a-b3d1-adc1d56eef29",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "leap",
+        "name": "Leap",
+        "uuid": "622644a8-55c3-498e-ac72-ad6d7d31109d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "uuid": "a56bad29-684c-47e7-9724-8c7f165a51af",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "2dba41bc-5b83-4406-b2b3-6280c3e31ed7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "floats"
+        ]
+      },
+      {
+        "slug": "pangram",
+        "name": "Pangram",
+        "uuid": "d17ab3c6-82a1-413e-9018-8775ec9ea498",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "collatz-conjecture",
+        "name": "Collatz Conjecture",
+        "uuid": "6170f05b-358b-487a-b5ae-4424af422d8e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "math"
+        ]
+      },
+      {
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
+        "uuid": "67108540-cdc3-46df-81f9-6bd8d3580575",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "stacks"
+        ]
+      },
+      {
+        "slug": "allergies",
+        "name": "Allergies",
+        "uuid": "7be1122c-33cd-40ed-a70f-c71a6713c47a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "binary",
+        "name": "Binary",
+        "uuid": "225cfd7d-81a3-4a58-b1aa-1de2e40e7a93",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 0,
+        "topics": null,
+        "status": "deprecated"
+      },
+      {
+        "slug": "accumulate",
+        "name": "Accumulate",
+        "uuid": "333c2cb9-f03c-473c-9eeb-096072a321b2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "uuid": "7e1d0e9a-435d-4dc6-8867-2fc4f9b7fe6f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "math"
+        ]
+      },
+      {
+        "slug": "anagram",
+        "name": "Anagram",
+        "uuid": "216334c2-bdb5-481a-a22b-20ac088f20e9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "atbash-cipher",
+        "name": "Atbash Cipher",
+        "uuid": "0f488d4b-89da-4d1f-958b-a7b3171f43d5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "bob",
+        "name": "Bob",
+        "uuid": "4fb40e77-727b-41bc-ac15-b909a26bb917",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "f7ea4ee6-cd34-4dc9-bd96-abcf940873f0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "lists",
+          "strings",
+          "text_formatting"
+        ]
+      },
+      {
+        "slug": "difference-of-squares",
+        "name": "Difference Of Squares",
+        "uuid": "580496d5-bec7-401d-b0cf-dc16da795491",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "math"
+        ]
+      },
+      {
+        "slug": "flatten-array",
+        "name": "Flatten Array",
+        "uuid": "fb0a030d-33bc-4066-a30a-1b8b02cc42f1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "ce5dd1a4-7c90-48e4-b260-d2b62f29fbaf",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "list-ops",
+        "name": "List Ops",
+        "uuid": "c8b94fa9-d758-4dca-b7fc-7a130061e064",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "nth-prime",
+        "name": "Nth Prime",
+        "uuid": "cfd7a0bc-4b94-402a-9e8e-d81cd4ddecfd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "math"
+        ]
+      },
+      {
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
+        "uuid": "8ccc61c6-fac5-4af7-803e-d0f6d10f8a1f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "math"
+        ]
+      },
+      {
+        "slug": "phone-number",
+        "name": "Phone Number",
+        "uuid": "f923bffb-109f-4257-957c-cea8cae2d5c5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "c257cb38-ed8d-473f-b02a-5dd8131fdc63",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "lists",
+          "strings",
+          "text_formatting"
+        ]
+      },
+      {
+        "slug": "prime-factors",
+        "name": "Prime Factors",
+        "uuid": "e8ed5a0f-796c-4a1b-af7a-2502254d79a8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "math"
+        ]
+      },
+      {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "76b1e1d1-2360-487c-89be-37f9780540b7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "rna-transcription",
+        "name": "Rna Transcription",
+        "uuid": "db3e09ee-6c93-417f-b0a0-196cdccf4984",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "roman-numerals",
+        "name": "Roman Numerals",
+        "uuid": "b4359037-8457-49ea-ac33-44710ada3b4d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
+        "slug": "sum-of-multiples",
+        "name": "Sum Of Multiples",
+        "uuid": "4bce27a8-2b91-4595-b6e6-d4be7e704113",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "math"
+        ]
+      }
+    ]
+  },
+  "concepts": [],
+  "key_features": [],
+  "tags": []
 }

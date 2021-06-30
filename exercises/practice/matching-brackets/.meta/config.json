@@ -1,0 +1,16 @@
+{
+  "blurb": "Make sure the brackets and braces all match.",
+  "authors": [],
+  "files": {
+    "solution": [
+      "matching-brackets.sml"
+    ],
+    "test": [
+      "test.sml"
+    ],
+    "example": [
+      "example.sml"
+    ]
+  },
+  "source": "Ginna Baker"
+}

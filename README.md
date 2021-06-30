@@ -28,7 +28,7 @@ Every exercise must have at least these files:
 - `test.sml`: Test suite
 - `testlib.sml` Test helper
 
-#### `testlib.sml`
+### `testlib.sml`
 
 This helper has this structures:
 
@@ -139,7 +139,7 @@ make test-{{ slug }}
 if you are in exercises/{{slug}}
 
 ```
-make -C ../../ test-{{ slug }}
+make -C https://github.com/exercism/v3/blob/main/ test-{{ slug }}
 ```
 
 If you want to run all the tests:
