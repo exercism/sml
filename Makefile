@@ -2,10 +2,8 @@ dirs := $(wildcard exercises/*)
 all-tests := $(addprefix test-, $(notdir $(dirs)))
 
 COMMIT_RANGE := HEAD
-ifdef TRAVIS_PULL_REQUEST
-ifneq ($(TRAVIS_PULL_REQUEST), false)
-COMMIT_RANGE := master..HEAD
-endif
+ifdef GITHUB_COMMIT_RANGE
+COMMIT_RANGE := $(GITHUB_COMMIT_RANGE)
 endif
 
 test: $(all-tests)
@@ -13,18 +11,17 @@ test: $(all-tests)
 debug:
 	@echo ---------------
 	@echo HEAD: $(shell git rev-list -1 HEAD)
-	@echo master: $(shell git rev-list -1 master 2> /dev/null)
+	@echo master: $(shell git rev-list -1 origin/master 2> /dev/null)
 	@echo COMMIT_RANGE: $(COMMIT_RANGE)
-	@echo TRAVIS_COMMIT_RANGE: $(TRAVIS_COMMIT_RANGE)
-	@echo TRAVIS_PULL_REQUEST: $(TRAVIS_PULL_REQUEST)
-	@echo TRAVIS_COMMIT: $(TRAVIS_COMMIT)
+	@echo GITHUB_EVENT_NAME: $(GITHUB_EVENT_NAME)
+	@echo GITHUB_SHA: $(GITHUB_SHA)
 	@echo Modified/Added:
 	@git diff-tree --name-status -r --no-commit-id --diff-filter=AM -M $(COMMIT_RANGE)
 	@echo Renamed:
 	@git diff-tree --name-status -r --no-commit-id --diff-filter=R -M $(COMMIT_RANGE)
 	@echo ---------------
 
-travis:
+gha:
 	@$(MAKE) -s debug
 	$(eval tests := $(shell \
 		git diff-tree --name-only -r --diff-filter=AM $(COMMIT_RANGE) | \

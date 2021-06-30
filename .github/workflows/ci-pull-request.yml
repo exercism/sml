@@ -1,0 +1,30 @@
+name: sml / pull_request
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        sml-version: [5.8]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install sml-${{ matrix.sml-version }}
+        run: |
+          curl -LO https://github.com/polyml/polyml/archive/v${{ matrix.sml-version }}.tar.gz
+          tar xf v${{ matrix.sml-version }}.tar.gz
+          cd polyml-${{ matrix.sml-version }} && ./configure --prefix=$HOME/.local && make && make install && cd -
+          echo $HOME/.local/bin/ >> $GITHUB_PATH
+
+      - name: Run exercism/sml ci (runs tests) for all exercises
+        env:
+          GITHUB_COMMIT_RANGE: origin/${{ github.base_ref }}..${{ github.sha }}
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          make gha

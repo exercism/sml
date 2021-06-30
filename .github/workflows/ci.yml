@@ -1,0 +1,27 @@
+name: sml / main
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        sml-version: [5.8]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install project dependencies
+        run: |
+          curl -LO https://github.com/polyml/polyml/archive/v${{ matrix.sml-version }}.tar.gz
+          tar xf v${{ matrix.sml-version }}.tar.gz
+          cd polyml-${{ matrix.sml-version }} && ./configure --prefix=$HOME/.local && make && make install && cd -
+          export PATH=$PATH:$HOME/.local/bin
+
+      - name: Run exercism/sml ci (runs tests) for all exercises
+        run: make gha
