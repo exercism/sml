@@ -1,6 +1,14 @@
 {
   "blurb": "Implement basic list operations",
-  "authors": [],
+  "authors": [
+    "snahor"
+  ],
+  "contributors": [
+    "iHiD",
+    "mcmillhj-wta",
+    "sjwarner-bp",
+    "sshine"
+  ],
   "files": {
     "solution": [
       "list-ops.sml"

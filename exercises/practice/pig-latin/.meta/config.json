@@ -1,6 +1,14 @@
 {
   "blurb": "Implement a program that translates from English to Pig Latin",
-  "authors": [],
+  "authors": [
+    "snahor"
+  ],
+  "contributors": [
+    "iHiD",
+    "mcmillhj-wta",
+    "sjwarner-bp",
+    "sshine"
+  ],
   "files": {
     "solution": [
       "pig-latin.sml"
