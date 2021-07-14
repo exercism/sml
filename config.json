@@ -19,7 +19,6 @@
     "average_run_time": 1.0
   },
   "checklist_issue": 8,
-  "test_pattern": "test[.]sml$",
   "files": {
     "solution": [
       "%{kebab_slug}.sml"
