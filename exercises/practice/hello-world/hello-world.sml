@@ -1,2 +1,1 @@
-fun hello () =
-  raise Fail "'hello' is not implemented"
+fun hello () = "Goodbye, Mars!"
