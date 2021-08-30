@@ -16,7 +16,7 @@
       "test.sml"
     ],
     "example": [
-      "example.sml"
+      ".meta/example.sml"
     ]
   },
   "source": "Ginna Baker"

@@ -17,7 +17,7 @@
       "test.sml"
     ],
     "example": [
-      "example.sml"
+      ".meta/example.sml"
     ]
   },
   "source": "Taken from Chapter 2 of Functional Thinking by Neal Ford.",

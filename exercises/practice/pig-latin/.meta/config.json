@@ -17,7 +17,7 @@
       "test.sml"
     ],
     "example": [
-      "example.sml"
+      ".meta/example.sml"
     ]
   },
   "source": "The Pig Latin exercise at Test First Teaching by Ultrasaurus",

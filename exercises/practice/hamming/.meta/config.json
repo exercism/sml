@@ -18,7 +18,7 @@
       "test.sml"
     ],
     "example": [
-      "example.sml"
+      ".meta/example.sml"
     ]
   },
   "source": "The Calculating Point Mutations problem at Rosalind",

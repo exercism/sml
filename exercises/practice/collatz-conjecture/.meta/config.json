@@ -17,7 +17,7 @@
       "test.sml"
     ],
     "example": [
-      "example.sml"
+      ".meta/example.sml"
     ]
   },
   "source": "An unsolved problem in mathematics named after mathematician Lothar Collatz",
