@@ -17,7 +17,7 @@
       "test.sml"
     ],
     "example": [
-      "example.sml"
+      ".meta/example.sml"
     ]
   },
   "source": "Event Manager by JumpstartLab",
