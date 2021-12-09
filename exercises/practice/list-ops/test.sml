@@ -51,25 +51,25 @@ val testsuite =
         (fn _ => map (fn n => n + 1, [1, 3, 5, 7]) |> Expect.equalTo [2, 4, 6, 8])
     ],
 
-    describe "folds (reduces) the given list from the left with a function" [
+    describe "folds (reduces) the given list from the left with a function, foldl" [
       test "empty list"
-        (fn _ => foldl (fn (x, y) => x * y, 2, []) |> Expect.equalTo 2),
+        (fn _ => foldl (fn (x, y) => x * y, 1, []) |> Expect.equalTo 1),
 
-      test "direction independent function applied to non-empty list"
+      test "direction independent function applied to non-empty list, foldl"
         (fn _ => foldl (fn (x, y) => x + y, 5, [1, 2, 3, 4]) |> Expect.equalTo 15),
 
-      test "direction dependent function applied to non-empty list"
+      test "direction dependent function applied to non-empty list, foldl
         (fn _ => foldl (fn (x, y) => x div y, 5, [2, 5]) |> Expect.equalTo 0)
     ],
 
     describe "folds (reduces) the given list from the right with a function" [
-      test "empty list"
-        (fn _ => foldr (fn (x, y) => x * y, 2, []) |> Expect.equalTo 2),
+      test "empty list, foldr"
+        (fn _ => foldr (fn (x, y) => x * y, 3, []) |> Expect.equalTo 3),
 
-      test "direction independent function applied to non-empty list"
+      test "direction independent function applied to non-empty list, foldr"
         (fn _ => foldr (fn (x, y) => x + y, 5, [1, 2, 3, 4]) |> Expect.equalTo 15),
 
-      test "direction dependent function applied to non-empty list"
+      test "direction dependent function applied to non-empty list, foldr"
         (fn _ => foldr (fn (x, y) => x div y, 5, [2, 5]) |> Expect.equalTo 2)
     ],
 
