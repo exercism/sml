@@ -259,7 +259,7 @@
         "uuid": "c257cb38-ed8d-473f-b02a-5dd8131fdc63",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
+        "difficulty": 4,
         "topics": [
           "lists",
           "strings",
@@ -301,7 +301,7 @@
         "uuid": "b4359037-8457-49ea-ac33-44710ada3b4d",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
+        "difficulty": 5,
         "topics": []
       },
       {
