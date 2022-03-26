@@ -1,4 +1,4 @@
-dirs := $(wildcard exercises/*)
+dirs := $(wildcard exercises/practice/*)
 all-tests := $(addprefix test-, $(notdir $(dirs)))
 
 COMMIT_RANGE := HEAD
@@ -21,6 +21,7 @@ debug:
 	@git diff-tree --name-status -r --no-commit-id --diff-filter=R -M $(COMMIT_RANGE)
 	@echo ---------------
 
+# FIXME GHA target is broken and this gets unnoticed by GitHub Actions.
 gha:
 	@$(MAKE) -s debug
 	$(eval tests := $(shell \
@@ -32,13 +33,13 @@ gha:
 test-%:
 	$(eval exercise := $(patsubst test-%, %, $@))
 	@echo
-	@ls ./exercises/practice/$(exercise)/README.md > /dev/null
+	@ls ./exercises/practice/$(exercise)/.docs/instructions.md > /dev/null
 	@# check stub type
 	@cd ./exercises/practice/$(exercise) && \
 		poly -q --use test | grep 'error: Type error' | \
 		wc -l | xargs -I @ expr @ = 0 > /dev/null || \
 		{ echo '$(exercise).sml is faulty'; exit 1; }
-	@cd ./exercises/practice/$(exercise) && cat test.sml | sed 's/$(exercise).sml/.meta/example.sml/' | poly -q
+	@cd ./exercises/practice/$(exercise) && cat test.sml | sed 's/$(exercise).sml/.meta\/example.sml/' | poly -q
 	@echo
 
 .PHONY: test
