@@ -217,9 +217,6 @@ def generate_test_content(data, signature, force=False):
         return acc
 
     return '\n'.join([
-        # FIXME version is missing in data
-        '(* version %s *)' % 'UNKNOWN', #data['version'],
-        '',
         'use "testlib.sml";',
         'use "%s.sml";' % data['exercise'],
         '',
