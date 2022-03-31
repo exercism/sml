@@ -139,8 +139,6 @@ def extract_signatures(data, force=False):
             else:
                 # assumes there's at least one test with non "nullish" vars
                 fn = camelize(case.get('property', exercise))
-                if fn == "isPaired": # FIXME how to treat this renaming correctly?
-                    fn = "isBalanced"
                 if sml_type(case['expected'], force=force) == 'exn':
                     continue
                 args = get_fn_args(case)
@@ -194,8 +192,6 @@ def generate_test_content(data, signature, force=False):
         if 'property' not in  case:
             print('WARNING: property not found using exercise name as function name')
         fn = camelize(case.get('property', exercise))
-        if fn == "isPaired": # FIXME how to treat this renaming correctly?
-            fn = "isBalanced"
         expected = case['expected']
         args = get_fn_args(case)
         return '\n'.join((
