@@ -21,12 +21,11 @@ debug:
 	@git diff-tree --name-status -r --no-commit-id --diff-filter=R -M $(COMMIT_RANGE)
 	@echo ---------------
 
-# FIXME GHA target is broken and this gets unnoticed by GitHub Actions.
 gha:
 	@$(MAKE) -s debug
 	$(eval tests := $(shell \
 		git diff-tree --name-only -r --diff-filter=AM $(COMMIT_RANGE) | \
-		perl -n -e '/exercises\/practice/([a-z-_]+)\/.+\.sml/ && print "test-$$1\n"' | uniq))
+		perl -n -e '/exercises\/practice\/([a-z-_]+)\/.+\.sml/ && print "test-$$1\n"' | uniq))
 	$(if $(tests), @echo Tests: $(tests), @echo 'Nothing to test.')
 	$(if $(tests), @$(MAKE) -s $(tests))
 
