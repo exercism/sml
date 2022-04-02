@@ -100,11 +100,10 @@ def sml_value(value, smltype='', force=False):
 
 
 def get_fn_args(case):
-    reserved_keys = {'property', 'expected', 'description', 'comments'}
+    case_input = case["input"]
     return OrderedDict(
-        (k, case[k])
-        for k in sorted(case.keys())
-        if k not in reserved_keys
+        (k, case_input[k])
+        for k in sorted(case_input.keys())
     )
 
 
@@ -157,7 +156,8 @@ def extract_signatures(data, force=False):
 def expectation(signature, fn, args, expected, force=False):
     tmpl = '(fn _ => %s |> Expect.%s)'
     output = sml_value(expected, signature['output'], force=force)
-    invocation = '%s (%s)' % (
+    invocation_tmpl = '%s %s' if len(args) == 1 else '%s (%s)'
+    invocation = invocation_tmpl % (
         fn,
         ', '.join((
             sml_value(val, signature['args'][arg], force=force)
@@ -213,8 +213,6 @@ def generate_test_content(data, signature, force=False):
         return acc
 
     return '\n'.join([
-        '(* version %s *)' % data['version'],
-        '',
         'use "testlib.sml";',
         'use "%s.sml";' % data['exercise'],
         '',
@@ -260,7 +258,7 @@ FLAGS = TEST | STUB | EXAMPLE
 
 def generate(exercise, flags, force=False):
     root = Path(__file__).parent.parent.absolute()
-    path = root / 'exercises' / exercise
+    path = root / 'exercises' / 'practice' / exercise
 
     if not path.exists():
         path.mkdir()

@@ -1,4 +1,4 @@
-dirs := $(wildcard exercises/*)
+dirs := $(wildcard exercises/practice/*)
 all-tests := $(addprefix test-, $(notdir $(dirs)))
 
 COMMIT_RANGE := HEAD
@@ -25,20 +25,20 @@ gha:
 	@$(MAKE) -s debug
 	$(eval tests := $(shell \
 		git diff-tree --name-only -r --diff-filter=AM $(COMMIT_RANGE) | \
-		perl -n -e '/exercises\/practice/([a-z-_]+)\/.+\.sml/ && print "test-$$1\n"' | uniq))
+		perl -n -e '/exercises\/practice\/([a-z-_]+)\/.+\.sml/ && print "test-$$1\n"' | uniq))
 	$(if $(tests), @echo Tests: $(tests), @echo 'Nothing to test.')
 	$(if $(tests), @$(MAKE) -s $(tests))
 
 test-%:
 	$(eval exercise := $(patsubst test-%, %, $@))
 	@echo
-	@ls ./exercises/practice/$(exercise)/README.md > /dev/null
+	@ls ./exercises/practice/$(exercise)/.docs/instructions.md > /dev/null
 	@# check stub type
 	@cd ./exercises/practice/$(exercise) && \
 		poly -q --use test | grep 'error: Type error' | \
 		wc -l | xargs -I @ expr @ = 0 > /dev/null || \
 		{ echo '$(exercise).sml is faulty'; exit 1; }
-	@cd ./exercises/practice/$(exercise) && cat test.sml | sed 's/$(exercise).sml/.meta/example.sml/' | poly -q
+	@cd ./exercises/practice/$(exercise) && cat test.sml | sed 's/$(exercise).sml/.meta\/example.sml/' | poly -q
 	@echo
 
 .PHONY: test
