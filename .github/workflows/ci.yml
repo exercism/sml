@@ -1,6 +1,7 @@
-name: sml / main
+name: sml / ci
 
 on:
+  pull_request:
   push:
     branches: [master, main]
   workflow_dispatch:
@@ -16,12 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install project dependencies
+      - name: Install sml-${{ matrix.sml-version }}
         run: |
           curl -LO https://github.com/polyml/polyml/archive/v${{ matrix.sml-version }}.tar.gz
           tar xf v${{ matrix.sml-version }}.tar.gz
           cd polyml-${{ matrix.sml-version }} && ./configure --prefix=$HOME/.local && make && make install && cd -
-          export PATH=$PATH:$HOME/.local/bin
+          echo "$HOME/.local/bin/" >> $GITHUB_PATH
 
-      - name: Run exercism/sml ci (runs tests) for all exercises
-        run: make gha
+      - name: Run tests for all exercises
+        run: make test
