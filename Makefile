@@ -15,4 +15,7 @@ test-%:
 	@cd ./exercises/practice/$(exercise) && cat test.sml | sed 's/$(exercise).sml/.meta\/example.sml/' | poly -q
 	@echo
 
+redeploy-testlib:
+	poly --script sml-bin/redeploy-testlib.sml
+
 .PHONY: test
