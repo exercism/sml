@@ -18,4 +18,4 @@ test-%:
 redeploy-testlib:
 	poly --script sml-bin/redeploy-testlib.sml
 
-.PHONY: test
+.PHONY: test redeploy-testlib
