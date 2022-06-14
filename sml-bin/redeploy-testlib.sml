@@ -8,7 +8,7 @@ fun fileExists x = File.access (x,[])
 fun testLibName base slug =
   Path.joinDirFile
     {
-      dir = (Path.concat (base,slug)),
+      dir = Path.concat (base,slug),
       file = "testlib.sml"
     }
 
@@ -24,27 +24,26 @@ fun dirList dirname =
 
 fun fileBytes path =
   let
-    val in' = BinIO.openIn path
-    val bytes = BinIO.inputAll in'
+    val instream = BinIO.openIn path
+    val bytes = BinIO.inputAll instream
   in
-    BinIO.closeIn in'; bytes
+    BinIO.closeIn instream; bytes
   end
 
 fun writeFileBytes bytes path =
   let
     val out = BinIO.openOut path
   in
-    BinIO.output (out, bytes);
+    BinIO.output (out,bytes);
     BinIO.closeOut out
   end
 
-fun relUnixPathToAbs x= Path.concat ((File.getDir ()), Path.fromUnixPath x)
+fun relUnixPathToAbs x = Path.concat (File.getDir (), Path.fromUnixPath x)
 
 val _ =
   let
-    val concept = relUnixPathToAbs "exercise/concept"
-    val practice = relUnixPathToAbs"exercises/practice"
+    val practice = relUnixPathToAbs "exercises/practice"
     val testLib = fileBytes "lib/testlib.sml"
   in
-    app (writeFileBytes testLib o testLibName practice) (dirList practice)
+    List.app (writeFileBytes testLib o testLibName practice) (dirList practice)
   end
