@@ -3,12 +3,12 @@ structure File =  OS.FileSys
 
 fun printLn x = print (x ^ "\n")
 
-fun fileExists x = File.access (x,[])
+fun fileExists x = File.access (x, [])
 
 fun testLibName base slug =
   Path.joinDirFile
     {
-      dir = Path.concat (base,slug),
+      dir = Path.concat (base, slug),
       file = "testlib.sml"
     }
 
@@ -34,7 +34,7 @@ fun writeFileBytes bytes path =
   let
     val out = BinIO.openOut path
   in
-    BinIO.output (out,bytes);
+    BinIO.output (out, bytes);
     BinIO.closeOut out
   end
 
