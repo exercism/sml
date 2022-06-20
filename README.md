@@ -30,7 +30,11 @@ Every exercise must have at least these files:
 
 ### `testlib.sml`
 
-This helper has this structures:
+The copy of `testlib.sml` for each exercise should be in sync with `lib/testlib.sml`.
+`make redeploy-testlib` is provided for synchronizing all exercises with `lib/testlib.sml`
+when it is updated.
+
+This helper has these structures:
 
 ```sml
 structure Expect:
