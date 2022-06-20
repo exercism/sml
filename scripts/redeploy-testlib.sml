@@ -1,3 +1,9 @@
+(* Re-deploy lib/testlib.sml on changes.
+ *
+ * When lib.testlib.sml is changed it should be updated for all exercises.
+ * Use this "script" a la `make redeploy-testlib`.
+ *)
+
 structure Path =  OS.Path
 structure File =  OS.FileSys
 
