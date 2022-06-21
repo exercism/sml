@@ -100,12 +100,12 @@ It will create the exercise directory, test and stub files.
 
 ```
 usage: generate [-h] [--force] [--test-only] [--stub-only] [--example-only]
-                exercises [exercises ...]
+                [--problem-specs-source {remote,local}] exercises [exercises ...]
 
 positional arguments:
   exercises
 
-optional arguments:
+options:
   -h, --help      show this help message and exit
   --force         Type inference will be disabled and "string" will be
                   assumed. Test cases will need to be modified to match the
@@ -113,6 +113,9 @@ optional arguments:
   --test-only     Generate only "test.sml"
   --stub-only     Generate only "<exercise>.sml"
   --example-only  Generate only "example.sml"
+  --problem-specs-source {remote,local}
+                  Choose whether to use remote (default) or local checkout
+                  of problem-specifications.
 ```
 
 **Note:**
