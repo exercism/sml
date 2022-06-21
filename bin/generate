@@ -1,38 +1,65 @@
 #!/usr/bin/env python
 
+import argparse
+import enum
 import json
 import re
 import shutil
 
 from pathlib import Path
 from collections import OrderedDict
-from urllib.request import urlopen, HTTPError
+from urllib.request import urlopen, URLError
 from http import HTTPStatus
+
+
+@enum.unique
+class ProblemSpecsSource(enum.Enum):
+    Local = 'local'
+    Remote = 'remote'
 
 
 canonical_data_url = 'https://raw.githubusercontent.com/exercism' + \
                      '/problem-specifications/master' + \
                      '/exercises/%s/canonical-data.json'
 
+def smldir():
+    """Absolute path of the sml directory."""
+    return Path(__file__).absolute().parent.parent
 
-def fetch(exercise):
+
+class CanonicalDataNotFound(Exception):
+    pass
+
+
+def get_canonical_data_from_remote(exercise):
     try:
         with urlopen(canonical_data_url % exercise) as response:
             return json.loads(response.read().decode('utf8'))
-    except HTTPError as e:
-        if e.status == HTTPStatus.NOT_FOUND.value:
-            msg = "canonical-data.json was not found."
-        else:
-            msg = 'Unexpected error, please try again later.'
-        raise Exception(msg)
+    except URLError as e:
+        raise CanonicalDataNotFound(f"{e.reason}")
 
 
-def load(exercise):
-    root = Path(__file__).absolute().parent.parent.parent
-    path = root / 'problem-specifications/exercises'
-    with (path / exercise / 'canonical-data.json').open() as f:
-        return json.loads(f.read())
+def get_canonical_data_from_local(exercise):
+    path = smldir().parent / 'problem-specifications' / 'exercises'
 
+    try:
+        with (path / exercise / 'canonical-data.json').open() as f:
+            return json.loads(f.read())
+    except OSError as e:
+        raise CanonicalDataNotFound(f"{e}")
+
+
+def get_canonical_data(exercise, problem_specs_source=ProblemSpecsSource.Remote):
+    """Get canonical-data of the exercise as a json string."""
+    if problem_specs_source == ProblemSpecsSource.Remote:
+        return get_canonical_data_from_remote(exercise)
+    elif problem_specs_source == ProblemSpecsSource.Local:
+        return get_canonical_data_from_local(exercise)
+
+    raise Exception(
+        f"Unknown source for problem-specifications: '{problem_specs_source}'."
+        f" Valid options are {list(ProblemSpecsSource)}."
+    )
 
 def indent(n, s):
     return s.rjust(len(s) + n, ' ')
@@ -256,14 +283,68 @@ EXAMPLE = 4
 FLAGS = TEST | STUB | EXAMPLE
 
 
-def generate(exercise, flags, force=False):
+class EnumAction(argparse.Action):
+    """Better enum support for argparse.
+
+    Usage: If MyEnum is an enum.Enum, e.g.:
+
+    @enum.unique
+    class MyEnum(enum.Enum):
+        Foo = 'foo'
+        Bar = 'bar'
+
+    you can use it with argparse like this:
+
+    parser.add_argument(
+        '--my-option',
+        action=EnumAction,
+        type=MyEnum,
+        choices=list(MyEnum), # Can be omitted
+        default=MyEnum.Foo,
+    )
+
+    On the command-line the *values* of MyEnum should be provided (i.e. 'foo' and 'bar' for MyEnum).
+    Therefore it makes sense to use '@enum.unique'.
+    """
+
+    def __init__(self, **kwargs):
+        enum_type = kwargs.pop("type", None)
+
+        if enum_type is None or not issubclass(enum_type, enum.Enum):
+            raise TypeError("The 'type' parameter must be an Enum when using EnumAction")
+
+        # For convinience we deduce 'choices' if none are provided.
+        kwargs.setdefault("choices", list(enum_type))
+
+        for choice in kwargs["choices"]:
+            if not isinstance(choice, enum_type):
+                raise ValueError(f"Choices for '{kwargs['dest']}' must be of type {enum_type},"
+                    + f"this choice is not: '{choice}'.")
+
+        # Translate choices into strings:
+        kwargs["choices"] = [e.value for e in kwargs["choices"]]
+
+        super(EnumAction, self).__init__(**kwargs)
+
+        self._enum = enum_type
+
+    def __call__(self, parser: argparse.ArgumentParser, namespace: argparse.Namespace, value, option_string: str = None):
+        # Convert value back into an Enum
+        if isinstance(value, str):
+            value = self._enum(value)
+            setattr(namespace, self.dest, value)
+        else:
+            raise argparse.ArgumentTypeError()
+
+
+def generate(exercise, flags, problem_specs_source, force=False):
     root = Path(__file__).parent.parent.absolute()
     path = root / 'exercises' / 'practice' / exercise
 
     if not path.exists():
         path.mkdir()
 
-    data = fetch(exercise)
+    data = get_canonical_data(exercise, problem_specs_source)
     signatures = extract_signatures(data, force=force)
     content = generate_exercise_content(signatures)
 
@@ -283,8 +364,6 @@ def generate(exercise, flags, force=False):
 
 
 if __name__ == '__main__':
-    import argparse
-
     parser = argparse.ArgumentParser()
     parser.add_argument('exercises', nargs='+')
     parser.add_argument(
@@ -310,6 +389,13 @@ if __name__ == '__main__':
         action='store_true',
         help='Generate only "example.sml"'
     )
+    parser.add_argument(
+        '--problem-specs-source',
+        action=EnumAction,
+        type=ProblemSpecsSource,
+        default=ProblemSpecsSource.Remote,
+        help='Choose whether to use remote (default) or another checkout of problem-specifications.'
+    )
     args = parser.parse_args()
 
     for exercise in args.exercises:
@@ -321,8 +407,14 @@ if __name__ == '__main__':
                 flags |= ~(STUB | TEST)
             if args.stub_only:
                 flags |= ~(TEST | EXAMPLE)
-            generate(exercise, force=args.force, flags=flags or FLAGS)
-        except FileNotFoundError:
-            print('[%s]: canonical-data.json not found' % exercise)
+            generate(exercise, force=args.force, problem_specs_source=args.problem_specs_source, flags=flags or FLAGS)
+        except CanonicalDataNotFound as e:
+            other_sources = [f"'{s.value}'" for s in ProblemSpecsSource if s != args.problem_specs_source]
+
+            msg = f"Could not load canonical data from '{args.problem_specs_source.value}'-repo "\
+                + f"of problem-specifications. Try to specify another source in '--problem-specs-source' "\
+                + f"at command-line (e.g.: {', '.join(other_sources)}). Original Error: {e}"
+
+            print(f"[{exercise}]: {msg}")
         except Exception as e:
-            print('[%s]: %s' % (exercise, e))
+            print(f"[{exercise}]: {e}")
