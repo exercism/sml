@@ -314,6 +314,18 @@
         "topics": [
           "math"
         ]
+      },
+      {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "86d5a60a-fc44-443d-bc00-5c6265e736c4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+            "lists",
+            "strings"
+        ]
       }
     ]
   },
