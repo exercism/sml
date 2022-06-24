@@ -26,10 +26,11 @@ struct
       then Pass
       else failEq (PolyML.makestring b) (PolyML.makestring a)
 
-    fun nearTo b a =
-      if Real.== (a, b)
+    fun nearTo delta b a =
+      if Real.abs (a - b) <= delta * Real.abs a orelse
+         Real.abs (a - b) <= delta * Real.abs b
       then Pass
-      else failEq (Real.toString b) (Real.toString a)
+      else failEq (Real.toString b ^ " +/- " ^ Real.toString delta) (Real.toString a)
 
     fun anyError f =
       (

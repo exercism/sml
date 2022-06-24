@@ -44,7 +44,7 @@ structure Expect:
     val error: exn -> (unit -> 'a) -> expectation
     datatype expectation = Fail of string * string | Pass
     val falsy: bool -> expectation
-    val nearTo: real -> real -> expectation
+    val nearTo: real -> real -> real -> expectation
     val truthy: bool -> expectation
   end
 structure Test:
@@ -76,7 +76,7 @@ val testsuite =
       (fn _ => bar () |> Expect.truthy),
     
     test "something that baz does"
-      (fn _ => baz (123) |> Expect.nearTo 123.10),
+      (fn _ => baz (123) |> Expect.nearTo 0.001 123.10),
     
     test "an exception from 'qux'"
       (fn _ => (fn _ => qux (0, 0))) |> Expect.error QuxError),

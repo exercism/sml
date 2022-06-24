@@ -204,7 +204,7 @@ def expectation(signature, fn, args, expected, force=False):
     if signature['output'] == 'real':
         return tmpl % (
             invocation,
-            'nearTo %s' % output
+            'nearTo 0.001 %s' % output
         )
     return tmpl % (
         invocation,
