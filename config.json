@@ -326,6 +326,19 @@
             "lists",
             "strings"
         ]
+      },
+      {
+        "slug": "acronym",
+        "name": "Acronym",
+        "uuid": "937616ce-696b-4845-b06c-365a58ca46d2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+            "lists",
+            "strings",
+            "text_formatting"
+        ]
       }
     ]
   },
