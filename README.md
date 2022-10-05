@@ -1,7 +1,6 @@
 # Exercism Standard ML Track
 
-[![Configlet Status](https://github.com/exercism/sml/workflows/configlet/badge.svg)]
-[![Exercise Test Status](https://github.com/exercism/sml/workflows/sml%20%2F%20main/badge.svg)]
+[![configlet](https://github.com/exercism/sml/workflows/Configlet/badge.svg)](https://github.com/exercism/sml/actions/workflows/configlet.yml?query=workflow%3Aconfiglet) [![sml / ci](https://github.com/exercism/sml/workflows/sml%20/%20ci/badge.svg)](https://github.com/exercism/sml/actions/workflows/ci.yml?query=workflow%3A%22sml+%2F+ci%22)
 
 Exercism exercises in Standard ML.
 
@@ -9,11 +8,12 @@ Exercism exercises in Standard ML.
 
 Any type of contribution is more than welcome!
 
-The first step is to get familiar with this [guideline](https://github.com/exercism/docs/tree/master/contributing-to-language-tracks/README.md).
+Below track specific informations are provided. General informations are
+provided [elsewhere](https://github.com/exercism/docs/tree/main/building).
 
 ## Setup
 
-Even though there are multiple Standard ML implementations, we'll stick to [PolyML](http://polyml.org/).
+Even though there are multiple Standard ML implementations, we'll stick to [PolyML](https://polyml.org/).
 
 Please read [INSTALLATION.md](docs/INSTALLATION.md) for more info.
 
@@ -23,7 +23,7 @@ Every exercise must have at least these files:
 
 - `example.sml`: Example solution
 - `{{ slug }}.sml`: Stub file with the same functions as `example.sml`
-- `README.md`: Exercise description 
+- `README.md`: Exercise description
 - `HINTS.md`: (Optional)
 - `test.sml`: Test suite
 - `testlib.sml` Test helper
@@ -71,13 +71,13 @@ val testsuite =
   describe "Examples" [
     test "foo"
       (fn _ => foo ("foo") |> Expect.equalTo "foo-foo"),
-    
+
     test "bar"
       (fn _ => bar () |> Expect.truthy),
-    
+
     test "something that baz does"
       (fn _ => baz (123) |> Expect.nearTo 0.001 123.10),
-    
+
     test "an exception from 'qux'"
       (fn _ => (fn _ => qux (0, 0))) |> Expect.error QuxError),
   ]
