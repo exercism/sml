@@ -8,9 +8,8 @@ fun eea (_, t) (_, 1) = t
   | eea (t0, t1) (r0, r1) =
       let val q = r0 div r1 in eea (t1, t0 - q*t1) (r1, r0 - q*r1) end
 
-fun encode_raw (key: {a: int, b: int}, phrase: string): char list =
+fun encode_impl (key: {a: int, b: int}, phrase: string): char list =
   let
-    val _ = eea (0, 0) (LENGTH_ALPHABET, (#a key)) (* check coprimality condition *)
     val ORD_LOWER_A = Char.ord #"a";
     datatype CodePoint = CP of int | LIT of char;
 
@@ -34,11 +33,12 @@ fun encode_raw (key: {a: int, b: int}, phrase: string): char list =
 
 fun encode (key: {a: int, b: int}, phrase: string): string =
   let
+    val _ = eea (0, 0) (LENGTH_ALPHABET, (#a key)) (* check coprimality condition *)
     fun group n 0 (c::cs) = #" " :: (group n n (c::cs))
       | group n i [] = []
       | group n i (c :: cs) = c :: (group n (i-1) cs)
   in
-    String.implode (group 5 5 (encode_raw (key, phrase)))
+    String.implode (group 5 5 (encode_impl (key, phrase)))
   end;
 
 
@@ -48,5 +48,5 @@ fun decode (key: {a: int, b: int}, phrase: string): string =
     val a1 = modular_inverse (#a key);
     val b1 = (~ a1 * (#b key)) mod LENGTH_ALPHABET;
   in
-    String.implode (encode_raw ({a = a1, b = b1}, phrase))
+    String.implode (encode_impl ({a = a1, b = b1}, phrase))
   end;
