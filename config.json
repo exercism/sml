@@ -339,6 +339,17 @@
             "strings",
             "text_formatting"
         ]
+      },
+      {
+        "slug": "affine-cipher",
+        "name": "Affine Cipher",
+        "uuid": "8a335321-d6fd-4d6c-bd77-4f5d878a5b3c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "math"
+        ]
       }
     ]
   },
