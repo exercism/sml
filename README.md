@@ -93,22 +93,16 @@ sync](https://exercism.org/docs/building/configlet/sync) in combination with the
 `bin/generate`:
 
 ```shell
-$ bin/configlet sync --update -e {{ slug }} # interactively answer some questions
-$ bin/generate {{ slug }}                   # generates test.sml
+$ bin/configlet sync --update --tests include -e {{ slug }} # 1. Add tests.toml including all available tests.
+$ bin/configlet sync --update -e {{ slug }}  # 2. Interactively add required files with "generic" content.
+$ bin/generate {{ slug }}                    # 3. Autogenerate required files with sml-specific content.
 ```
+
+In step 2 you should always answer `yes`.
 
 **Note on `bin/generate`:** You need Python 3.5+. It may fail with some exercises. Reasons:
 `canonical-data.json` does not exist, or type mismatch (in these situation you can use `--force`
 option). In those cases you will have to create the files manually.
-
-It might be annoying that `configlet` asks you for every exercise whether you want to include it.
-You may do the following to just add all tests (you can manually remove some of them from
-`tests.toml` if desired):
-
-```shell
-$ bin/configlet sync --update --tests include -e {{ slug }}
-$ bin/configlet sync --update -e {{ slug }}
-```
 
 ### Provide a solution in `example.sml`
 
