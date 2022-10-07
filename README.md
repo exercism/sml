@@ -15,12 +15,10 @@ Please read [INSTALLATION.md](docs/INSTALLATION.md) for more info.
 
 Any type of contribution is more than welcome!
 
-Below track specific informations are provided. Some relevant exercism-wide documents are:
+Before opening a pull request please have look into [Contributors Pull Request
+Guide](https://exercism.org/docs/building/github/contributors-pull-request-guide).
 
-- [Contributing to exercism](https://github.com/exercism/docs/tree/main/building),
-- [Contributors Pull Request Guide](https://exercism.org/docs/building/github/contributors-pull-request-guide).
-
-### Adding a practice exercise
+## Contributing a new exercise
 
 Usually an exercise is derived from one of the exercises in the
 [problem-specifications](https://github.com/exercism/problem-specifications) repository. If you want
@@ -29,18 +27,20 @@ to all tracks.
 
 There is a [comprehensive guide][guide-practice-exercise] on how to add an exercise to one of the
 exercism tracks. It is advisable that you skim over the text. You don't have to remember everything,
-we recall the essentials her anyway. We also provide the track-specific details here. Down below we
-describe tooling which helps you with the boilerplate - it makes it very easy to add an exercise.
+we recall the essentials here anyway. We also provide the track-specific details here. Down below we
+describe tooling which helps you with the boilerplate.
 
 Basically, adding an exercise means to do the following things.
 
-- Register exercise in `{{ repo-path }}/config.json`,
+- Register the exercise in `{{ repo-path }}/config.json`,
 - Use tooling to generate *exercise-folder* `exercises/practice/{{ slug }}/`,
 - Provide a solution for the exercise in `example.sml`,
 - Check if the linter (configlet) is satisfied.
 
-So the first thing we do is to *register* it in `<repo>/config.json` under the field
-`exercises/practice`. This step needs to be done manually.
+### Register exercise in `{{ repo-path }}/config.json`
+
+This step needs to be done manually. You have to add a block looking like that under
+`exercises/practice`:
 
 ```json
 {
@@ -49,7 +49,7 @@ So the first thing we do is to *register* it in `<repo>/config.json` under the f
       {
         "slug": "flatten-array", // the slug from `problem-specifications`
         "name": "Flatten Array",
-        "uuid": "fb0a030d-33bc-4066-a30a-1b8b02cc42f1", // use `configlet` to generate this
+        "uuid": "fb0a030d-33bc-4066-a30a-1b8b02cc42f1", // use `configlet uuid` to generate this
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
@@ -70,7 +70,9 @@ $ bin/fetch-configlet # to fetch the latest version of configlet
 $ bin/configlet uuid  # paste the output into the `uuid` field.
 ```
 
-Now an *exercise-folder* `exercises/practice/{{ slug }}/` similar to this one has to be created:
+### Generate exercise-folder `exercises/practice/{{ slug }}/`
+
+A folder similar to this one has to be created:
 
 ```sh
 exercises/practice/flatten-array/
@@ -108,13 +110,16 @@ $ bin/configlet sync --update --tests include -e {{ slug }}
 $ bin/configlet sync --update -e {{ slug }}
 ```
 
-The hardest part is to write a valid solution `example.sml` which passes the test-suite. But you
-certainly can do that because you want to add the exercise. To verify that your solution is valid
-just execute the tests like so
+### Provide a solution in `example.sml`
+
+The most creative part is to write a valid solution `example.sml` which passes the test-suite. To
+verify that your solution is valid just execute the tests like so
 
 ```shell
 $ make test-{{ slug }}
 ```
+
+### Linting
 
 Finally check if the linter is satisfied with your work
 
@@ -122,11 +127,24 @@ Finally check if the linter is satisfied with your work
 $ bin/configlet lint
 ```
 
-### `testlib.sml`
+## Exercise Tests
 
-The copy of `testlib.sml` for each exercise should be in sync with `lib/testlib.sml`. `make
-redeploy-testlib` is provided for synchronizing all exercises with `lib/testlib.sml` when it is
-updated.
+You can execute  tests by
+
+```shell
+$ make test            # all tests
+$ make test-{{ slug }} # single test
+```
+
+Mainstream languages usually have one or more popular test-frameworks. Standard ML is not blessed
+with this convenience. Therefore the track implements its own "test-framework" `lib/testlib.sml`. It
+gets the job done. For technical reasons each exercise must provide its own copy of the testlib.
+
+Any updates to `lib/testlib.sml` have to be synced to the exercises by
+
+```
+$ make redeploy-testlib
+```
 
 
 [guide-practice-exercise]: https://exercism.org/docs/building/tracks/practice-exercises
