@@ -88,21 +88,23 @@ exercises/practice/flatten-array/
     └── tests.toml             # specifies which tests from `problem-specifications` are implemented
 ```
 
-The easiest way to add the boilerplate is to execute [configlet
+The easiest way to autogenerate the boilerplate is to execute [configlet
 sync](https://exercism.org/docs/building/configlet/sync) in combination with the track specific tool
-`bin/generate`:
+`bin/generate`. The former is responsible for required files with "generic" content, and the latter
+for required files with sml-specific content
 
 ```shell
-$ bin/configlet sync --update --tests include -e {{ slug }} # 1. Add tests.toml including all available tests.
-$ bin/configlet sync --update -e {{ slug }}  # 2. Interactively add required files with "generic" content.
-$ bin/generate {{ slug }}                    # 3. Autogenerate required files with sml-specific content.
+$ bin/configlet sync -yu --tests include --docs --filepaths --metadata -e {{ slug }}
+$ bin/generate {{ slug }}
 ```
-
-In step 2 you should always answer `yes`.
 
 **Note on `bin/generate`:** You need Python 3.5+. It may fail with some exercises. Reasons:
 `canonical-data.json` does not exist, or type mismatch (in these situation you can use `--force`
 option). In those cases you will have to create the files manually.
+
+**IMPORTANT:** Currently the test-framework expects `example.sml` to be inside `.meta/`, which is
+not the case right after execution of `bin/generate`. As a workaround you should move the file
+manually and update the path in `.meta/config.json` accordingly.
 
 ### Provide a solution in `example.sml`
 
@@ -123,7 +125,7 @@ $ bin/configlet lint
 
 ## Exercise Tests
 
-You can execute  tests by
+You can execute tests by
 
 ```shell
 $ make test            # all tests
@@ -134,11 +136,13 @@ Mainstream languages usually have one or more popular test-frameworks. Standard 
 with this convenience. Therefore the track implements its own "test-framework" `lib/testlib.sml`. It
 gets the job done. For technical reasons each exercise must provide its own copy of the testlib.
 
-Any updates to `lib/testlib.sml` have to be synced to the exercises by
+Any updates to `lib/testlib.sml` have to be synced to all exercises by
 
 ```
 $ make redeploy-testlib
 ```
+
+We don't want to deal with multiple versions of testlib. Hence the redeploy script is the only way to update the testlib of any exercise.
 
 
 [guide-practice-exercise]: https://exercism.org/docs/building/tracks/practice-exercises
