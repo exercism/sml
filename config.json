@@ -186,7 +186,7 @@
       },
       {
         "slug": "difference-of-squares",
-        "name": "Difference Of Squares",
+        "name": "Difference of Squares",
         "uuid": "580496d5-bec7-401d-b0cf-dc16da795491",
         "practices": [],
         "prerequisites": [],
@@ -288,7 +288,7 @@
       },
       {
         "slug": "rna-transcription",
-        "name": "Rna Transcription",
+        "name": "RNA Transcription",
         "uuid": "db3e09ee-6c93-417f-b0a0-196cdccf4984",
         "practices": [],
         "prerequisites": [],
@@ -306,7 +306,7 @@
       },
       {
         "slug": "sum-of-multiples",
-        "name": "Sum Of Multiples",
+        "name": "Sum of Multiples",
         "uuid": "4bce27a8-2b91-4595-b6e6-d4be7e704113",
         "practices": [],
         "prerequisites": [],
