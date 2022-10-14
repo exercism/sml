@@ -1,160 +1,148 @@
 # Exercism Standard ML Track
 
-[![Configlet Status](https://github.com/exercism/sml/workflows/configlet/badge.svg)]
-[![Exercise Test Status](https://github.com/exercism/sml/workflows/sml%20%2F%20main/badge.svg)]
+[![configlet](https://github.com/exercism/sml/workflows/Configlet/badge.svg)](https://github.com/exercism/sml/actions/workflows/configlet.yml?query=workflow%3Aconfiglet) [![sml / ci](https://github.com/exercism/sml/workflows/sml%20/%20ci/badge.svg)](https://github.com/exercism/sml/actions/workflows/ci.yml?query=workflow%3A%22sml+%2F+ci%22)
 
 Exercism exercises in Standard ML.
+
+## Setup
+
+Even though there are multiple Standard ML implementations, we'll stick to
+[PolyML](https://polyml.org/).
+
+Please read [INSTALLATION.md](docs/INSTALLATION.md) for more info.
 
 ## Contributing Guide
 
 Any type of contribution is more than welcome!
 
-The first step is to get familiar with this [guideline](https://github.com/exercism/docs/tree/master/contributing-to-language-tracks/README.md).
+Before opening a pull request please have look into [Contributors Pull Request
+Guide](https://exercism.org/docs/building/github/contributors-pull-request-guide).
 
-## Setup
+## Contributing a new exercise
 
-Even though there are multiple Standard ML implementations, we'll stick to [PolyML](http://polyml.org/).
+Usually an exercise is derived from one of the exercises in the
+[problem-specifications](https://github.com/exercism/problem-specifications) repository. If you want
+to contribute a completely new exercise, consider opening a pull request there to make it available
+to all tracks.
 
-Please read [INSTALLATION.md](docs/INSTALLATION.md) for more info.
+There is a [comprehensive guide][guide-practice-exercise] on how to add an exercise to one of the
+exercism tracks. It is advisable that you skim over the text. You don't have to remember everything,
+we recall the essentials here anyway. We also provide the track-specific details here. Down below we
+describe tooling which helps you with the boilerplate.
 
-## Exercise structure
+Basically, adding an exercise means to do the following things.
 
-Every exercise must have at least these files:
+- Register the exercise in `{{ repo-path }}/config.json`,
+- Use tooling to generate *exercise-folder* `exercises/practice/{{ slug }}/`,
+- Provide a solution for the exercise in `example.sml`,
+- Check if the linter (configlet) is satisfied.
 
-- `example.sml`: Example solution
-- `{{ slug }}.sml`: Stub file with the same functions as `example.sml`
-- `README.md`: Exercise description 
-- `HINTS.md`: (Optional)
-- `test.sml`: Test suite
-- `testlib.sml` Test helper
+### Register exercise in `{{ repo-path }}/config.json`
 
-### `testlib.sml`
+This step needs to be done manually. You have to add a block looking like that under
+`exercises/practice`:
 
-The copy of `testlib.sml` for each exercise should be in sync with `lib/testlib.sml`.
-`make redeploy-testlib` is provided for synchronizing all exercises with `lib/testlib.sml`
-when it is updated.
-
-This helper has these structures:
-
-```sml
-structure Expect:
-  sig
-    val anyError: (unit -> 'a) -> expectation
-    val equalTo: ''a -> ''a -> expectation
-    val error: exn -> (unit -> 'a) -> expectation
-    datatype expectation = Fail of string * string | Pass
-    val falsy: bool -> expectation
-    val nearTo: real -> real -> real -> expectation
-    val truthy: bool -> expectation
-  end
-structure Test:
-  sig
-    val run: testnode -> 'a
-    datatype testnode =
-        Test of string * (unit -> Expect.expectation)
-      | TestGroup of string * testnode list
-  end
-val describe = fn: string -> Test.testnode list -> Test.testnode
-val test = fn: string -> (unit -> Expect.expectation) -> Test.testnode
+```json
+{
+  "exercises": {
+    "practice": [
+      {
+        "slug": "flatten-array", // the slug from `problem-specifications`
+        "name": "Flatten Array",
+        "uuid": "fb0a030d-33bc-4066-a30a-1b8b02cc42f1", // use `configlet uuid` to generate this
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      // more exercises ...
+    ],
+    // more stuff ...
+  },
+  // more stuff ...
+}
 ```
 
-Usage example:
+To generate a unique `uuid` just execute the following on the command line:
 
-```sml
-use "foo.sml";
-use "testlib.sml";
-
-infixr |>
-fun x |> f = f x
-
-val testsuite =
-  describe "Examples" [
-    test "foo"
-      (fn _ => foo ("foo") |> Expect.equalTo "foo-foo"),
-    
-    test "bar"
-      (fn _ => bar () |> Expect.truthy),
-    
-    test "something that baz does"
-      (fn _ => baz (123) |> Expect.nearTo 0.001 123.10),
-    
-    test "an exception from 'qux'"
-      (fn _ => (fn _ => qux (0, 0))) |> Expect.error QuxError),
-  ]
-
-val _ = Test.run testsuite
+```shell
+$ bin/fetch-configlet # to fetch the latest version of configlet
+$ bin/configlet uuid  # paste the output into the `uuid` field.
 ```
 
+### Generate exercise-folder `exercises/practice/{{ slug }}/`
 
-## Adding an exercise
+A folder similar to this one has to be created:
 
-The easiest way to start is by running the generator:
-
-```
-bin/generate {{ slug }}
-```
-
-It will create the exercise directory, test and stub files.
-
-### Generator
-
-```
-usage: generate [-h] [--force] [--test-only] [--stub-only] [--example-only]
-                [--problem-specs-source {remote,local}] exercises [exercises ...]
-
-positional arguments:
-  exercises
-
-options:
-  -h, --help      show this help message and exit
-  --force         Type inference will be disabled and "string" will be
-                  assumed. Test cases will need to be modified to match the
-                  right data type.
-  --test-only     Generate only "test.sml"
-  --stub-only     Generate only "<exercise>.sml"
-  --example-only  Generate only "example.sml"
-  --problem-specs-source {remote,local}
-                  Choose whether to use remote (default) or local checkout
-                  of problem-specifications.
+```sh
+exercises/practice/flatten-array/
+├── flatten-array.sml          # stub-file displayed to studend on website
+├── testlib.sml                # copy of the test-library (track-specific)
+├── test.sml                   # actual test-suite
+├── .docs
+│   ├── instructions.append.md # optional track-specific file augmenting `instructions.md`
+│   └── instructions.md        # contains (track-independent) description of the exercise
+└── .meta
+    ├── config.json            # you may add yourself as author here
+    ├── example.sml            # solution proving that the test-suite can actually be satisfied
+    └── tests.toml             # specifies which tests from `problem-specifications` are implemented
 ```
 
-**Note:**
-- You need Python 3.5+.
-- It may fail with some exercises. Reasons:
-  - `canonical-data.json` does not exist
-  - type mismatch (in these situation you can use `--force` option)
+The easiest way to autogenerate the boilerplate is to execute [configlet
+sync](https://exercism.org/docs/building/configlet/sync) in combination with the track specific tool
+`bin/generate`. The former is responsible for required files with "generic" content, and the latter
+for required files with sml-specific content
 
-In those cases you will have to create the files manually. `testlib.sml` can be copied from `lib/testlib.sml`. When in doubt, feel free to open an issue.
-
-In order to generate `README.md` you will need an up to date copy of `problem-specifications`. This should be located at the same level as your `sml` clone. Then you can execute:
-
-```
-bin/fetch-configlet
-bin/configlet generate . -o {{ slug }}
+```shell
+$ bin/configlet sync -yu --tests include --docs --filepaths --metadata -e {{ slug }}
+$ bin/generate {{ slug }}
 ```
 
-## Testing
+**Note on `bin/generate`:** You need Python 3.5+. It may fail with some exercises. Reasons:
+`canonical-data.json` does not exist, or type mismatch (in these situation you can use `--force`
+option). In those cases you will have to create the files manually.
 
-For a single exercise:
+**IMPORTANT:** Currently the test-framework expects `example.sml` to be inside `.meta/`, which is
+not the case right after execution of `bin/generate`. As a workaround you should move the file
+manually and update the path in `.meta/config.json` accordingly.
 
-If you are at the top level:
+### Provide a solution in `example.sml`
 
-```
-make test-{{ slug }}
-```
+The most creative part is to write a valid solution `example.sml` which passes the test-suite. To
+verify that your solution is valid just execute the tests like so
 
-if you are in exercises/{{slug}}
-
-```
-make -C https://github.com/exercism/v3/blob/main/ test-{{ slug }}
-```
-
-If you want to run all the tests:
-
-```
-make test
+```shell
+$ make test-{{ slug }}
 ```
 
-## Pull request
+### Linting
 
-Do not forget to add your exercise to `config.json`. Please read [this](https://github.com/exercism/docs/blob/master/contributing/pull-request-guidelines.md).
+Finally check if the linter is satisfied with your work
+
+```shell
+$ bin/configlet lint
+```
+
+## Exercise Tests
+
+You can execute tests by
+
+```shell
+$ make test            # all tests
+$ make test-{{ slug }} # single test
+```
+
+Mainstream languages usually have one or more popular test-frameworks. Standard ML is not blessed
+with this convenience. Therefore the track implements its own "test-framework" `lib/testlib.sml`. It
+gets the job done. For technical reasons each exercise must provide its own copy of the testlib.
+
+Any updates to `lib/testlib.sml` have to be synced to all exercises by
+
+```
+$ make redeploy-testlib
+```
+
+We don't want to deal with multiple versions of testlib. Hence the redeploy script is the only way to update the testlib of any exercise.
+
+
+[guide-practice-exercise]: https://exercism.org/docs/building/tracks/practice-exercises
