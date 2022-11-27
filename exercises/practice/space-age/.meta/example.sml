@@ -1,5 +1,5 @@
 datatype planet = Mercury | Venus | Earth | Mars
-                | Jupiter | Saturn | Neptune | Uranus
+                | Jupiter | Saturn | Uranus | Neptune
 
 fun earthYears seconds = seconds / 31557600.0
 
