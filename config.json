@@ -357,7 +357,7 @@
         "uuid": "788844da-ac1d-4bb9-a680-3aef6f8a11c8",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
+        "difficulty": 4,
         "topics": [
           "date",
           "strings"
