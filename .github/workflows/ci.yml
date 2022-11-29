@@ -8,11 +8,11 @@ on:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
-        sml-version: [5.8]
+        sml-version: [5.9]
 
     steps:
       - uses: actions/checkout@v3
