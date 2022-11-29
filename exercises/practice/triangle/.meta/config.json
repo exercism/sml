@@ -1,0 +1,17 @@
+{
+  "authors": [],
+  "files": {
+    "solution": [
+      "triangle.sml"
+    ],
+    "test": [
+      "test.sml"
+    ],
+    "example": [
+      ".meta/example.sml"
+    ]
+  },
+  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
+  "source": "The Ruby Koans triangle project, parts 1 & 2",
+  "source_url": "https://web.archive.org/web/20220831105330/http://rubykoans.com"
+}
