@@ -374,6 +374,17 @@
           "math",
           "logic"
         ]
+      },
+      {
+        "slug": "pascals-triangle",
+        "name": "Pascals Triangle",
+        "uuid": "bc381243-73cb-42bf-91d8-d33d6215e579",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "math"
+        ]
       }
     ]
   },
