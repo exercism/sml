@@ -362,6 +362,18 @@
           "date",
           "strings"
         ]
+      },
+      {
+        "slug": "triangle",
+        "name": "Triangle",
+        "uuid": "c49dec99-cccc-418c-9de9-b9856f1b749b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "math",
+          "logic"
+        ]
       }
     ]
   },
