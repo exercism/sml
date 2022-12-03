@@ -15,7 +15,7 @@ if [ -z "$all_slugs" ]; then
   all_slugs=$(ls ./exercises/practice/)
 fi
 
-docker run --rm -it --entrypoint bash \
+docker run --rm --entrypoint bash \
        -v $(realpath ./exercises):/exercises:z  \
        -v $(realpath ./scripts):/scripts:z \
        exercism/sml-test-runner \
