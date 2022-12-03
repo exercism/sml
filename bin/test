@@ -11,7 +11,7 @@
 # ./bin/test [slug...]
 
 all_slugs="$*"
-if [ -z $all_slugs ]; then
+if [ -z "$all_slugs" ]; then
   all_slugs=$(ls ./exercises/practice/)
 fi
 

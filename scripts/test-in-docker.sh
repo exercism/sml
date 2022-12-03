@@ -12,24 +12,28 @@ for slug in $all_slugs; do
   rm -rf /solution
   cp -r /exercises/practice/${slug} /solution
 
-  # Check the template file for static errors and type inconsistencies with test.sml
-  bin/run.sh ${slug} /solution /solution > /dev/null
-  mv /solution/results.json /solution/results-template.json
-  template_errors=$(jq '.message' /solution/results-template.json | grep "Static Errors")
+  # Check the template file for static errors and type inconsistencies with test.sml.
+  # Heuristic: Normally tests (failing or not) end with a line like that:
+  #   Tests: 15 passed, 0 failed, 0 errored, 15 total
+  # In case of syntax or type errors the compiler exits earlier and the line is missing.
+  template_result=$(cd /solution && poly -q --error-exit --use test)
+  template_pattern=$(echo "$template_result" | grep -E '^Tests:.+passed.+failed.+errored.+total$')
 
-  # Check if the example solution passes
+  # Integration test: Check if the example solution passes the tests
+  # as run by the sml-test-runner similiarly to a student submitting
+  # their solution.
   cp /solution/.meta/example.sml /solution/${slug}.sml
   bin/run.sh ${slug} /solution /solution > /dev/null
-  pass_pattern=$(cat /solution/results.json | jq -r tostring | grep "{\"version\":1,\"status\":\"pass\"")
+  solution_pattern=$(cat /solution/results.json | jq -r tostring | grep "{\"version\":1,\"status\":\"pass\"")
 
   errors=""
 
-  if [ -n "$template_errors" ]; then
-    errors="Template is faulty:\n$(cat /solution/results-template.json | jq -r '.message')"
+  if [ -z "$template_pattern" ]; then
+    errors="Template is faulty:\n${template_result}"
     local_exit_code=1;
   fi
 
-  if [ -z "$pass_pattern" ]; then
+  if [ -z "$solution_pattern" ]; then
     errors="${errors}\n\nSolution is incorrect:\n$(cat /solution/results.json | jq -r '.message')"
     local_exit_code=1;
   fi
@@ -38,7 +42,7 @@ for slug in $all_slugs; do
     echo -e "${slug}: \e[32mPASSED\e[0m"
   else
     exit_code=1
-    echo -e "${slug}: \e[31mFAILED\e[0m\n\n${errors}\n\n"
+    echo -e "${slug}: \e[31mFAILED\e[0m\n${errors}\n\n"
   fi
 done
 
