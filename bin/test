@@ -10,38 +10,17 @@
 # Usage:
 # ./bin/test [slug...]
 
-CONTAINER=sml-tests
-
-echo "Checking"
-
 all_slugs="$*"
 if [ -z $all_slugs ]; then
   all_slugs=$(ls ./exercises/practice/)
 fi
 
-exit_code=0
+docker run --rm -it --entrypoint bash \
+       -v $(realpath ./exercises):/exercises:z  \
+       -v $(realpath ./scripts):/scripts:z \
+       exercism/sml-test-runner \
+       /scripts/test-in-docker.sh $all_slugs
 
-docker run --rm -dt --entrypoint bash --name $CONTAINER \
-       -v $(realpath ./exercises):/exercises:z exercism/sml-test-runner
-
-for slug in $all_slugs; do
-  docker exec -it $CONTAINER bash -c "\
-    rm -rf /solution &&
-    cp -r /exercises/practice/${slug} /solution  &&
-    cp /solution/.meta/example.sml /solution/${slug}.sml &&
-    bin/run.sh ${slug} /solution /solution"
-
-  results=$(docker exec -it $CONTAINER bash -c "cat /solution/results.json")
-  selection=$(echo "$results" | jq -r tostring | grep "{\"version\":1,\"status\":\"pass\"")
-
-  if [ -z $selection ]; then
-    echo -e "${slug}: \e[31mFAILED\e[0m\n\n$(echo "$results" | jq -r '.message')\n\n"
-    exit_code=1;
-  else
-    printf "${slug}: \e[32mPASSED\e[0m\n\n";
-  fi
-done
-
-docker stop $CONTAINER
+exit_code=$?
 
 exit ${exit_code}
