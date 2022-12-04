@@ -1,5 +1,4 @@
 {
-  "blurb": "Make sure the brackets and braces all match.",
   "authors": [
     "sshine"
   ],
@@ -19,5 +18,6 @@
       ".meta/example.sml"
     ]
   },
+  "blurb": "Make sure the brackets and braces all match.",
   "source": "Ginna Baker"
 }

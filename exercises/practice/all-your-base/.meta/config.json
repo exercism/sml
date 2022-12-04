@@ -1,5 +1,4 @@
 {
-  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base.",
   "authors": [],
   "contributors": [
     "iHiD",
@@ -17,5 +16,6 @@
     "example": [
       ".meta/example.sml"
     ]
-  }
+  },
+  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base."
 }
