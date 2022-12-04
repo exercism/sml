@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Synopsis:
-# Test the track's exercises.
+# Test the sml track's exercises.
 #
 # For each exercise we type-check the template solution (which is
 # provided to the students) and test if the example solution
@@ -16,8 +16,9 @@ if [ -z "$all_slugs" ]; then
 fi
 
 docker run --rm --entrypoint bash \
-       -v $(realpath ./exercises):/exercises:z  \
-       -v $(realpath ./scripts):/scripts:z \
+       --network none \
+       --mount type=bind,src=$(realpath ./exercises),dst=/exercises,ro \
+       --mount type=bind,src=$(realpath ./scripts),dst=/scripts,ro \
        exercism/sml-test-runner \
        /scripts/test-in-docker.sh $all_slugs
 
