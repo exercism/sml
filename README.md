@@ -115,6 +115,16 @@ verify that your solution is valid just execute the tests like so
 $ make test-{{ slug }}
 ```
 
+*Alternatively* you can verify your solution by
+
+```shell
+$ # You might need `sudo` since docker is invoked:
+$ bin/test {{ slug }}
+```
+
+Under the hood this uses `docker` to run the tests in the `sml-test-runner` image. This is
+essentially what happens if a student submits their own solution.
+
 ### Linting
 
 Finally check if the linter is satisfied with your work
