@@ -16,7 +16,7 @@
     "highlightjs_language": "sml"
   },
   "test_runner": {
-    "average_run_time": 1.0
+    "average_run_time": 1
   },
   "checklist_issue": 8,
   "files": {
