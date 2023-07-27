@@ -417,7 +417,7 @@
     },
     {
       "title": "Parametric polymorphism",
-      "content": "Abstractions across data types, think templates in C++ or generics in Ada.",
+      "content": "Abstractions across data types - think templates in C++ or generics in Ada.",
       "icon": "extensible"
     }
   ],
