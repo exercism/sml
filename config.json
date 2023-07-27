@@ -389,7 +389,38 @@
     ]
   },
   "concepts": [],
-  "key_features": [],
+    "key_features": [
+    {
+      "title": "Algebraic data types",
+      "content": "Easy to define and easy to use, with robust pattern matching and pattern-exhaustiveness.",
+      "icon": "powerful"
+    },
+    {
+      "title": "Modular",
+      "content": "Powerful and flexable system supporting information hiding and genericity.",
+      "icon": "general-purpose"
+    },
+    {
+      "title": "Static typing",
+      "content": "Safety first! Strong guarantees about the correctness of programs at compile time.",
+      "icon": "statically-typed"
+    },
+    {
+      "title": "Functionally focused",
+      "content": "All the benefits of functional programming with some imperative features.",
+      "icon": "functional"
+    },
+    {
+      "title": "Automatic type inference",
+      "content": "The compiler can often calculate type from context. Programs become concise and easier to write.",
+      "icon": "fun"
+    },
+    {
+      "title": "Parametric polymorphism",
+      "content": "Abstractions across data types, think templates in C++ or generics in Ada.",
+      "icon": "extensible"
+    }
+  ],
   "tags": [
     "paradigm/functional",
     "paradigm/imperative",
