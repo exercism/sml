@@ -10,7 +10,7 @@
       "test.sml"
     ],
     "example": [
-      "example.sml"
+      ".meta/example.sml"
     ]
   },
   "blurb": "Count the 1 bits in a number",
