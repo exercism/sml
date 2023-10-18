@@ -27,7 +27,7 @@
       "test.sml"
     ],
     "example": [
-      "example.sml"
+      ".meta/example.sml"
     ],
     "exemplar": [
       ".meta/exemplar.sml"
