@@ -246,6 +246,14 @@
         ]
       },
       {
+        "slug": "pop-count",
+        "name": "Pop Count",
+        "uuid": "76d154fe-a39c-4d0e-a43a-f18e36388c83",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "f923bffb-109f-4257-957c-cea8cae2d5c5",
