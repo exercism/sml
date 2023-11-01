@@ -131,7 +131,8 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": []
+        "topics": [],
+        "status": "deprecated"
       },
       {
         "slug": "all-your-base",
