@@ -106,6 +106,17 @@
         ]
       },
       {
+        "slug": "square-root",
+        "name": "Square Root",
+        "uuid": "8f79d2ac-2407-4bba-91a8-6a47737e7f36",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "math"
+        ]
+      },
+      {
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "7be1122c-33cd-40ed-a70f-c71a6713c47a",
@@ -332,8 +343,8 @@
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
-            "lists",
-            "strings"
+          "lists",
+          "strings"
         ]
       },
       {
@@ -344,9 +355,9 @@
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
-            "lists",
-            "strings",
-            "text_formatting"
+          "lists",
+          "strings",
+          "text_formatting"
         ]
       },
       {
@@ -398,7 +409,7 @@
     ]
   },
   "concepts": [],
-    "key_features": [
+  "key_features": [
     {
       "title": "Algebraic data types",
       "content": "Easy to define and easy to use, with robust pattern matching and pattern-exhaustiveness.",
