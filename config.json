@@ -316,6 +316,17 @@
         "topics": []
       },
       {
+        "slug": "pythagorean-triplet",
+        "name": "Pythagorean Triplet",
+        "uuid": "203470a2-f80c-4d6c-8ea4-7d09d7bfb509",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": [
+          "math"
+        ]
+      },
+      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "b4359037-8457-49ea-ac33-44710ada3b4d",
