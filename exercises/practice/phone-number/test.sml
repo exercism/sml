@@ -1,4 +1,4 @@
-(* version 1.2.0 *)
+(* version 1.3.0 *)
 
 use "testlib.sml";
 use "phone-number.sml";
@@ -34,16 +34,34 @@ val testsuite =
         (fn _ => clean ("321234567890") |> Expect.equalTo NONE),
 
       test "invalid with letters"
-        (fn _ => clean ("123-abc-7890") |> Expect.equalTo NONE),
+        (fn _ => clean ("523-abc-7890") |> Expect.equalTo NONE),
 
       test "invalid with punctuations"
-        (fn _ => clean ("123-@:!-7890") |> Expect.equalTo NONE),
+        (fn _ => clean ("523-@:!-7890") |> Expect.equalTo NONE),
 
-      test "invalid if area code does not start with 2-9"
+      test "invalid if area code starts with 0"
+        (fn _ => clean ("(023) 456-7890") |> Expect.equalTo NONE),
+
+      test "invalid if area code starts with 1"
         (fn _ => clean ("(123) 456-7890") |> Expect.equalTo NONE),
 
-      test "invalid if exchange code does not start with 2-9"
-        (fn _ => clean ("(223) 056-7890") |> Expect.equalTo NONE)
+      test "invalid if exchange code starts with 0"
+        (fn _ => clean ("(223) 056-7890") |> Expect.equalTo NONE),
+
+      test "invalid if exchange code starts with 1"
+        (fn _ => clean ("(223) 156-7890") |> Expect.equalTo NONE),
+
+      test "invalid if area code starts with 0 on valid 11-digit number"
+        (fn _ => clean ("1 (023) 456-7890") |> Expect.equalTo NONE),
+
+      test "invalid if area code starts with 1 on valid 11-digit number"
+        (fn _ => clean ("1 (123) 456-7890") |> Expect.equalTo NONE),
+
+      test "invalid if exchange code starts with 0 on valid 11-digit number"
+        (fn _ => clean ("1 (223) 056-7890") |> Expect.equalTo NONE),
+
+      test "invalid if exchange code starts with 1 on valid 11-digit number"
+        (fn _ => clean ("1 (223) 156-7890") |> Expect.equalTo NONE)
     ]
   ]
 
