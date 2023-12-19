@@ -1,4 +1,4 @@
-(* version 1.4.0 *)
+(* version 1.5.0 *)
 
 use "testlib.sml";
 use "matching-brackets.sml";
@@ -34,8 +34,16 @@ val testsuite =
       (fn _ => isBalanced "([{])" |> Expect.falsy),
     test "paired and wrong nested brackets"
       (fn _ => isBalanced "[({]})" |> Expect.falsy),
+    test "paired and wrong nested brackets but innermost are correct"
+      (fn _ => isBalanced "[({}])" |> Expect.falsy),
     test "paired and incomplete brackets"
       (fn _ => isBalanced "{}[" |> Expect.falsy),
+    test "too many closing brackets"
+      (fn _ => isBalanced "[]]" |> Expect.falsy),
+    test "early unexpected brackets"
+      (fn _ => isBalanced ")()" |> Expect.falsy),
+    test "early mismatched brackets"
+      (fn _ => isBalanced "{)()" |> Expect.falsy),
     test "math expression"
       (fn _ => isBalanced "(((185 + 223.85) * 15) - 543)/2" |> Expect.truthy),
     test "complex latex expression"
