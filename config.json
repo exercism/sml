@@ -274,6 +274,17 @@
         "topics": []
       },
       {
+        "slug": "isogram",
+        "name": "Isogram",
+        "uuid": "ae8fa578-1308-44b2-8e71-d7566553379c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "strings"
+        ]
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "c257cb38-ed8d-473f-b02a-5dd8131fdc63",
