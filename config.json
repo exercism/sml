@@ -64,6 +64,15 @@
         "topics": []
       },
       {
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "uuid": "cc6e7e8d-84f8-4b85-8f5e-7a68b3b34b1f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": []
+      },
+      {
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "2dba41bc-5b83-4406-b2b3-6280c3e31ed7",
