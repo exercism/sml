@@ -1,7 +1,11 @@
-(* a*a + b*b = c*c, a + b + c = n
- * a*a + b*b = (n - a - b) * (n - a - b)
- * 0 = n*n - 2*n*a - 2*n*b + 2*a*b
- * (2*n - 2*a) b = (n*n - 2*n*a)
+(* For every Pythagorean triplet with total a + b + c = n,
+ * a² + b² = c²
+ * <=> a² + b² = (n - a - b)², substituting c
+ * <=> 0 = n² - 2*n*a - 2*n*b + 2*a*b
+ * <=> (2*n - 2*a) b = (n² - 2*n*a)
+ * <=> $b=\frac{n*(n - 2*a)}{2*(n-a)}$
+ *
+ * The denominator is never 0, as perimeter exceeds a side length.
  *)
 fun tripletsWithSum (n: int): (int * int * int) list =
   let
