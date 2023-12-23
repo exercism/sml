@@ -3,7 +3,7 @@
  * <=> a² + b² = (n - a - b)², substituting c
  * <=> 0 = n² - 2*n*a - 2*n*b + 2*a*b
  * <=> (2*n - 2*a) b = (n² - 2*n*a)
- * <=> $b=\frac{n*(n - 2*a)}{2*(n-a)}$
+ * <=> b = (n² - 2*n*a) / (2*n - 2*a)
  *
  * The denominator is never 0, as perimeter exceeds a side length.
  *)
