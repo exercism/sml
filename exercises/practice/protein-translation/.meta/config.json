@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "protein-translation.sml"
+    ],
+    "test": [
+      "test.sml"
+    ],
+    "example": [
+      ".meta/example.sml"
+    ]
+  },
+  "blurb": "Translate RNA sequences into proteins.",
+  "source": "Tyler Long"
+}

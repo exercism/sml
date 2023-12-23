@@ -265,6 +265,15 @@
         "difficulty": 2
       },
       {
+        "slug": "protein-translation",
+        "name": "Protein Translation",
+        "uuid": "24edacd5-6e6d-4d37-8486-25283dce806f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": []
+      },
+      {
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "f923bffb-109f-4257-957c-cea8cae2d5c5",
