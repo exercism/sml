@@ -1,4 +1,4 @@
-(* version 1.4.0 *)
+(* version 1.5.0 *)
 
 use "testlib.sml";
 use "anagram.sml";
@@ -11,14 +11,8 @@ val testsuite =
     test "no matches"
       (fn _ => anagramsFor "diaper" ["hello", "world", "zombies", "pants"] |> Expect.equalTo []),
 
-    test "detects simple anagram"
-      (fn _ => anagramsFor "ant" ["tan", "stand", "at"] |> Expect.equalTo ["tan"]),
-
-    test "does not detect false positives"
-      (fn _ => anagramsFor "galea" ["eagle"] |> Expect.equalTo []),
-
     test "detects two anagrams"
-      (fn _ => anagramsFor "master" ["stream", "pigeon", "maters"] |> Expect.equalTo ["stream", "maters"]),
+      (fn _ => anagramsFor "solemn" ["lemons", "cherry", "melons"] |> Expect.equalTo ["lemons", "melons"]),
 
     test "does not detect anagram subsets"
       (fn _ => anagramsFor "good" ["dog", "goody"] |> Expect.equalTo []),
@@ -29,8 +23,8 @@ val testsuite =
     test "detects three anagrams"
       (fn _ => anagramsFor "allergy" ["gallery", "ballerina", "regally", "clergy", "largely", "leading"] |> Expect.equalTo ["gallery", "regally", "largely"]),
 
-    test "does not detect identical words"
-      (fn _ => anagramsFor "corn" ["corn", "dark", "Corn", "rank", "CORN", "cron", "park"] |> Expect.equalTo ["cron"]),
+    test "detects multiple anagrams with different case"
+      (fn _ => anagramsFor "nose" ["Eons", "ONES"] |> Expect.equalTo ["Eons", "ONES"]),
 
     test "does not detect non-anagrams with identical checksum"
       (fn _ => anagramsFor "mass" ["last"] |> Expect.equalTo []),
@@ -44,14 +38,23 @@ val testsuite =
     test "detects anagrams using case-insensitive possible matches"
       (fn _ => anagramsFor "orchestra" ["cashregister", "Carthorse", "radishes"] |> Expect.equalTo ["Carthorse"]),
 
-    test "does not detect a anagram if the original word is repeated"
-      (fn _ => anagramsFor "go" ["go Go GO"] |> Expect.equalTo []),
+    test "does not detect an anagram if the original word is repeated"
+      (fn _ => anagramsFor "go" ["goGoGO"] |> Expect.equalTo []),
 
     test "anagrams must use all letters exactly once"
       (fn _ => anagramsFor "tapper" ["patter"] |> Expect.equalTo []),
 
-    test "words are not anagrams of themselves (case-insensitive)"
-      (fn _ => anagramsFor "BANANA" ["BANANA", "Banana", "banana"] |> Expect.equalTo [])
+    test "words are not anagrams of themselves"
+      (fn _ => anagramsFor "BANANA" ["BANANA"] |> Expect.equalTo []),
+
+    test "words are not anagrams of themselves even if letter case is partially different"
+      (fn _ => anagramsFor "BANANA" ["Banana"] |> Expect.equalTo []),
+
+    test "words are not anagrams of themselves even if letter case is completely different"
+      (fn _ => anagramsFor "BANANA" ["banana"] |> Expect.equalTo []),
+
+    test "words other than themselves can be anagrams"
+      (fn _ => anagramsFor "LISTEN" ["LISTEN", "Silent"] |> Expect.equalTo ["Silent"])
   ]
 
 val _ = Test.run testsuite
