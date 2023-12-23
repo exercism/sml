@@ -1,4 +1,4 @@
-(* version 1.1.0 *)
+(* version 1.2.0 *)
 
 use "testlib.sml";
 use "flatten-array.sml";
@@ -8,11 +8,25 @@ fun x |> f = f x
 
 val testsuite =
   describe "flatten-array" [
+    test "empty"
+      (fn _ => let
+        val nested = List []
+      in
+        flatten nested |> Expect.equalTo []
+      end),
+
     test "no nesting"
       (fn _ => let
         val nested = List [Elem 0, Elem 1, Elem 2]
       in
         flatten nested |> Expect.equalTo [0, 1, 2]
+      end),
+
+    test "flattens a nested array"
+      (fn _ => let
+        val nested = List [List [List []]]
+      in
+        flatten nested |> Expect.equalTo []
       end),
 
     test "flattens array with just integers present"
@@ -49,6 +63,27 @@ val testsuite =
                            Elem 8]
       in
         flatten nested |> Expect.equalTo [1, 2, 3, 4, 5, 6, 7, 8]
+      end),
+
+    test "Empty values are omitted from the final result"
+      (fn _ => let
+        val nested = List [Elem 1, Elem 2, Empty]
+      in
+        flatten nested |> Expect.equalTo [1, 2]
+      end),
+
+    test "consecutive Empty values at the front of the list are omitted from the final result"
+      (fn _ => let
+        val nested = List [Empty, Empty, Elem 3]
+      in
+        flatten nested |> Expect.equalTo [3]
+      end),
+
+    test "consecutive Empty values in the middle of the list are omitted from the final result"
+      (fn _ => let
+        val nested = List [Elem 1, Empty, Empty, Elem 4]
+      in
+        flatten nested |> Expect.equalTo [1, 4]
       end),
 
     test "6 level nest list with Empty values"
