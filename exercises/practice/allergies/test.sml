@@ -1,4 +1,4 @@
-(* version 1.0.0 *)
+(* version 1.1.0 *)
 
 use "testlib.sml";
 use "allergies.sml";
@@ -61,7 +61,10 @@ val testsuite =
         (fn _ => allergies (255) |> Expect.equalTo [Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats]),
 
       test "ignore non allergen score parts"
-        (fn _ => allergies (509) |> Expect.equalTo [Eggs, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats])
+        (fn _ => allergies (509) |> Expect.equalTo [Eggs, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats]),
+
+      test "no allergen score parts without highest valid score"
+        (fn _ => allergies (257) |> Expect.equalTo [Eggs])
     ]
   ]
 
