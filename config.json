@@ -75,6 +75,17 @@
         ]
       },
       {
+        "slug": "strain",
+        "name": "Strain",
+        "uuid": "e929f6cf-04f8-41dd-b333-69be7b06d857",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "lists"
+        ]
+      },
+      {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "d17ab3c6-82a1-413e-9018-8775ec9ea498",
@@ -231,8 +242,10 @@
         "uuid": "c8b94fa9-d758-4dca-b7fc-7a130061e064",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 4,
+        "topics": [
+          "lists"
+        ]
       },
       {
         "slug": "nth-prime",
