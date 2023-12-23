@@ -372,6 +372,15 @@
         ]
       },
       {
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "90237a3f-595a-4238-bcef-46d6f84b0945",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": []
+      },
+      {
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "788844da-ac1d-4bb9-a680-3aef6f8a11c8",
