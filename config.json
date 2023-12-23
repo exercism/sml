@@ -405,6 +405,17 @@
         ]
       },
       {
+        "slug": "grains",
+        "name": "Grains",
+        "uuid": "1759636a-eeb0-42e9-98af-01cf4c738700",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "math"
+        ]
+      },
+      {
         "slug": "pascals-triangle",
         "name": "Pascals Triangle",
         "uuid": "bc381243-73cb-42bf-91d8-d33d6215e579",
