@@ -453,6 +453,15 @@
         "topics": []
       },
       {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "c4a24f88-febd-4955-a08d-67895a3d119f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": []
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "c49dec99-cccc-418c-9de9-b9856f1b749b",
