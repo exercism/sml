@@ -1,9 +1,9 @@
 local
-  fun lines (s: string): string list =
-    String.tokens (fn (c: char) => c = #"\n") s
+  val lines: string -> string list =
+    String.tokens (fn (c: char) => c = #"\n")
 
-  fun cells (s: string): string list =
-    String.tokens (fn (c: char) => c = #" ") s
+  val cells: string -> string list =
+    String.tokens (fn (c: char) => c = #" ")
 in
   fun row (s: string, index: int): int list =
     let
