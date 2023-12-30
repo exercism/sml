@@ -444,6 +444,17 @@
         ]
       },
       {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "ab525174-18aa-4458-bc86-d669a6679c5a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "lists"
+        ]
+      },
+      {
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "a503a4e2-b6eb-4ab0-ac67-8b136157f3dd",
