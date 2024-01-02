@@ -1,3 +1,17 @@
+datatype category =
+    Ones
+  | Twos
+  | Threes
+  | Fours
+  | Fives
+  | Sixes
+  | FullHouse
+  | FourOfAKind
+  | LittleStraight
+  | BigStraight
+  | Choice
+  | Yacht
+
 local
   fun insert (value: int) (l: int list) =
     case l of
@@ -76,22 +90,22 @@ local
     if List.nth (dice, 0) = List.nth (dice, 4) then 50
     else 0
 
-  fun score' (dice: int list, category: string): int =
+  fun score' (dice: int list, category): int =
     case category of
-        "ones" => ones dice
-      | "twos" => twos dice
-      | "threes" => threes dice
-      | "fours" => fours dice
-      | "fives" => fives dice
-      | "sixes" => sixes dice
-      | "full house" => fullHouse dice
-      | "four of a kind" => fourOfAKind dice
-      | "little straight" => littleStraight dice
-      | "big straight" => bigStraight dice
-      | "choice" => choice dice
-      | "yacht" => yacht dice
+        Ones => ones dice
+      | Twos => twos dice
+      | Threes => threes dice
+      | Fours => fours dice
+      | Fives => fives dice
+      | Sixes => sixes dice
+      | FullHouse => fullHouse dice
+      | FourOfAKind => fourOfAKind dice
+      | LittleStraight => littleStraight dice
+      | BigStraight => bigStraight dice
+      | Choice => choice dice
+      | Yacht => yacht dice
       | _ => raise Fail "invalid category"
 in
-  fun score (dice: int list, category: string): int =
+  fun score (dice: int list, category): int =
     score' (sort dice, category)
 end
