@@ -104,7 +104,6 @@ local
       | BigStraight => bigStraight dice
       | Choice => choice dice
       | Yacht => yacht dice
-      | _ => raise Fail "invalid category"
 in
   fun score (dice: int list, category): int =
     score' (sort dice, category)
