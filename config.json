@@ -255,6 +255,14 @@
         "topics": []
       },
       {
+        "slug": "wordy",
+        "name": "Wordy",
+        "uuid": "093172fd-426c-46dc-a70e-a5f2e877970d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "ce5dd1a4-7c90-48e4-b260-d2b62f29fbaf",
