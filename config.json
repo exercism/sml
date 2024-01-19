@@ -334,6 +334,17 @@
         ]
       },
       {
+        "slug": "luhn",
+        "name": "Luhn",
+        "uuid": "18e982ac-3e1e-497b-bfa0-04209223bb30",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "strings"
+        ]
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "c257cb38-ed8d-473f-b02a-5dd8131fdc63",
