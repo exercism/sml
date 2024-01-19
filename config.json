@@ -277,6 +277,15 @@
         ]
       },
       {
+        "slug": "transpose",
+        "name": "Transpose",
+        "uuid": "5184de5a-4772-4389-aa3c-b1117b601450",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": []
+      },
+      {
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "uuid": "8ccc61c6-fac5-4af7-803e-d0f6d10f8a1f",
