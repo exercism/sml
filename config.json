@@ -496,6 +496,15 @@
         "topics": [
           "math"
         ]
+      },
+      {
+        "slug": "palindrome-products",
+        "name": "Palindrome Products",
+        "uuid": "95b2f13e-e59f-477c-905a-8cfa652607b3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6,
+        "topics": []
       }
     ]
   },
