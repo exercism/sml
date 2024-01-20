@@ -133,6 +133,15 @@
         "topics": []
       },
       {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "55048224-25dc-4c91-b4f4-1ea1bacdd87f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": []
+      },
+      {
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "67108540-cdc3-46df-81f9-6bd8d3580575",
