@@ -144,6 +144,17 @@
         ]
       },
       {
+        "slug": "matrix",
+        "name": "Matrix",
+        "uuid": "892922b8-1616-41f5-9faa-11eb0f776cce",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "lists"
+        ]
+      },
+      {
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "8f79d2ac-2407-4bba-91a8-6a47737e7f36",
