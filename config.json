@@ -353,6 +353,17 @@
         "topics": []
       },
       {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "27b661f5-386c-4efb-8cce-53b6a3ba97d9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "strings"
+        ]
+      },
+      {
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "f923bffb-109f-4257-957c-cea8cae2d5c5",

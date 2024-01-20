@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "rotational-cipher.sml"
+    ],
+    "test": [
+      "test.sml"
+    ],
+    "example": [
+      ".meta/example.sml"
+    ]
+  },
+  "blurb": "Create an implementation of the rotational cipher, also sometimes called the Caesar cipher.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Caesar_cipher"
+}
