@@ -325,6 +325,17 @@
         ]
       },
       {
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "uuid": "e1131c5f-f0a1-4cce-aa24-6fb4e265824a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "math"
+        ]
+      },
+      {
         "slug": "pop-count",
         "name": "Pop Count",
         "uuid": "76d154fe-a39c-4d0e-a43a-f18e36388c83",
