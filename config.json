@@ -623,6 +623,10 @@
       }
     ]
   },
+  "foregone": [
+    "bank-account",
+    "parallel-letter-frequency"
+  ],
   "concepts": [],
   "key_features": [
     {
