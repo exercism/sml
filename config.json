@@ -353,6 +353,15 @@
         ]
       },
       {
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "be13a1d9-259f-4fc4-8cf3-4926c0d5c396",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": []
+      },
+      {
         "slug": "pop-count",
         "name": "Pop Count",
         "uuid": "76d154fe-a39c-4d0e-a43a-f18e36388c83",
