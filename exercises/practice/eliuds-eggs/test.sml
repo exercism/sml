@@ -1,11 +1,11 @@
 use "testlib.sml";
-use "pop-count.sml";
+use "eliuds-eggs.sml";
 
 infixr |>
 fun x |> f = f x
 
 val testsuite =
-  describe "pop-count" [
+  describe "eliuds-eggs" [
     test "0 eggs"
       (fn _ => eggCount 0 |> Expect.equalTo 0),
 
