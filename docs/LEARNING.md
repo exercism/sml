@@ -21,7 +21,7 @@ The course is aimed at somewhat experienced programmers, but it's hard to find a
 
 A good read is [Programming in Standard ML '97: An On-line Tutorial](https://www.cs.cmu.edu/~rwh/introsml/).
 
-Another is [A Gentle Introduction to ML](http://www.soc.napier.ac.uk/course-notes/sml/manual.html).
+Another is [A Gentle Introduction to ML](https://www.cs.nmsu.edu/~rth/cs/cs471/sml.html).
 
 Coursera offers a course on [programming languages](https://www.coursera.org/learn/programming-languages).
 It's hard to find a better introduction to the ML language.
