@@ -18,7 +18,6 @@
   "test_runner": {
     "average_run_time": 1
   },
-  "checklist_issue": 8,
   "files": {
     "solution": [
       "%{kebab_slug}.sml"
@@ -34,7 +33,6 @@
     ]
   },
   "exercises": {
-    "concept": [],
     "practice": [
       {
         "slug": "hello-world",
@@ -42,8 +40,7 @@
         "uuid": "a00f98a6-98dd-4c8a-b3d1-adc1d56eef29",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "leap",
@@ -51,8 +48,7 @@
         "uuid": "622644a8-55c3-498e-ac72-ad6d7d31109d",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "two-fer",
@@ -60,8 +56,7 @@
         "uuid": "a56bad29-684c-47e7-9724-8c7f165a51af",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "scrabble-score",
@@ -69,8 +64,7 @@
         "uuid": "cc6e7e8d-84f8-4b85-8f5e-7a68b3b34b1f",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
-        "topics": []
+        "difficulty": 3
       },
       {
         "slug": "space-age",
@@ -100,8 +94,7 @@
         "uuid": "d17ab3c6-82a1-413e-9018-8775ec9ea498",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "collatz-conjecture",
@@ -120,8 +113,7 @@
         "uuid": "38a13f45-9e80-4322-b896-d2cf06add3f9",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
-        "topics": []
+        "difficulty": 3
       },
       {
         "slug": "kindergarten-garden",
@@ -129,8 +121,7 @@
         "uuid": "7d74175b-a2c6-4e77-a908-ebcbcf1e29b6",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
-        "topics": []
+        "difficulty": 3
       },
       {
         "slug": "secret-handshake",
@@ -138,8 +129,7 @@
         "uuid": "55048224-25dc-4c91-b4f4-1ea1bacdd87f",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
-        "topics": []
+        "difficulty": 3
       },
       {
         "slug": "matching-brackets",
@@ -188,8 +178,7 @@
         "uuid": "7be1122c-33cd-40ed-a70f-c71a6713c47a",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "binary",
@@ -198,7 +187,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": null,
         "status": "deprecated"
       },
       {
@@ -208,7 +196,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": [],
         "status": "deprecated"
       },
       {
@@ -228,8 +215,7 @@
         "uuid": "216334c2-bdb5-481a-a22b-20ac088f20e9",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "atbash-cipher",
@@ -237,8 +223,7 @@
         "uuid": "0f488d4b-89da-4d1f-958b-a7b3171f43d5",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "bob",
@@ -246,8 +231,7 @@
         "uuid": "4fb40e77-727b-41bc-ac15-b909a26bb917",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "diamond",
@@ -279,8 +263,7 @@
         "uuid": "fb0a030d-33bc-4066-a30a-1b8b02cc42f1",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "wordy",
@@ -296,8 +279,7 @@
         "uuid": "ce5dd1a4-7c90-48e4-b260-d2b62f29fbaf",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "list-ops",
@@ -327,8 +309,7 @@
         "uuid": "5184de5a-4772-4389-aa3c-b1117b601450",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 5,
-        "topics": []
+        "difficulty": 5
       },
       {
         "slug": "perfect-numbers",
@@ -366,8 +347,7 @@
         "uuid": "24edacd5-6e6d-4d37-8486-25283dce806f",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
-        "topics": []
+        "difficulty": 3
       },
       {
         "slug": "rotational-cipher",
@@ -386,8 +366,7 @@
         "uuid": "f923bffb-109f-4257-957c-cea8cae2d5c5",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "isogram",
@@ -441,8 +420,7 @@
         "uuid": "76b1e1d1-2360-487c-89be-37f9780540b7",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "resistor-color",
@@ -458,8 +436,7 @@
         "uuid": "db3e09ee-6c93-417f-b0a0-196cdccf4984",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "pythagorean-triplet",
@@ -478,8 +455,7 @@
         "uuid": "b4359037-8457-49ea-ac33-44710ada3b4d",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 5,
-        "topics": []
+        "difficulty": 5
       },
       {
         "slug": "sum-of-multiples",
@@ -534,8 +510,7 @@
         "uuid": "90237a3f-595a-4238-bcef-46d6f84b0945",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2,
-        "topics": []
+        "difficulty": 2
       },
       {
         "slug": "gigasecond",
@@ -566,8 +541,7 @@
         "uuid": "a503a4e2-b6eb-4ab0-ac67-8b136157f3dd",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4,
-        "topics": []
+        "difficulty": 4
       },
       {
         "slug": "yacht",
@@ -575,8 +549,7 @@
         "uuid": "c4a24f88-febd-4955-a08d-67895a3d119f",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4,
-        "topics": []
+        "difficulty": 4
       },
       {
         "slug": "triangle",
@@ -618,16 +591,18 @@
         "uuid": "95b2f13e-e59f-477c-905a-8cfa652607b3",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 6,
-        "topics": []
+        "difficulty": 6
+      },
+      {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "4aaa8cbf-a48e-475a-a986-bd2cc3468e67",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       }
     ]
   },
-  "foregone": [
-    "bank-account",
-    "parallel-letter-frequency"
-  ],
-  "concepts": [],
   "key_features": [
     {
       "title": "Algebraic data types",
@@ -661,15 +636,15 @@
     }
   ],
   "tags": [
+    "execution_mode/interpreted",
     "paradigm/functional",
     "paradigm/imperative",
+    "platform/linux",
+    "platform/mac",
+    "platform/windows",
+    "runtime/language_specific",
     "typing/static",
     "typing/strong",
-    "execution_mode/interpreted",
-    "platform/windows",
-    "platform/mac",
-    "platform/linux",
-    "runtime/language_specific",
     "used_for/financial_systems",
     "used_for/scientific_calculations"
   ]
