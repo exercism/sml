@@ -603,6 +603,10 @@
       }
     ]
   },
+  "foregone": [
+    "bank-account",
+    "parallel-letter-frequency"
+  ],
   "key_features": [
     {
       "title": "Algebraic data types",
