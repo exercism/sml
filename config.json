@@ -601,12 +601,12 @@
         "prerequisites": [],
         "difficulty": 5
       }
+    ],
+    "foregone": [
+      "bank-account",
+      "parallel-letter-frequency"
     ]
   },
-  "foregone": [
-    "bank-account",
-    "parallel-letter-frequency"
-  ],
   "key_features": [
     {
       "title": "Algebraic data types",
