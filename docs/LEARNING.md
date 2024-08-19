@@ -9,7 +9,7 @@ These resources can help you get started:
 
 ML is probably not the best language for new programmers. You are probably better off starting with a language like
 Ruby or Python, but if you are feeling particularly bold you might want to read [Programming in Standard ML '97:
-An On-line Tutorial](https://www.cs.cmu.edu/~rwh/introsml/) I suggest skipping the introduction and jumping straight
+An On-line Tutorial](https://homepages.inf.ed.ac.uk/stg/NOTES/) I suggest skipping the introduction and jumping straight
 to [Simple applicative programming ](http://homepages.inf.ed.ac.uk/stg/NOTES/node13.html), because the introduction
 is very technical.
 
@@ -19,7 +19,7 @@ The course is aimed at somewhat experienced programmers, but it's hard to find a
 
 ### I've heard of functional programming
 
-A good read is [Programming in Standard ML '97: An On-line Tutorial](https://www.cs.cmu.edu/~rwh/introsml/).
+A good read is [Programming in Standard ML '97: An On-line Tutorial](https://homepages.inf.ed.ac.uk/stg/NOTES/).
 
 Another is [A Gentle Introduction to ML](https://www.cs.nmsu.edu/~rth/cs/cs471/sml.html).
 
