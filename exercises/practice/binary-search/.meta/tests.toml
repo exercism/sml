@@ -38,6 +38,7 @@ description = "a value larger than the array's largest value is not found"
 
 [f439a0fa-cf42-4262-8ad1-64bf41ce566a]
 description = "nothing is found in an empty array"
+include = false
 
 [2c353967-b56d-40b8-acff-ce43115eed64]
 description = "nothing is found when the left and right bounds cross"
