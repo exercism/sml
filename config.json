@@ -369,6 +369,14 @@
         "difficulty": 1
       },
       {
+        "slug": "binary-search",
+        "name": "Binary Search",
+        "uuid": "afa5857c-bc9f-492c-a49e-1fbc06a613ab",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "ae8fa578-1308-44b2-8e71-d7566553379c",
