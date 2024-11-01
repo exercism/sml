@@ -334,6 +334,15 @@
         ]
       },
       {
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "4ce578b2-9cfb-498b-947f-79f97abeb224",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": []
+      },
+      {
         "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "76d154fe-a39c-4d0e-a43a-f18e36388c83",
