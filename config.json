@@ -536,6 +536,14 @@
         ]
       },
       {
+        "slug": "largest-series-product",
+        "name": "Largest Series Product",
+        "uuid": "ac954648-3670-4268-9cf2-907d8588efe1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "a503a4e2-b6eb-4ab0-ac67-8b136157f3dd",
