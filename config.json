@@ -628,7 +628,8 @@
     ],
     "foregone": [
       "bank-account",
-      "parallel-letter-frequency"
+      "parallel-letter-frequency",
+      "dnd-character"
     ]
   },
   "key_features": [
