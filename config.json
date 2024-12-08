@@ -608,6 +608,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
+      },
+      {
+        "slug": "binary-search",
+        "name": "Binary Search",
+        "uuid": "35f8b4eb-77a4-43e1-81ba-7475d2384a96",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       }
     ],
     "foregone": [
