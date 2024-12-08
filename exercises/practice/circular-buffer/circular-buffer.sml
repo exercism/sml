@@ -11,7 +11,7 @@ structure CircularBuffer :> sig
   val overwrite : buffer -> int -> unit
 end = struct
 
-  type buffer = ??? (* TODO declare the data structure *)
+  type buffer = () (* TODO declare the data structure *)
 
   exception BufferFull
   exception BufferEmpty
