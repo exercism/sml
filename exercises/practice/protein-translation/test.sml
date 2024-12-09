@@ -86,6 +86,9 @@ val testsuite =
     test "Translation stops if STOP codon in middle of six-codon sequence"
       (fn _ => proteins "UGGUGUUAUUAAUGGUUU" |> Expect.equalTo ["Tryptophan", "Cysteine", "Tyrosine"]),
 
+    test "Sequence of two non-STOP codons does not translate to a STOP codon"
+      (fn _ => proteins "AUGAUG" |> Expect.equalTo ["Methionine", "Methionine"]),
+
     test "Non-existing codon can't translate"
       (fn _ => (fn _ => proteins "AAA") |> Expect.error (Fail "Invalid codon")),
 

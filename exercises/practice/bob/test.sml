@@ -69,7 +69,7 @@ val testsuite =
       (fn _ => response ("\t\t\t\t\t\t\t\t\t\t") |> Expect.equalTo "Fine. Be that way!"),
 
     test "multiple line question"
-      (fn _ => response ("\nDoes this cryogenic chamber make me look fat?\nNo.") |> Expect.equalTo "Whatever."),
+      (fn _ => response ("\nDoes this cryogenic chamber make\n me look fat?") |> Expect.equalTo "Sure."),
 
     test "starting with whitespace"
       (fn _ => response ("         hmmmmmmm...") |> Expect.equalTo "Whatever."),
