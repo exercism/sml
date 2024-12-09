@@ -41,7 +41,7 @@ val testsuite =
       test "word beginning with q without a following u"
         (fn _ => translate ("qat") |> Expect.equalTo "atqay"),
 
-      test "word beginning with consonald and vowel containing qu"
+      test "word beginning with consonant and vowel containing qu"
         (fn _ => translate ("liquid") |> Expect.equalTo "iquidlay")
     ],
 
