@@ -84,7 +84,10 @@ val testsuite =
       (fn _ => roman (3001) |> Expect.equalTo "MMMI"),
 
     test "3999 is MMMCMXCIX"
-      (fn _ => roman (3999) |> Expect.equalTo "MMMCMXCIX")
+      (fn _ => roman (3999) |> Expect.equalTo "MMMCMXCIX"),
+
+    test "3888 is MMMDCCCLXXXVIII"
+      (fn _ => roman (3888) |> Expect.equalTo "MMMDCCCLXXXVIII")
   ]
 
 val _ = Test.run testsuite
