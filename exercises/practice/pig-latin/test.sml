@@ -39,7 +39,10 @@ val testsuite =
         (fn _ => translate ("xenon") |> Expect.equalTo "enonxay"),
 
       test "word beginning with q without a following u"
-        (fn _ => translate ("qat") |> Expect.equalTo "atqay")
+        (fn _ => translate ("qat") |> Expect.equalTo "atqay"),
+
+      test "word beginning with consonant and vowel containing qu"
+        (fn _ => translate ("liquid") |> Expect.equalTo "iquidlay")
     ],
 
     describe "some letter clusters are treated like a single consonant" [
