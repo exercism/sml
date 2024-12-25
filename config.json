@@ -44,6 +44,39 @@
         "status": "deprecated"
       },
       {
+        "slug": "binary",
+        "name": "Binary",
+        "uuid": "225cfd7d-81a3-4a58-b1aa-1de2e40e7a93",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "status": "deprecated"
+      },
+      {
+        "slug": "hello-world",
+        "name": "Hello World",
+        "uuid": "a00f98a6-98dd-4c8a-b3d1-adc1d56eef29",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "leap",
+        "name": "Leap",
+        "uuid": "622644a8-55c3-498e-ac72-ad6d7d31109d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "uuid": "a56bad29-684c-47e7-9724-8c7f165a51af",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "937616ce-696b-4845-b06c-365a58ca46d2",
@@ -57,6 +90,17 @@
         ]
       },
       {
+        "slug": "affine-cipher",
+        "name": "Affine Cipher",
+        "uuid": "8a335321-d6fd-4d6c-bd77-4f5d878a5b3c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "math"
+        ]
+      },
+      {
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "7be1122c-33cd-40ed-a70f-c71a6713c47a",
@@ -65,13 +109,15 @@
         "difficulty": 2
       },
       {
-        "slug": "binary",
-        "name": "Binary",
-        "uuid": "225cfd7d-81a3-4a58-b1aa-1de2e40e7a93",
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "uuid": "e1131c5f-f0a1-4cce-aa24-6fb4e265824a",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "status": "deprecated"
+        "difficulty": 2,
+        "topics": [
+          "math"
+        ]
       },
       {
         "slug": "bob",
@@ -93,6 +139,14 @@
         ]
       },
       {
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "90237a3f-595a-4238-bcef-46d6f84b0945",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
         "uuid": "580496d5-bec7-401d-b0cf-dc16da795491",
@@ -104,12 +158,31 @@
         ]
       },
       {
+        "slug": "eliuds-eggs",
+        "name": "Eliud's Eggs",
+        "uuid": "76d154fe-a39c-4d0e-a43a-f18e36388c83",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "flatten-array",
         "name": "Flatten Array",
         "uuid": "fb0a030d-33bc-4066-a30a-1b8b02cc42f1",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
+      },
+      {
+        "slug": "grains",
+        "name": "Grains",
+        "uuid": "1759636a-eeb0-42e9-98af-01cf4c738700",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "math"
+        ]
       },
       {
         "slug": "hamming",
@@ -120,20 +193,12 @@
         "difficulty": 2
       },
       {
-        "slug": "hello-world",
-        "name": "Hello World",
-        "uuid": "a00f98a6-98dd-4c8a-b3d1-adc1d56eef29",
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "4ce578b2-9cfb-498b-947f-79f97abeb224",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "leap",
-        "name": "Leap",
-        "uuid": "622644a8-55c3-498e-ac72-ad6d7d31109d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "pangram",
@@ -142,6 +207,17 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
+      },
+      {
+        "slug": "pascals-triangle",
+        "name": "Pascal's Triangle",
+        "uuid": "bc381243-73cb-42bf-91d8-d33d6215e579",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "math"
+        ]
       },
       {
         "slug": "rna-transcription",
@@ -200,82 +276,6 @@
         "topics": [
           "math",
           "logic"
-        ]
-      },
-      {
-        "slug": "two-fer",
-        "name": "Two Fer",
-        "uuid": "a56bad29-684c-47e7-9724-8c7f165a51af",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "affine-cipher",
-        "name": "Affine Cipher",
-        "uuid": "8a335321-d6fd-4d6c-bd77-4f5d878a5b3c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "math"
-        ]
-      },
-      {
-        "slug": "armstrong-numbers",
-        "name": "Armstrong Numbers",
-        "uuid": "e1131c5f-f0a1-4cce-aa24-6fb4e265824a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "math"
-        ]
-      },
-      {
-        "slug": "darts",
-        "name": "Darts",
-        "uuid": "90237a3f-595a-4238-bcef-46d6f84b0945",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "eliuds-eggs",
-        "name": "Eliud's Eggs",
-        "uuid": "76d154fe-a39c-4d0e-a43a-f18e36388c83",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "grains",
-        "name": "Grains",
-        "uuid": "1759636a-eeb0-42e9-98af-01cf4c738700",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "math"
-        ]
-      },
-      {
-        "slug": "nucleotide-count",
-        "name": "Nucleotide Count",
-        "uuid": "4ce578b2-9cfb-498b-947f-79f97abeb224",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "pascals-triangle",
-        "name": "Pascal's Triangle",
-        "uuid": "bc381243-73cb-42bf-91d8-d33d6215e579",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "math"
         ]
       },
       {
