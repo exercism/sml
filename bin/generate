@@ -355,7 +355,7 @@ def generate(exercise, flags, problem_specs_source, force=False):
         write(path / ('%s.sml' % exercise), content)
 
     if flags & EXAMPLE:
-        write(path / 'example.sml', content)
+        write(path / '.meta/example.sml', content)
 
     shutil.copyfile(
         (root / 'lib/testlib.sml').as_posix(),
