@@ -244,6 +244,14 @@
         "difficulty": 2
       },
       {
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "uuid": "d88bd83a-2cc4-4f36-b383-8795e52b9412",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "reverse-string",
         "name": "Reverse String",
         "uuid": "86d5a60a-fc44-443d-bc00-5c6265e736c4",
