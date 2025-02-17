@@ -485,6 +485,14 @@
         ]
       },
       {
+        "slug": "house",
+        "name": "House",
+        "uuid": "c6ac9ac2-aa55-4c3d-b1cb-9d2d9f89e944",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "list-ops",
         "name": "List Ops",
         "uuid": "c8b94fa9-d758-4dca-b7fc-7a130061e064",
