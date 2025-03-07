@@ -70,7 +70,7 @@
       },
       {
         "slug": "two-fer",
-        "name": "Two Fer",
+        "name": "Two-Fer",
         "uuid": "a56bad29-684c-47e7-9724-8c7f165a51af",
         "practices": [],
         "prerequisites": [],
@@ -312,7 +312,7 @@
       },
       {
         "slug": "isbn-verifier",
-        "name": "Isbn Verifier",
+        "name": "ISBN Verifier",
         "uuid": "38a13f45-9e80-4322-b896-d2cf06add3f9",
         "practices": [],
         "prerequisites": [],
@@ -578,7 +578,7 @@
       },
       {
         "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
+        "name": "Run-Length Encoding",
         "uuid": "d9213e16-f49a-43c1-bae7-2e5283c512d4",
         "practices": [],
         "prerequisites": [],
