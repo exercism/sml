@@ -10,7 +10,7 @@ local
         else (List.take (ns, span)) :: spans span (tl ns)
 in
   fun largestProduct (digits: string, span: int): int =
-    if      span > size digits then raise Fail "span must be smaller than string length"
+    if      span > size digits then raise Fail "span must not exceed string length"
     else if span < 0           then raise Fail "span must not be negative"
     else if span = 0           then 1
     else explode digits
