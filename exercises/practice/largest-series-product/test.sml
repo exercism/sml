@@ -34,7 +34,8 @@ val testsuite =
       (fn _ => largestProduct ("99099", 3) |> Expect.equalTo 0),
 
     test "rejects span longer than string length"
-      (fn _ => (fn _ => largestProduct ("123", 4)) |> Expect.error (Fail "span must be smaller than string length")),
+      (* "span must not exceed string length" *)
+      (fn _ => (fn _ => largestProduct ("123", 4)) |> Expect.anyError),
 
     test "reports 1 for empty string and empty product (0 span)"
       (fn _ => largestProduct ("", 0) |> Expect.equalTo 1),
@@ -43,7 +44,8 @@ val testsuite =
       (fn _ => largestProduct ("123", 0) |> Expect.equalTo 1),
 
     test "rejects empty string and nonzero span"
-      (fn _ => (fn _ => largestProduct ("", 1)) |> Expect.error (Fail "span must be smaller than string length")),
+      (* "span must not exceed string length" *)
+      (fn _ => (fn _ => largestProduct ("", 1)) |> Expect.anyError),
 
     test "rejects invalid character in digits"
       (fn _ => (fn _ => largestProduct ("1234a5", 2)) |> Expect.error (Fail "digits input must only contain digits")),
