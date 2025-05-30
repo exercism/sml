@@ -220,14 +220,6 @@
         ]
       },
       {
-        "slug": "rna-transcription",
-        "name": "RNA Transcription",
-        "uuid": "db3e09ee-6c93-417f-b0a0-196cdccf4984",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "76b1e1d1-2360-487c-89be-37f9780540b7",
@@ -262,6 +254,14 @@
           "lists",
           "strings"
         ]
+      },
+      {
+        "slug": "rna-transcription",
+        "name": "RNA Transcription",
+        "uuid": "db3e09ee-6c93-417f-b0a0-196cdccf4984",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "sum-of-multiples",
@@ -688,6 +688,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 6
+      },
+      {
+        "slug": "book-store",
+        "name": "Book Store",
+        "uuid": "4bbd1b60-627e-4aed-8f6b-c7fccfb9aaa2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
       },
       {
         "slug": "circular-buffer",
