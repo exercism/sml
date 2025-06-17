@@ -15,11 +15,39 @@ val testsuite =
         answer question |> Expect.equalTo (SOME 5)
       end),
 
+    test "just a zero"
+      (fn _ => let
+        val question = "What is 0?"
+      in
+        answer question |> Expect.equalTo (SOME 0)
+      end),
+
+    test "just a negative number"
+      (fn _ => let
+        val question = "What is -123?"
+      in
+        answer question |> Expect.equalTo (SOME ~123)
+      end),
+
     test "addition"
       (fn _ => let
         val question = "What is 1 plus 1?"
       in
         answer question |> Expect.equalTo (SOME 2)
+      end),
+
+    test "addition with a left hand zero"
+      (fn _ => let
+        val question = "What is 0 plus 2?"
+      in
+        answer question |> Expect.equalTo (SOME 2)
+      end),
+
+    test "addition with a right hand zero"
+      (fn _ => let
+        val question = "What is 3 plus 0?"
+      in
+        answer question |> Expect.equalTo (SOME 3)
       end),
 
     test "more addition"
