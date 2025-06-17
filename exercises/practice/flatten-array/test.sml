@@ -22,14 +22,14 @@ val testsuite =
         flatten nested |> Expect.equalTo [0, 1, 2]
       end),
 
-    test "flattens a nested array"
+    test "flattens a nested list"
       (fn _ => let
         val nested = List [List [List []]]
       in
         flatten nested |> Expect.equalTo []
       end),
 
-    test "flattens array with just integers present"
+    test "flattens list with just integers present"
       (fn _ => let
         val nested = List [Elem 1,
                            List [Elem 2, Elem 3, Elem 4, Elem 5, Elem 6, Elem 7],
@@ -86,7 +86,7 @@ val testsuite =
         flatten nested |> Expect.equalTo [1, 4]
       end),
 
-    test "6 level nest list with Empty values"
+    test "6 level nested list with Empty values"
       (fn _ => let
         val nested = List [Elem 0,
                            Elem 2,
@@ -102,15 +102,15 @@ val testsuite =
 
     test "all values in nested list are Empty"
       (fn _ => let
-         val nested = List [Empty,
-                            List [List [List [Empty]]],
-                            Empty,
-                            Empty,
-                            List [List [Empty, Empty], Empty],
-                            Empty]
-       in
-         flatten nested |> Expect.equalTo []
-       end)
+        val nested = List [Empty,
+                           List [List [List [Empty]]],
+                           Empty,
+                           Empty,
+                           List [List [Empty, Empty], Empty],
+                           Empty]
+      in
+        flatten nested |> Expect.equalTo []
+      end)
   ]
 
 val _ = Test.run testsuite
