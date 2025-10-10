@@ -346,6 +346,14 @@
         "difficulty": 3
       },
       {
+        "slug": "line-up",
+        "name": "Line Up",
+        "uuid": "6b707608-65f8-4cb7-9f2f-e1a19ac48ad8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "uuid": "8ccc61c6-fac5-4af7-803e-d0f6d10f8a1f",
