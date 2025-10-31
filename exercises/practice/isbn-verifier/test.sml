@@ -29,6 +29,12 @@ val testsuite =
     test "X is only valid as a check digit"
       (fn _ => isValid "3-598-2X507-9" |> Expect.falsy),
 
+    test "only one check digit is allowed"
+      (fn _ => isValid "3-598-21508-96" |> Expect.falsy),
+
+    test "X is not substituted by the value 10"
+      (fn _ => isValid "3-598-2X507-5" |> Expect.falsy),
+
     test "valid isbn without separating dashes"
       (fn _ => isValid "3598215088" |> Expect.truthy),
 
