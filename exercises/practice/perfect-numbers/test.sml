@@ -27,7 +27,10 @@ val testsuite =
         (fn _ => classify 30 |> Expect.equalTo (SOME Abundant)),
 
       test "Large abundant number is classified correctly"
-        (fn _ => classify 33550335 |> Expect.equalTo (SOME Abundant))
+        (fn _ => classify 33550335 |> Expect.equalTo (SOME Abundant)),
+
+      test "Perfect square abundant number is classified correctly"
+        (fn _ => classify 196 |> Expect.equalTo (SOME Abundant))
     ],
 
     describe "Deficient numbers" [
@@ -48,10 +51,10 @@ val testsuite =
     ],
 
     describe "Invalid inputs" [
-      test "Zero is rejected (not a natural number)"
+      test "Zero is rejected (as it is not a positive integer)"
         (fn _ => classify 0 |> Expect.equalTo NONE),
 
-      test "Negative integer is rejected (not a natural number)"
+      test "Negative integer is rejected (as it is not a positive integer)"
         (fn _ => classify ~1 |> Expect.equalTo NONE)
     ]
   ]
