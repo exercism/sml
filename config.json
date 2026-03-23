@@ -714,6 +714,14 @@
         "difficulty": 8
       },
       {
+        "slug": "connect",
+        "name": "Connect",
+        "uuid": "fe005f3c-f5eb-4575-9166-9807949050a2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "satellite",
         "name": "Satellite",
         "uuid": "4363b45c-bc2e-4dc5-9673-e97c27e1f1cb",
