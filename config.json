@@ -674,6 +674,14 @@
         "difficulty": 5
       },
       {
+        "slug": "split-second-stopwatch",
+        "name": "Split-Second Stopwatch",
+        "uuid": "e8e2197d-9238-4366-9f07-71def378959d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "transpose",
         "name": "Transpose",
         "uuid": "5184de5a-4772-4389-aa3c-b1117b601450",
