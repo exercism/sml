@@ -72,6 +72,7 @@ jq "${filter}" config.json > config.sorted && mv config.sorted config.json
 
 exercise_dir="exercises/practice/${slug}"
 files=$(jq -r --arg dir "${exercise_dir}" '.files | to_entries | map({key: .key, value: (.value | map("'"'"'" + $dir + "/" + . + "'"'"'") | join(" and "))}) | from_entries' "${exercise_dir}/.meta/config.json")
+cp lib/testlib.sml "${exercise_dir}/testlib.sml"
 
 cat << NEXT_STEPS
 
