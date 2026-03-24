@@ -714,6 +714,14 @@
         "difficulty": 7
       },
       {
+        "slug": "dominoes",
+        "name": "Dominoes",
+        "uuid": "d5b502c3-f2f6-47e9-be82-b808bc76e598",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "6b01cbb4-6a20-4214-83a0-bb1691bbdb10",
