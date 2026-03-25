@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "dominoes.sml"
+    ],
+    "test": [
+      "test.sml"
+    ],
+    "example": [
+      ".meta/example.sml"
+    ]
+  },
+  "blurb": "Make a chain of dominoes."
+}
