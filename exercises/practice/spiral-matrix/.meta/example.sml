@@ -10,10 +10,10 @@ fun spiralMatrix (size: int): int list list =
           @ List.tabulate (n - 1, fn r => (offset + n - 1 - r, offset))
           @ spiralCoords (n - 2, offset + 1)
 
+      val coords = Vector.fromList (spiralCoords (size, 0))
       val grid = Array.array (size * size, 0)
-      val _ = List.foldl (fn ((r, c), i) =>
-        (Array.update (grid, r * size + c, i); i + 1))
-        1 (spiralCoords (size, 0))
+      val _ = Vector.appi (fn (i, (r, c)) =>
+        Array.update (grid, r * size + c, i + 1)) coords
     in
       List.tabulate (size, fn r =>
         List.tabulate (size, fn c => Array.sub (grid, r * size + c)))
