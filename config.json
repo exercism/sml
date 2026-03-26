@@ -682,6 +682,14 @@
         "difficulty": 5
       },
       {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "ac176b01-15aa-4b66-9ebb-e363ef242a54",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "split-second-stopwatch",
         "name": "Split-Second Stopwatch",
         "uuid": "e8e2197d-9238-4366-9f07-71def378959d",
