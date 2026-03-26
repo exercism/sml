@@ -722,6 +722,14 @@
         "difficulty": 6
       },
       {
+        "slug": "piecing-it-together",
+        "name": "Piecing It Together",
+        "uuid": "4993f9ab-a47c-465d-9452-1e695dc3c883",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "book-store",
         "name": "Book Store",
         "uuid": "4bbd1b60-627e-4aed-8f6b-c7fccfb9aaa2",
