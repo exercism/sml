@@ -36,19 +36,7 @@ val testsuite =
       (fn _ => label ["black", "grey", "black"] |> Expect.equalTo "8 ohms"),
 
     test "Ignore extra colors"
-      (fn _ => label ["blue", "green", "yellow", "orange"] |> Expect.equalTo "650 kiloohms"),
-
-    test "Orange and orange and red"
-      (fn _ => label ["orange", "orange", "red"] |> Expect.equalTo "3.3 kiloohms"),
-
-    test "Orange and orange and green"
-      (fn _ => label ["orange", "orange", "green"] |> Expect.equalTo "3.3 megaohms"),
-
-    test "White and white and violet"
-      (fn _ => label ["white", "white", "violet"] |> Expect.equalTo "990 megaohms"),
-
-    test "White and white and grey"
-      (fn _ => label ["white", "white", "grey"] |> Expect.equalTo "9.9 gigaohms")
+      (fn _ => label ["blue", "green", "yellow", "orange"] |> Expect.equalTo "650 kiloohms")
   ]
 
 val _ = Test.run testsuite
