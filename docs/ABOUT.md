@@ -27,8 +27,8 @@ It's also many programmers first introduction to pattern matching and (truely) s
 
 There are several popular implementations:
 
-- [MLton](http://mlton.org/)
-- [SML/NJ](http://www.smlnj.org/)
-- [PolyML](http://www.polyml.org/). 
+- [MLton](https://github.com/MLton/mlton#readme)
+- [SML/NJ](https://www.smlnj.org/)
+- [PolyML](https://www.polyml.org/). 
 
 You can find information on the language on each implementation's sites. 
