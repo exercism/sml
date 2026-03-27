@@ -746,6 +746,14 @@
         "difficulty": 7
       },
       {
+        "slug": "grade-school",
+        "name": "Grade School",
+        "uuid": "6329e62d-0621-43b2-9c42-81946235f8da",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "6b01cbb4-6a20-4214-83a0-bb1691bbdb10",
