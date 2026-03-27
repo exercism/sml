@@ -1,13 +1,23 @@
-type school = unit (* design your own type *)
+structure GradeSchool :> sig
+  type school
 
-fun newSchool (): school =
-  raise Fail "'newSchool' is not implemented"
+  val newSchool : unit -> school
+  val add : school * string * int -> bool
+  val roster : school -> string list
+  val grade : school * int -> string list
+end = struct
 
-fun add (school: school, name: string, grade: int): bool * school =
-  raise Fail "'add' is not implemented"
+  type school = unit (* design your own type *)
 
-fun roster (school: school): string list =
-  raise Fail "'roster' is not implemented"
+  fun newSchool () : school =
+    raise Fail "'newSchool' is not implemented"
 
-fun grade (school: school, desiredGrade: int): string list =
-  raise Fail "'grade' is not implemented"
+  fun add (school: school, name: string, grade: int) : bool =
+    raise Fail "'add' is not implemented"
+
+  fun roster (school: school) : string list =
+    raise Fail "'roster' is not implemented"
+
+  fun grade (school: school, desiredGrade: int) : string list =
+    raise Fail "'grade' is not implemented"
+end
