@@ -22,7 +22,7 @@
 - [Stackoverflow](https://stackoverflow.com/questions/tagged/sml)
 - [/r/sml](https://www.reddit.com/r/sml/)
 - [Lambda The Ultimate](http://lambda-the-ultimate.org)
-- [Ponyo](https://ponyo.org/)
+- [Ponyo](https://github.com/eatonphil/ponyo#readme)
 - [Style Guide](https://www.cs.cornell.edu/courses/cs312/2008sp/handouts/style.htm)
 
 # Implementations
