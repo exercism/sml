@@ -722,6 +722,14 @@
         "difficulty": 5
       },
       {
+        "slug": "binary-search-tree",
+        "name": "Binary Search Tree",
+        "uuid": "7581b8bd-e890-497e-86fa-365c89e66857",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "95b2f13e-e59f-477c-905a-8cfa652607b3",
