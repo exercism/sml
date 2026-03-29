@@ -655,6 +655,14 @@
         "difficulty": 4
       },
       {
+        "slug": "crypto-square",
+        "name": "Crypto Square",
+        "uuid": "f1a91cc9-04e8-4ba1-8fc8-e4abff8074ac",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "18810489-b71e-4d1c-9f2d-e9ac28580fd4",
