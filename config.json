@@ -671,6 +671,14 @@
         "difficulty": 5
       },
       {
+        "slug": "game-of-life",
+        "name": "Conway's Game of Life",
+        "uuid": "43d29fb5-b579-4f7e-aed7-8dff01e07c4b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "killer-sudoku-helper",
         "name": "Killer Sudoku Helper",
         "uuid": "2d5222b1-2aba-4d34-8a36-89bdff464b28",
