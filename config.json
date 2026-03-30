@@ -786,6 +786,14 @@
         "difficulty": 6
       },
       {
+        "slug": "rail-fence-cipher",
+        "name": "Rail Fence Cipher",
+        "uuid": "9f05100d-2033-411b-b732-9c0a9349d21b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "book-store",
         "name": "Book Store",
         "uuid": "4bbd1b60-627e-4aed-8f6b-c7fccfb9aaa2",
