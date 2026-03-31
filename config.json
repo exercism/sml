@@ -818,6 +818,14 @@
         "difficulty": 7
       },
       {
+        "slug": "alphametics",
+        "name": "Alphametics",
+        "uuid": "fb9e5c15-2480-4267-8235-6ad5ac5bfdd8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "6b01cbb4-6a20-4214-83a0-bb1691bbdb10",
