@@ -1,4 +1,6 @@
-# Hints
+# Instructions append
+
+## Hints
 
 If the argument is less than `1`, return [`NONE`](https://smlfamily.github.io/Basis/option.html#SIG:OPTION.option:TY:SPEC).
 

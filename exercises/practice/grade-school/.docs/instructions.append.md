@@ -1,5 +1,7 @@
 # Instructions append
 
+## Implementation
+
 To complete this exercise you need to implement the struct by defining the data type `school` and implementing the functions:
 
 - newSchool
