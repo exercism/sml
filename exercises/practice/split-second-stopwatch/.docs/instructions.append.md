@@ -1,5 +1,7 @@
 # Instructions append
 
+## Implementation
+
 To complete this exercise you need to define the data type `stopwatch`, and implement the functions:
 
 - newStopwatch
@@ -13,5 +15,4 @@ To complete this exercise you need to define the data type `stopwatch`, and impl
 - total
 - previousLaps
 
-You will find a dummy type definition already in place,
-but it is up to you to define the functions and create a meaningful data type.
+You will find a dummy type definition already in place, but it is up to you to define the functions and create a meaningful data type.
