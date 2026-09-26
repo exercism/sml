@@ -77,8 +77,11 @@ val testsuite =
       test "empty list"
         (fn _ => reverse ([]) |> Expect.equalTo []),
 
-      test "non-empty list"
-        (fn _ => reverse ([1, 3, 5, 7]) |> Expect.equalTo [7, 5, 3, 1])
+      test "non-empty even-length list"
+        (fn _ => reverse ([1, 3, 5, 7]) |> Expect.equalTo [7, 5, 3, 1]),
+
+      test "non-empty odd-length list"
+        (fn _ => reverse ([1, 3, 5, 7, 9, 11, 13]) |> Expect.equalTo [13, 11, 9, 7, 5, 3, 1])
     ]
   ]
 
