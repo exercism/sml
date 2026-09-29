@@ -16,7 +16,8 @@ Please read [INSTALLATION.md](docs/INSTALLATION.md) for more info.
 Any type of contribution is more than welcome!
 
 Before opening a pull request please have look into [Contributors Pull Request
-Guide](https://exercism.org/docs/building/github/contributors-pull-request-guide).
+Guide](https://exercism.org/docs/building/github/contributors-pull-request-guide)
+and discuss your proposed contribution in the [forum][forum].
 
 ## Contributing a new exercise
 
@@ -155,4 +156,5 @@ $ make redeploy-testlib
 We don't want to deal with multiple versions of testlib. Hence the redeploy script is the only way to update the testlib of any exercise.
 
 
+[forum]: https://forum.exercism.org/c/programming/sml
 [guide-practice-exercise]: https://exercism.org/docs/building/tracks/practice-exercises
