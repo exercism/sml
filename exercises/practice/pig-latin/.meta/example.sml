@@ -1,23 +1,23 @@
-fun isVowelCluster #"a" _    = true
-  | isVowelCluster #"e" _    = true
-  | isVowelCluster #"i" _    = true
-  | isVowelCluster #"o" _    = true
-  | isVowelCluster #"u" _    = true
-  | isVowelCluster #"y" #"t" = true
-  | isVowelCluster #"x" #"r" = true
-  | isVowelCluster _    _    = false
+fun isVowelCluster _     #"a" _    = true
+  | isVowelCluster _     #"e" _    = true
+  | isVowelCluster _     #"i" _    = true
+  | isVowelCluster _     #"o" _    = true
+  | isVowelCluster _     #"u" _    = true
+  | isVowelCluster false #"y" _    = true
+  | isVowelCluster true  #"y" #"t" = true
+  | isVowelCluster true  #"x" #"r" = true
+  | isVowelCluster _     _    _    = false
 
 fun isCluster #"q" #"u" = true
   | isCluster _    _    = false
 
-fun translate' [] = ""
-  | translate' [x] = Char.toString x ^ "ay"
-  | translate' [#"m", #"y"] = "ymay"
-  | translate' (word as (a::b::cs)) =
-      if isVowelCluster a b
+fun translate' _ [] = ""
+  | translate' _ [x] = Char.toString x ^ "ay"
+  | translate' start (word as (a::b::cs)) =
+      if isVowelCluster start a b
       then implode word ^ "ay"
       else if isCluster a b
-           then translate' (cs @ [a, b])
-           else translate' (b :: cs @ [a])
+           then implode (cs @ [a, b]) ^ "ay"
+           else translate' false (b :: cs @ [a])
 
-fun translate words = String.concatWith " " (map (translate' o explode) (String.tokens Char.isSpace words))
+fun translate words = String.concatWith " " (map (translate' true o explode) (String.tokens Char.isSpace words))
