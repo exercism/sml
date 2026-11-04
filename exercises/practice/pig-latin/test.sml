@@ -86,7 +86,7 @@ val testsuite =
 
     describe "phrases are translated" [
       test "a whole phrase"
-        (fn _ => translate ("quick fast run") |> Expect.equalTo "ickquay astfay unray")
+        (fn _ => translate ("why do squids enjoy xrays") |> Expect.equalTo "ywhay oday idssquay enjoyay xraysay")
     ]
   ]
 
