@@ -1,0 +1,10 @@
+fun mostCommonWord text =
+  let
+    val words = String.tokens Char.isSpace (String.map Char.toLower text)
+    fun countOf w = length (List.filter (fn x => x = w) words)
+    fun pick (word, best) =
+      if countOf word > countOf best then word else best
+    val best = foldl pick "" words
+  in
+    "\"" ^ best ^ "\" appears " ^ Int.toString (countOf best) ^ " times"
+  end
